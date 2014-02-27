@@ -1,0 +1,55 @@
+User Stories
+
+Eu, como utilizador visitante quero registar-me no sistema.
+
+Eu, como utilizador visitante quero autenticar-me no sistema.
+
+Eu, como utilizador quero ver uma lista resumida dos conteúdos do website.
+
+Eu, como utilizador quero filtrar as publicações por categorias.
+
+Eu, como utilizador quero ver uma publicação em detalhe.
+
+Eu, como utilizador registado quero avaliar positiva ou negativamente uma publicação
+
+Eu, como utilizador registado quero adicionar um amigo.
+
+Eu, como utilizador registado quero consultar a minha lista de amigos
+
+Eu, como utilizador registado quero comentar uma publicação
+
+Eu, como utilizador registado quero partilhar uma publicação
+
+Eu, como utilizador registado quero fazer logout do sistema.
+
+Eu, como utilizador registado quero remover uma amizade.
+
+Eu, como utilizador registado quero recomendar publicações a amigos.
+
+Eu, como utilizador registado quero visualizar as recomendações dos meus amigos.
+
+Eu, como utilizador registado quero enviar mensagens privadas.
+
+Eu, como utilizador registado quero visualizar as mensagens recebidas.
+
+Eu, como utilizador registado quero publicar conteúdos.
+
+Eu, como utilizador registado quero alterar a minha avaliação de um conteúdo.
+
+Eu, como administrador quero editar o conteúdo de uma publicação.
+
+Eu, como administrador quero apagar uma publicação.
+
+Eu, como administrador quero editar um comentário.
+
+Eu, como administrador quero editar uma publicação.
+
+Eu, como administrador quero apagar um comentário.
+
+Eu, como administrador quero promover um utilizador registado a utilizador do sistema.
+
+Eu, como administrador quero despromover um gestor do sistema a utilizador registado.  --- Adicionar administrador principal do sistema???
+
+Eu, como administrador quero banir temporariamente um utilizador registado.
+
+Eu, como administrador quero banir permanentemente um utilizador registado.
