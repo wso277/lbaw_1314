@@ -1,55 +1,53 @@
-User Stories
+User Points		User Stories											Priority
 
-Eu, como utilizador visitante quero registar-me no sistema.
+3		Eu, como utilizador visitante, quero registar-me no sistema. 5
 
-Eu, como utilizador visitante quero autenticar-me no sistema.
+3		Eu, como utilizador visitante, quero autenticar-me no sistema. 5
 
-Eu, como utilizador quero ver uma lista resumida dos conteúdos do website.
+5		Eu, como utilizador, quero ver uma lista resumida dos conteúdos do website. 5
 
-Eu, como utilizador quero filtrar as publicações por categorias.
+3		Eu, como utilizador, quero filtrar as publicações por categorias. 3
 
-Eu, como utilizador quero ver uma publicação em detalhe.
+3		Eu, como utilizador, quero ver uma publicação em detalhe. 5
 
-Eu, como utilizador registado quero avaliar positiva ou negativamente uma publicação
+1		Eu, como utilizador registado, quero avaliar positiva ou negativamente uma publicação. 2
 
-Eu, como utilizador registado quero adicionar um amigo.
+2		Eu, como utilizador registado, quero adicionar um amigo. 2
 
-Eu, como utilizador registado quero consultar a minha lista de amigos
+2		Eu, como utilizador registado, quero consultar a minha lista de amigos. 2
 
-Eu, como utilizador registado quero comentar uma publicação
+8/13		Eu, como utilizador registado, quero comentar uma publicação. 5
 
-Eu, como utilizador registado quero partilhar uma publicação
+8		Eu, como utilizador registado, quero partilhar uma publicação. 4
 
-Eu, como utilizador registado quero fazer logout do sistema.
+3		Eu, como utilizador registado, quero fazer logout do sistema. 5
 
-Eu, como utilizador registado quero remover uma amizade.
+1		Eu, como utilizador registado, quero remover uma amizade. 1
 
-Eu, como utilizador registado quero recomendar publicações a amigos.
+21		Eu, como utilizador registado, quero recomendar publicações a amigos. 3 // ao recomendar, implementar no feed
 
-Eu, como utilizador registado quero visualizar as recomendações dos meus amigos.
+8		Eu, como utilizador registado, quero visualizar as recomendações dos meus amigos. 3
 
-Eu, como utilizador registado quero enviar mensagens privadas.
+3		Eu, como utilizador registado, quero enviar mensagens privadas. 3
 
-Eu, como utilizador registado quero visualizar as mensagens recebidas.
+3		Eu, como utilizador registado, quero visualizar as mensagens recebidas. 3
 
-Eu, como utilizador registado quero publicar conteúdos.
+21		Eu, como utilizador registado, quero publicar conteúdos. 5
 
-Eu, como utilizador registado quero alterar a minha avaliação de um conteúdo.
+1		Eu, como utilizador registado, quero alterar a minha avaliação de um conteúdo. 1
 
-Eu, como administrador quero editar o conteúdo de uma publicação.
+3		Eu, como administrador, quero apagar uma publicação. 3
 
-Eu, como administrador quero apagar uma publicação.
+13		Eu, como administrador, quero editar um comentário. 5
 
-Eu, como administrador quero editar um comentário.
+21		Eu, como administrador, quero editar uma publicação. 5
 
-Eu, como administrador quero editar uma publicação.
+5		Eu, como administrador, quero apagar um comentário. 3
 
-Eu, como administrador quero apagar um comentário.
+3		Eu, como administrador, quero promover um utilizador registado a utilizador do sistema. 4
 
-Eu, como administrador quero promover um utilizador registado a utilizador do sistema.
+3		Eu, como administrador, quero despromover um gestor do sistema a utilizador registado.  4 --- Adicionar administrador principal do sistema???
 
-Eu, como administrador quero despromover um gestor do sistema a utilizador registado.  --- Adicionar administrador principal do sistema???
+3		Eu, como administrador, quero banir temporariamente um utilizador registado. 2
 
-Eu, como administrador quero banir temporariamente um utilizador registado.
-
-Eu, como administrador quero banir permanentemente um utilizador registado.
+3		Eu, como administrador, quero banir permanentemente um utilizador registado. 2
