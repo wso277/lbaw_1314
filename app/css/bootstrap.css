@@ -6,12 +6,13 @@
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: Helvetica;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 body {
   margin: 0;
+  height:100%;
 }
 article,
 aside,
@@ -277,7 +278,8 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  height:100%;
+  background-color: #dee1dd;
 }
 input,
 button,
@@ -2081,8 +2083,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #658b6f;
+  border-color: #658b6f;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2090,8 +2092,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  background-color: #617f4f;
+  border-color: #617b6f;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3938,26 +3940,26 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f0ad4e;
-  border-color: #e7e7e7;
+  background-color: #28363d;
+  border-color: #28363d;
 }
 .navbar-default .navbar-brand {
-  color: #777;
+  color: #99aead;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #5e5e5e;
+  color: #99aead;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #777;
+  color: #99aead;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: #99aead;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
+  color: #fff;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -4365,10 +4367,10 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 30px;
-  margin-bottom: 30px;
+  padding: 15px;
+  margin-bottom: 2em;
   color: inherit;
-  background-color: #eee;
+  background-color: #c4cdc1;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4755,7 +4757,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel {
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: #dee1dd;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
@@ -4965,12 +4967,12 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #428bca;
+  border-color: #99aead;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: #99aead;
+  border-color: #99aead;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #428bca;
