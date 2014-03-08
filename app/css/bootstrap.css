@@ -279,7 +279,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   height:100%;
-  background-color: #dee1dd;
+  background-color: #d4d8d1;
 }
 input,
 button,
@@ -2083,8 +2083,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #658b6f;
-  border-color: #658b6f;
+  background-color: #577492;
+  border-color: #577492;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2092,8 +2092,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #617f4f;
-  border-color: #617b6f;
+  background-color: #428bca;
+  border-color: #428bca;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3940,26 +3940,26 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #28363d;
-  border-color: #28363d;
+  background-color: #332c2f;
+  border-color: #332c2f;
 }
 .navbar-default .navbar-brand {
-  color: #99aead;
+  color: #aa9a66;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #99aead;
+  color: #aa9a66;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #99aead;
+  color: #aa9a66;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #99aead;
+  color: #aa9a66;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #fff;
+  color: #b74934;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -4370,7 +4370,7 @@ a.list-group-item.active > .badge,
   padding: 15px;
   margin-bottom: 2em;
   color: inherit;
-  background-color: #c4cdc1;
+  background-color: #a8a8a1;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4971,8 +4971,8 @@ a.list-group-item-danger.active:focus {
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #99aead;
-  border-color: #99aead;
+  background-color: #b74934;
+  border-color: #b74934;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #428bca;
