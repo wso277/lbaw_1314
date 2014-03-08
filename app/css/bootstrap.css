@@ -4368,7 +4368,7 @@ a.list-group-item.active > .badge,
 }
 .jumbotron {
   padding: 15px;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   color: inherit;
   background-color: #a8a8a1;
 }
@@ -4377,7 +4377,7 @@ a.list-group-item.active > .badge,
   color: inherit;
 }
 .jumbotron p {
-  margin-bottom: 15px;
+  margin-bottom: 0.1em;
   font-size: 21px;
   font-weight: 200;
 }
@@ -4389,8 +4389,8 @@ a.list-group-item.active > .badge,
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
   .container .jumbotron {
     padding-right: 60px;
