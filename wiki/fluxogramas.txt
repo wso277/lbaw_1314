@@ -1,14 +1,3 @@
-registo
-login
-filtrar?
-adicionar amizade
-comentar
-partilhar?
-recomendar?
-enviar pm
-publicar
-apagar publicacao?
-editar
 promover utilizador
 banir
-despromover
+despromover utilizador
