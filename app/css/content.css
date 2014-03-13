@@ -1,11 +1,16 @@
 .text {
 	text-align:justify;
+	font-family:Georgia;
+	font-size: 18px;
 	-webkit-font-smoothing:antialiased;
-	background-color:#a8a8a1;
 	width:73%;
 	padding:5px;
-	padding-left:10px;
+	padding-left:5em;
 	border-radius:5px;
+}
+
+body {
+	background-color: #e6e6e6;
 }
 
 .webview {
@@ -30,7 +35,7 @@
 
 .comment {
 	padding-top:1.5em;
-	padding-left:5em;
+	padding-left:2em;
 	margin:15px;
 	width: 70%;
 }
@@ -49,6 +54,6 @@
 
 .btn-cmt {
   color: #666;
-  background-color: #d4d8d1;
-  border-color: #d4d8d1;
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
 }
