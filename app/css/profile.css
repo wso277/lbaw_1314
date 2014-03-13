@@ -2,4 +2,12 @@
 	margin-top: 2em;
 	margin-left: 2em;
 	margin-right: 2em;
+	float:left;
+}
+
+.post-history {
+	width:73%;
+	margin-left:2em;
+	float:left;
+	clear:left
 }
