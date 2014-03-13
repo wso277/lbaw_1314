@@ -1,3 +1,8 @@
+.text {
+	text-align:justify;
+	-webkit-font-smoothing:antialiased;
+}
+
 .webview {
 	width: 75%;
 	height: 75%;
@@ -16,4 +21,27 @@
 	float: left;
 	width: 10%;
 	position: fixed;
+}
+
+.comment {
+	padding-top:1.5em;
+	padding-left:5em;
+}
+
+.comment > .comment-author {
+	padding-left:3em;
+}
+
+.comment > .comment-text {
+	padding-left:3em;
+}
+
+.comment > .vote-buttons {
+	padding-left:3em;
+}
+
+.btn-cmt {
+  color: #666;
+  background-color: #d4d8d1;
+  border-color: #d4d8d1;
 }
