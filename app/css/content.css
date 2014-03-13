@@ -1,6 +1,11 @@
 .text {
 	text-align:justify;
 	-webkit-font-smoothing:antialiased;
+	background-color:#a8a8a1;
+	width:73%;
+	padding:5px;
+	padding-left:10px;
+	border-radius:5px;
 }
 
 .webview {
@@ -26,6 +31,8 @@
 .comment {
 	padding-top:1.5em;
 	padding-left:5em;
+	margin:15px;
+	width: 70%;
 }
 
 .comment > .comment-author {
