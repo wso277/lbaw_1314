@@ -1,3 +1,7 @@
+body {
+	overflow-x:hidden;
+}
+
 .text {
 	text-align:justify;
 	font-family:Georgia;
@@ -38,6 +42,9 @@ body {
 	padding-left:2em;
 	margin:15px;
 	width: 70%;
+	border-bottom: 1px;
+	border-bottom-style: solid;	
+	border-bottom-color: #cccccc
 }
 
 .comment > .comment-author {
