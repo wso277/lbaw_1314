@@ -1,0 +1,9 @@
+Noticia(idNoticia, Conteudo, Titulo, idEditor->Editor, avaliavel)
+Comentario(idComentario, Conteudo, avaliavel, idEditor->Editor, idNoticia->Noticia)
+Link(idLink, HomeLink, href)
+LinkNoticia(idNoticia->Noticia, idLink->Link);
+NoticiaCategoria(idNoticia->Noticia, idCategoria->Categoria)
+Categoria(idCategoria, Nome)
+Editor(idEditor, Nome, Idade, Localidade, Username, Profissao, Fotografia, Tipo, Estado)
+Mensagem(Emissor->Utilizador, Receptor->Utilizador, Assunto, Conteudo)
+Amizade(Amigo1->Utilizador, Amigo2->Utilizador) 	//Amigo1<Amigo2
