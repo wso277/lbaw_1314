@@ -5,8 +5,16 @@ LinkNoticia(idNoticia->Noticia NN, idLink->Link NN)
 NoticiaCategoria(idNoticia->Noticia NN, idCategoria->Categoria NN)
 Categoria(idCategoria UK NN, Nome UK NN)
 Interesse(idEditor->Editor NN, idCategoria->Categoria NN)
-Editor(idEditor UK NN, Nome NN, Idade NN, Localidade NN, Username UK NN, Profissao NN, Fotografia NN, Tipo NN, Estado NN)
-Mensagem(Emissor->Editor NN, Receptor->Editor NN, Assunto NN, Conteudo NN)
+Editor(idEditor UK NN, Nome NN, Idade NN, Localidade NN, Username UK NN, Password NN, Profissao NN, Fotografia NN, Tipo NN, Estado NN)
+Mensagem(idMensagem, Emissor->Editor NN, Receptor->Editor NN, Assunto NN, Conteudo NN)
 Amizade(Amigo1->Editor NN, Amigo2->Editor NN, CHECK Amigo1<Amigo2) 	//Amigo1<Amigo2
 AvaliarNoticia(chave UK NN, idEditor->Editor NN, idNoticia->Noticia NN, avaliacao NN)
 AvaliarComentario(chave UK NN, idEditor->Editor NN, idComentario->Comentario NN, avaliacao NN)
+
+
+idmensagem
+enums tipo estado
+
+dfs
+
+validacao
