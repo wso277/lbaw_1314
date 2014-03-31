@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Noticia(
 	idNoticia SERIAL PRIMARY KEY,
 	conteudo VARCHAR NOT NULL, 
 	titulo VARCHAR(85) NOT NULL, 
-	data  DATE DEFAULT CURRENT_DATE, 
+	data_post  DATE DEFAULT CURRENT_DATE, 
 	idEditor INTEGER REFERENCES Editor(idEditor)
 	);
 
@@ -68,8 +68,8 @@ CREATE TABLE IF NOT EXISTS Editor(
 	pass VARCHAR NOT NULL,
 	profissao VARCHAR NOT NULL,
 	fotografia VARCHAR,
-	tipo tipo NOT NULL,
-	estado estado NOT NULL,
+	tipo_user tipo,
+	estado_user estado,
 	CHECK (char_length(pass) > 8),
 	CHECK (char_length(username) > 6)
 	);
@@ -103,3 +103,7 @@ CREATE TABLE IF NOT EXISTS AvaliarComentario(
 	idEditor INTEGER REFERENCES Editor(idEditor),
 	idComentario INTEGER REFERENCES Comentario(idComentario)
 	);
+
+INSERT INTO Editor VALUES (1,'Olaa','Ali','Olaeusouox','987654321','pimp','asasasa','editor','bantemp');  
+
+INSERT INTO Noticia VALUES(1,'ola','titulo','2000-12-16',1);  
