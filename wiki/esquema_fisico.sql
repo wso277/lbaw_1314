@@ -1,17 +1,19 @@
 /*drop de todas as tabelas*/
-DROP TABLE IF EXISTS Noticia;
-DROP TABLE IF EXISTS Comentario;
-DROP TABLE IF EXISTS Link;
-DROP TABLE IF EXISTS LinkNoticia;
-DROP TABLE IF EXISTS NoticiaCategoria;
-DROP TABLE IF EXISTS Categoria;
+DROP TABLE IF EXISTS Noticia CASCADE;
+DROP TABLE IF EXISTS Comentario CASCADE;
+DROP TABLE IF EXISTS Link CASCADE;
+DROP TABLE IF EXISTS LinkNoticia CASCADE;
+DROP TABLE IF EXISTS NoticiaCategoria CASCADE;
+DROP TABLE IF EXISTS Categoria CASCADE;
+DROP TYPE IF EXISTS tipo CASCADE;
+DROP TYPE IF EXISTS estado CASCADE;
 
-CREATE TYPE TIPO AS ENUM ('editor' 'moderador');
-CREATE TYPE ESTADO AS ENUM ('ban', 'bantemp', 'normal');
+CREATE TYPE tipo AS ENUM ('editor','moderador');
+CREATE TYPE estado AS ENUM ('ban', 'bantemp', 'normal');
 
 /* Notícias */
 CREATE TABLE IF NOT EXISTS Noticia(
-	idNoticia INTEGER SERIAL PRIMARY KEY,
+	idNoticia SERIAL PRIMARY KEY,
 	conteudo VARCHAR NOT NULL, 
 	titulo VARCHAR(85) NOT NULL, 
 	data  DATE DEFAULT CURRENT_DATE, 
@@ -20,7 +22,7 @@ CREATE TABLE IF NOT EXISTS Noticia(
 
 /* Comentários */
 CREATE TABLE IF NOT EXISTS Comentario(
-	idComentario INTEGER SERIAL PRIMARY KEY,
+	idComentario SERIAL PRIMARY KEY,
 	conteudo VARCHAR(140) NOT NULL,
 	idEditor INTEGER REFERENCES Editor(idEditor), 
 	idNoticia INTEGER REFERENCES Noticia(idNoticia)
@@ -28,9 +30,9 @@ CREATE TABLE IF NOT EXISTS Comentario(
 
 /* Links */
 CREATE TABLE IF NOT EXISTS Link(
-	idLink INTEGER SERIAL PRIMARY KEY,
+	idLink SERIAL PRIMARY KEY,
 	HomeLink VARCHAR NOT NULL,
-	href VARCHAR PRIMARY KEY NOT NULL
+	href VARCHAR NOT NULL
 	);
 
 /* Links para Noticias */
@@ -39,16 +41,16 @@ CREATE TABLE IF NOT EXISTS LinkNoticia(
 	idLink INTEGER REFERENCES Link(idLink)
 	);
 
+/* Categorias */
+CREATE TABLE IF NOT EXISTS Categoria(
+	idCategoria SERIAL PRIMARY KEY,
+	Nome VARCHAR NOT NULL
+	);
+
 /* Categorias de Noticias */
 CREATE TABLE IF NOT EXISTS NoticiaCategoria(
 	idNoticia INTEGER REFERENCES Noticia(idNoticia),
 	idCategoria INTEGER REFERENCES Categoria(idCategoria)
-	);
-
-/* Categorias */
-CREATE TABLE IF NOT EXISTS Categoria(
-	idCategoria INTEGER SERIAL PRIMARY KEY,
-	Nome VARCHAR PRIMARY KEY NOT NULL
 	);
 
 /* Interesses */
@@ -59,7 +61,7 @@ CREATE TABLE IF NOT EXISTS Interesse(
 
 /* Editor */
 CREATE TABLE IF NOT EXISTS Editor(
-	idEditor INTEGER SERIAL PRIMARY KEY,
+	idEditor SERIAL PRIMARY KEY,
 	nome VARCHAR NOT NULL,
 	localidade VARCHAR NOT NULL,
 	username VARCHAR(15) UNIQUE NOT NULL,
@@ -74,7 +76,7 @@ CREATE TABLE IF NOT EXISTS Editor(
 
 /* Mensagem */
 CREATE TABLE IF NOT EXISTS Mensagem(
-	idMensagem INTEGER SERIAL PRIMARY KEY,
+	idMensagem SERIAL PRIMARY KEY,
 	emissor INTEGER REFERENCES Editor(idEditor),
 	recetor INTEGER REFERENCES Editor(idEditor),
 	titulo VARCHAR NOT NULL,
@@ -90,14 +92,14 @@ CREATE TABLE IF NOT EXISTS Amizade(
 
 /* AvaliarNoticia */
 CREATE TABLE IF NOT EXISTS AvaliarNoticia(
-	chave INTEGER SERIAL PRIMARY KEY,
+	chave SERIAL PRIMARY KEY,
 	idEditor INTEGER REFERENCES Editor(idEditor),
-	idNoticia INTEGER REFERENCES Editor(idNoticia)
+	idNoticia INTEGER REFERENCES Noticia(idNoticia)
 	);
 
 /* AvaliarComentario */
 CREATE TABLE IF NOT EXISTS AvaliarComentario(
-	chave INTEGER SERIAL PRIMARY KEY,
+	chave SERIAL PRIMARY KEY,
 	idEditor INTEGER REFERENCES Editor(idEditor),
-	idComentario INTEGER REFERENCES Editor(idComentario)
+	idComentario INTEGER REFERENCES Comentario(idComentario)
 	);
