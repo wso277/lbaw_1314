@@ -68,8 +68,8 @@ CREATE TABLE IF NOT EXISTS Editor(
 	pass VARCHAR NOT NULL,
 	profissao VARCHAR NOT NULL,
 	fotografia VARCHAR,
-	tipo TIPO NOT NULL,
-	estado ESTADO NOT NULL,
+	tipo tipo NOT NULL,
+	estado estado NOT NULL,
 	CHECK (char_length(pass) > 8),
 	CHECK (char_length(username) > 6)
 	);
