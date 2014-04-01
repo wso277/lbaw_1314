@@ -1,0 +1,16 @@
+Queries importantes:
+
+//Todos os likes das Noticias
+SELECT Noticia.idNoticia, SUM (AvaliarNoticia.avaliacao) AS Pontuacao FROM AvaliarNoticia,Noticia WHERE AvaliarNoticia.idNoticia = Noticia.idNoticia GROUP BY Noticia.idNoticia ORDER BY Pontuacao DESC;
+
+//Todos os likes dos Comentarios
+SELECT Comentario.idComentario, SUM (AvaliarComentario.avaliacao) FROM AvaliarComentario,Comentario WHERE AvaliarComentario.idComentario = Comentario.idComentario GROUP BY Comentario.idComentario;
+
+//Buscar utilizador por username
+SELECT * FROM Editor Where username="Joao Filetes";
+
+//Buscar todas as noticias 
+SELECT * FROM Noticia ORDER BY ;
+
+//Buscar noticia por categoria
+SELECT * FROM 
