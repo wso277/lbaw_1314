@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS Comentario(
 /* Links */
 CREATE TABLE IF NOT EXISTS Link(
 	idLink SERIAL PRIMARY KEY,
-	HomeLink VARCHAR NOT NULL,
+	homeLink VARCHAR NOT NULL,
 	href VARCHAR NOT NULL
 	);
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS LinkNoticia(
 /* Categorias */
 CREATE TABLE IF NOT EXISTS Categoria(
 	idCategoria SERIAL PRIMARY KEY,
-	Nome VARCHAR NOT NULL
+	nome VARCHAR NOT NULL
 	);
 
 /* Categorias de Noticias */
@@ -109,13 +109,13 @@ CREATE TABLE IF NOT EXISTS AvaliarComentario(
 	CHECK (avaliacao = -1 OR avaliacao = 1)
 	);
 
-INSERT INTO Editor VALUES (DEFAULT,'Joao Filetes','Ali acola','filetez','987654321','welele@fe.up.pt','autista','asasasa','editor','bantemp');
-INSERT INTO Editor VALUES (DEFAULT,'Wiwson Rabanadas','Ali alem','rabandaz','987654321','welelf@fe.up.pt','autista','asasasa','editor','bantemp');    
-INSERT INTO Editor VALUES (DEFAULT,'Luis Salmao','Ali no caralho','salmaez','987654321','welela@fe.up.pt','autista','asasasa','editor','bantemp');  
-INSERT INTO Editor VALUES (DEFAULT,'Fabio Franganito','Ali no caralhao te foda','franganitoz','987654321','welile@fe.up.pt','autista','asasasa','editor','bantemp');  
+INSERT INTO Editor VALUES(DEFAULT,'Joao Filetes','Ali acola','filetez','987654321','welele@fe.up.pt','autista','asasasa','editor','bantemp');
+INSERT INTO Editor VALUES(DEFAULT,'Wiwson Rabanadas','Ali alem','rabandaz','987654321','welelf@fe.up.pt','autista','asasasa','editor','bantemp');    
+INSERT INTO Editor VALUES(DEFAULT,'Luis Salmao','Ali no caralho','salmaez','987654321','welela@fe.up.pt','autista','asasasa','editor','bantemp');  
+INSERT INTO Editor VALUES(DEFAULT,'Fabio Franganito','Ali no caralhao te foda','franganitoz','987654321','welile@fe.up.pt','autista','asasasa','editor','bantemp');  
 
 INSERT INTO Noticia VALUES(DEFAULT,'Pinto da Costa acaba de comer outra gaja','titulo','2000-12-16',1);
-INSERT Noticia INTO VALUES(DEFAULT,'Jorge Jesus volta a ladrar','titulo','2000-12-16',2);
+INSERT INTO Noticia VALUES(DEFAULT,'Jorge Jesus volta a ladrar','titulo','2000-12-16',2);
 INSERT INTO Noticia VALUES(DEFAULT,'Jorge Jesus engasga-se a falar','titulo','2000-12-16',3);
 INSERT INTO Noticia VALUES(DEFAULT,'Bruno de Carvalho tem clausula de rescisao de 150 milhoes de euros','titulo','2000-12-16',4);
 
@@ -141,9 +141,41 @@ INSERT INTO AvaliarNoticia VALUES(DEFAULT,2,3,-1);
 INSERT INTO AvaliarNoticia VALUES(DEFAULT,3,1,-1);
 INSERT INTO AvaliarNoticia VALUES(DEFAULT,4,2,-1);
 
-INSERT INTO Comentario VALUES(DEFAULT,'GANDA GAJA OH BELHOTE',4,1);
-INSERT INTO Comentario VALUES(DEFAULT,'TCH NUNCA PENSEI',3,2);
+/* Editor,Comentario, Avaliacao*/
+INSERT INTO AvaliarComentario VALUES(DEFAULT,1,1,1);
+INSERT INTO AvaliarComentario VALUES(DEFAULT,1,2,1);
+INSERT INTO AvaliarComentario VALUES(DEFAULT,2,3,-1);
+INSERT INTO AvaliarComentario VALUES(DEFAULT,3,1,-1);
+INSERT INTO AvaliarComentario VALUES(DEFAULT,4,2,-1);
+
+/*Editor,Noticia*/
+INSERT INTO Comentario VALUES(DEFAULT,'GANDA GAJA OH BELHOTE',1,1);
+INSERT INTO Comentario VALUES(DEFAULT,'TCH NUNCA PENSEI',1,2);
 INSERT INTO Comentario VALUES(DEFAULT,'POAH',3,1);
 INSERT INTO Comentario VALUES(DEFAULT,'WELELELELELE',2,3);
 INSERT INTO Comentario VALUES(DEFAULT,'VOU TE MALABAAAAAAAAAAR',1,4);
-INSERT INTO Comentario VALUES(DEFAULT,'TEMOS QUE MUDAR ESTA MERDA',4,1);
+INSERT INTO Comentario VALUES(DEFAULT,'TEMOS QUE MUDAR ESTA MERDA',4,2);
+
+INSERT INTO Mensagem VALUES(DEFAULT,1,2,'titulo1','ganda cena oh belhoooooteeeee');
+INSERT INTO Mensagem VALUES(DEFAULT,1,3,'titulo2','ganda cena oh filhoooooteeeee');
+INSERT INTO Mensagem VALUES(DEFAULT,1,4,'titulo3','ganda cena oh velhoooooteeeee');
+INSERT INTO Mensagem VALUES(DEFAULT,2,1,'titulo4','olha, cenas aconteceram');
+INSERT INTO Mensagem VALUES(DEFAULT,3,1,'titulo4','olha, hoje nao vai pintar');
+
+INSERT INTO Amizade VALUES(1,2);
+INSERT INTO Amizade VALUES(1,3);
+INSERT INTO Amizade VALUES(1,4);
+INSERT INTO Amizade VALUES(2,3);
+
+INSERT INTO Link VALUES(DEFAULT,'http://www.abola.pt/ojorgejesusladrou','abola.pt');
+INSERT INTO Link VALUES(DEFAULT,'http://www.abola.pt/ojorgejesusengasgouse','abola.pt');
+INSERT INTO Link VALUES(DEFAULT,'http://www.abola.pt/fonsecapensaquestaem2013','abola.pt');
+INSERT INTO Link VALUES(DEFAULT,'http://www.abola.pt/marcosilvacoiso','abola.pt');
+INSERT INTO Link VALUES(DEFAULT,'http://www.abola.pt/olaeusouox','abola.pt');
+INSERT INTO Link VALUES(DEFAULT,'http://www.abola.pt/olacomoestas','abola.pt');
+
+/* Noticia, Link*/
+INSERT INTO LinkNoticia VALUES(1,1);
+INSERT INTO LinkNoticia VALUES(2,3);
+INSERT INTO LinkNoticia VALUES(4,2);
+INSERT INTO LinkNoticia VALUES(4,3);
