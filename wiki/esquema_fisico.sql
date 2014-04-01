@@ -17,15 +17,15 @@ CREATE TABLE IF NOT EXISTS Noticia(
 	conteudo VARCHAR NOT NULL, 
 	titulo VARCHAR(85) NOT NULL, 
 	data_post  DATE DEFAULT CURRENT_DATE, 
-	idEditor INTEGER REFERENCES Editor(idEditor)
+	idEditor INTEGER REFERENCES Editor
 	);
 
 /* Comentários */
 CREATE TABLE IF NOT EXISTS Comentario(
 	idComentario SERIAL PRIMARY KEY,
 	conteudo VARCHAR(140) NOT NULL,
-	idEditor INTEGER REFERENCES Editor(idEditor), 
-	idNoticia INTEGER REFERENCES Noticia(idNoticia)
+	idEditor INTEGER REFERENCES Editor, 
+	idNoticia INTEGER REFERENCES Noticia
 	);
 
 /* Links */
@@ -37,8 +37,8 @@ CREATE TABLE IF NOT EXISTS Link(
 
 /* Links para Noticias */
 CREATE TABLE IF NOT EXISTS LinkNoticia(
-	idNoticia INTEGER REFERENCES Noticia(idNoticia),
-	idLink INTEGER REFERENCES Link(idLink)
+	idNoticia INTEGER REFERENCES Noticia,
+	idLink INTEGER REFERENCES Link
 	);
 
 /* Categorias */
@@ -49,14 +49,14 @@ CREATE TABLE IF NOT EXISTS Categoria(
 
 /* Categorias de Noticias */
 CREATE TABLE IF NOT EXISTS NoticiaCategoria(
-	idNoticia INTEGER REFERENCES Noticia(idNoticia),
-	idCategoria INTEGER REFERENCES Categoria(idCategoria)
+	idNoticia INTEGER REFERENCES Noticia,
+	idCategoria INTEGER REFERENCES Categoria
 	);
 
 /* Interesses */
 CREATE TABLE IF NOT EXISTS Interesse(
-	idEditor INTEGER REFERENCES Editor(idEditor),
-	idCategoria INTEGER REFERENCES Categoria(idCategoria)
+	idEditor INTEGER REFERENCES Editor,
+	idCategoria INTEGER REFERENCES Categoria
 	);
 
 /* Editor */
@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS Editor(
 	localidade VARCHAR NOT NULL,
 	username VARCHAR(15) UNIQUE NOT NULL,
 	pass VARCHAR NOT NULL,
+	email VARCHAR UNIQUE NOT NULL,
 	profissao VARCHAR NOT NULL,
 	fotografia VARCHAR,
 	tipo_user tipo,
@@ -77,33 +78,72 @@ CREATE TABLE IF NOT EXISTS Editor(
 /* Mensagem */
 CREATE TABLE IF NOT EXISTS Mensagem(
 	idMensagem SERIAL PRIMARY KEY,
-	emissor INTEGER REFERENCES Editor(idEditor),
-	recetor INTEGER REFERENCES Editor(idEditor),
+	emissor INTEGER REFERENCES Editor,
+	recetor INTEGER REFERENCES Editor,
 	titulo VARCHAR NOT NULL,
 	conteudo VARCHAR(140) NOT NULL
 	);
 
 /* Amizade */
 CREATE TABLE IF NOT EXISTS Amizade(
-	amigo1 INTEGER REFERENCES Editor(idEditor),
-	amigo2 INTEGER REFERENCES Editor(idEditor),
+	amigo1 INTEGER REFERENCES Editor,
+	amigo2 INTEGER REFERENCES Editor,
 	CHECK (amigo1<amigo2)
 	);
 
 /* AvaliarNoticia */
 CREATE TABLE IF NOT EXISTS AvaliarNoticia(
 	chave SERIAL PRIMARY KEY,
-	idEditor INTEGER REFERENCES Editor(idEditor),
-	idNoticia INTEGER REFERENCES Noticia(idNoticia)
+	idEditor INTEGER REFERENCES Editor,
+	idNoticia INTEGER REFERENCES Noticia,
+	avaliacao INTEGER NOT NULL,
+	CHECK (avaliacao = -1 OR avaliacao = 1)
 	);
 
 /* AvaliarComentario */
 CREATE TABLE IF NOT EXISTS AvaliarComentario(
 	chave SERIAL PRIMARY KEY,
-	idEditor INTEGER REFERENCES Editor(idEditor),
-	idComentario INTEGER REFERENCES Comentario(idComentario)
+	idEditor INTEGER REFERENCES Editor,
+	idComentario INTEGER REFERENCES Comentario,
+	avaliacao INTEGER NOT NULL,
+	CHECK (avaliacao = -1 OR avaliacao = 1)
 	);
 
-INSERT INTO Editor VALUES (1,'Olaa','Ali','Olaeusouox','987654321','pimp','asasasa','editor','bantemp');  
+INSERT INTO Editor VALUES (DEFAULT,'Joao Filetes','Ali acola','filetez','987654321','welele@fe.up.pt','autista','asasasa','editor','bantemp');
+INSERT INTO Editor VALUES (DEFAULT,'Wiwson Rabanadas','Ali alem','rabandaz','987654321','welelf@fe.up.pt','autista','asasasa','editor','bantemp');    
+INSERT INTO Editor VALUES (DEFAULT,'Luis Salmao','Ali no caralho','salmaez','987654321','welela@fe.up.pt','autista','asasasa','editor','bantemp');  
+INSERT INTO Editor VALUES (DEFAULT,'Fabio Franganito','Ali no caralhao te foda','franganitoz','987654321','welile@fe.up.pt','autista','asasasa','editor','bantemp');  
 
-INSERT INTO Noticia VALUES(1,'ola','titulo','2000-12-16',1);  
+INSERT INTO Noticia VALUES(DEFAULT,'Pinto da Costa acaba de comer outra gaja','titulo','2000-12-16',1);
+INSERT Noticia INTO VALUES(DEFAULT,'Jorge Jesus volta a ladrar','titulo','2000-12-16',2);
+INSERT INTO Noticia VALUES(DEFAULT,'Jorge Jesus engasga-se a falar','titulo','2000-12-16',3);
+INSERT INTO Noticia VALUES(DEFAULT,'Bruno de Carvalho tem clausula de rescisao de 150 milhoes de euros','titulo','2000-12-16',4);
+
+INSERT INTO Categoria VALUES(DEFAULT, 'desporto');
+INSERT INTO Categoria VALUES(DEFAULT, 'futebol');
+INSERT INTO Categoria VALUES(DEFAULT, 'cinema');
+INSERT INTO Categoria VALUES(DEFAULT, 'literatura');
+INSERT INTO Categoria VALUES(DEFAULT, 'agricultura');
+INSERT INTO Categoria VALUES(DEFAULT, 'politica');
+INSERT INTO Categoria VALUES(DEFAULT, 'sexo');
+INSERT INTO Categoria VALUES(DEFAULT, 'video-jogos');
+INSERT INTO Categoria VALUES(DEFAULT, 'atualidade');
+INSERT INTO Categoria VALUES(DEFAULT, 'gastronomia'); 
+
+INSERT INTO NoticiaCategoria VALUES(1,1);
+INSERT INTO NoticiaCategoria VALUES(2,2);
+INSERT INTO NoticiaCategoria VALUES(3,3);
+INSERT INTO NoticiaCategoria VALUES(4,4);
+
+INSERT INTO AvaliarNoticia VALUES(DEFAULT,1,1,1);
+INSERT INTO AvaliarNoticia VALUES(DEFAULT,1,2,1);
+INSERT INTO AvaliarNoticia VALUES(DEFAULT,2,3,-1);
+INSERT INTO AvaliarNoticia VALUES(DEFAULT,3,1,-1);
+INSERT INTO AvaliarNoticia VALUES(DEFAULT,4,2,-1);
+
+INSERT INTO Comentario VALUES(DEFAULT,'GANDA GAJA OH BELHOTE',4,1);
+INSERT INTO Comentario VALUES(DEFAULT,'TCH NUNCA PENSEI',3,2);
+INSERT INTO Comentario VALUES(DEFAULT,'POAH',3,1);
+INSERT INTO Comentario VALUES(DEFAULT,'WELELELELELE',2,3);
+INSERT INTO Comentario VALUES(DEFAULT,'VOU TE MALABAAAAAAAAAAR',1,4);
+INSERT INTO Comentario VALUES(DEFAULT,'TEMOS QUE MUDAR ESTA MERDA',4,1);
