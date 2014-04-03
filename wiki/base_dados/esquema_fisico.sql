@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS LinkNoticia(
 	idNoticia INTEGER, 
 	href VARCHAR,
 	FOREIGN KEY(idNoticia) REFERENCES Noticia, 
-	FOREIGN KEY(href) REFERENCES Link,
+	FOREIGN KEY(href) REFERENCES Link
 	);
 
 /* Categorias */
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS Mensagem(
 
 /* Amizade */
 CREATE TABLE IF NOT EXISTS Amizade(
-	amigo1 VARCHAR(15) 
+	amigo1 VARCHAR(15),
 	amigo2 VARCHAR(15) REFERENCES Editor,
 	FOREIGN KEY(amigo1) REFERENCES Editor,
 	CHECK (amigo1<amigo2)
@@ -118,3 +118,13 @@ CREATE TABLE IF NOT EXISTS AvaliarComentario(
 	avaliacao INTEGER NOT NULL,
 	CHECK (avaliacao = -1 OR avaliacao = 1)
 	);
+
+/*Index*/
+CREATE INDEX noticia_index ON Noticia (idNoticia);
+CREATE INDEX notcat ON NoticiaCategoria (nome);
+CREATE INDEX coment ON Comentario (idNoticia);
+CREATE INDEX lknot ON LinkNoticia (idNoticia);
+CREATE INDEX ON Editor ((lower(username)));
+CREATE INDEX cat ON Categoria (nome);
+CREATE INDEX avalnoticia ON AvaliarNoticia (idNoticia);
+CREATE INDEX avalcomentario ON AvaliarComentario (idComentario);
