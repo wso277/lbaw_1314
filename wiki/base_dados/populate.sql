@@ -1,13 +1,3 @@
-/*Index*/
-CREATE INDEX noticia ON Noticia (idNoticia);
-CREATE INDEX noticiacategoria ON NoticiaCategoria (nome);
-CREATE INDEX comentario ON Comentario (idNoticia);
-CREATE INDEX linknoticia ON LinkNoticia (idNoticia);
-CREATE INDEX user ON Editor ((lower(username)));
-CREATE INDEX categoria ON Categoria (nome);
-CREATE INDEX avalnoticia ON AvaliarNoticia (idNoticia);
-CREATE INDEX avalcomentario ON AvaliarComentario (idComentario);
-
 /* username, nome, localidade, pass, email, profissão, foto, tipo, estado */
 INSERT INTO Editor VALUES('filetez','Joao Filetes','Ali acola','987654321','welele@fe.up.pt','autista','asasasa','moderador','normal');
 INSERT INTO Editor VALUES('rabandaz','Wiwson Rabanadas','Ali alem','987654321','welelf@fe.up.pt','autista','asasasa','moderador','normal');    
@@ -46,7 +36,6 @@ INSERT INTO Noticia VALUES(DEFAULT,'Javier Faus, vice-presidente do Barcelona, n
 	Para Javier Faus, «a regulamentação da FIFA é boa para a Ásia e para a América Latina, onde os fundos de investimento transferem 100 miúdos, ficam com um e abandonam os restantes».
 	«No Barcelona formamos pessoas antes de futebolistas», realçou.'
 	,'Há muita gente que não digere a hegemonia do Barcelona','2013-04-02','wolowizard');
-
 
 INSERT INTO Categoria VALUES('desporto');
 INSERT INTO Categoria VALUES('futebol');
@@ -102,16 +91,16 @@ INSERT INTO AvaliarNoticia VALUES(DEFAULT,'iamaspy',5,1);
 
 
 /*Editor,Noticia*/
-INSERT INTO Comentario VALUES(DEFAULT,'GANDA GAJA OH BELHOTE','filetez',1);
-INSERT INTO Comentario VALUES(DEFAULT,'TCH NUNCA PENSEI','filetez',2);
-INSERT INTO Comentario VALUES(DEFAULT,'POAH','tiburoenz',1);
-INSERT INTO Comentario VALUES(DEFAULT,'WELELELELELE','rabandaz',3);
-INSERT INTO Comentario VALUES(DEFAULT,'VOU TE MALABAAAAAAAAAAR','filetez',4);
+INSERT INTO Comentario VALUES(DEFAULT,'Esta noticia esta claramente incrivel','filetez',1);
+INSERT INTO Comentario VALUES(DEFAULT,'QUe trigger espetacular','filetez',2);
+INSERT INTO Comentario VALUES(DEFAULT,'Opa, isto nao me parece legit','tiburoenz',1);
+INSERT INTO Comentario VALUES(DEFAULT,'Extremamente fantastico','rabandaz',3);
+INSERT INTO Comentario VALUES(DEFAULT,'Que falta de noção','filetez',4);
 INSERT INTO Comentario VALUES(DEFAULT,'Ganda jogo oh maninho!','filetez',5);
 INSERT INTO Comentario VALUES(DEFAULT,'Sao meus colegas!','rabandaz',6);
 INSERT INTO Comentario VALUES(DEFAULT,'O projeto deles foi mesmo interessante, espero que esteja disponivel de borla','filetez',6);
-INSERT INTO Comentario VALUES(DEFAULT,'E SO AZIA OH BELHOTE','filetez',7);
-INSERT INTO Comentario VALUES(DEFAULT,'SOMOS OS MAIORES','franganitoz',6);
+INSERT INTO Comentario VALUES(DEFAULT,'Boa noticia','filetez',7);
+INSERT INTO Comentario VALUES(DEFAULT,'Apoio.','franganitoz',6);
 INSERT INTO Comentario VALUES(DEFAULT,'So choram','franganitoz',7);
 INSERT INTO Comentario VALUES(DEFAULT,'Parabens','HardenOP',6);
 INSERT INTO Comentario VALUES(DEFAULT,'So para vender jornais','jorgeGabriel',7);
@@ -131,9 +120,9 @@ INSERT INTO AvaliarComentario VALUES(DEFAULT,'willimwallace87',8,1);
 INSERT INTO AvaliarComentario VALUES(DEFAULT,'willimwallace87',10,1);
 INSERT INTO AvaliarComentario VALUES(DEFAULT,'franganitoz',8,1);
 
-INSERT INTO Mensagem VALUES(DEFAULT,'filetez','rabandaz','sem titulo','ganda cena oh belhooooote');
-INSERT INTO Mensagem VALUES(DEFAULT,'filetez','tiburoenz','sem titulo','ganda cena oh filhoooooteeeee');
-INSERT INTO Mensagem VALUES(DEFAULT,'filetez','franganitoz','sem titulo','ganda cena oh velhoooooteeeee');
+INSERT INTO Mensagem VALUES(DEFAULT,'filetez','rabandaz','sem titulo','Amanha bora la?');
+INSERT INTO Mensagem VALUES(DEFAULT,'filetez','tiburoenz','sem titulo','acho que nao');
+INSERT INTO Mensagem VALUES(DEFAULT,'filetez','franganitoz','sem titulo','nao me parece');
 INSERT INTO Mensagem VALUES(DEFAULT,'rabandaz','willimwallace87','sem titulo','olha, cenas aconteceram');
 INSERT INTO Mensagem VALUES(DEFAULT,'tiburoenz','filetez','sem titulo','olha, hoje nao vai pintar');
 INSERT INTO Mensagem VALUES(DEFAULT,'tiburoenz','filetez','sem titulo','amanha vais estar em casa? Podiamos adiar');
@@ -156,18 +145,18 @@ INSERT INTO Amizade VALUES('iamaspy','wolowizard');
 
 
 
-INSERT INTO Link VALUES('http://www.abola.pt/ojorgejesusladrou','abola.pt');
-INSERT INTO Link VALUES('http://www.abola.pt/ojorgejesusengasgouse','abola.pt');
-INSERT INTO Link VALUES('http://www.abola.pt/fonsecapensaquestaem2013','abola.pt');
-INSERT INTO Link VALUES('http://www.abola.pt/marcosilvacoiso','abola.pt');
-INSERT INTO Link VALUES('http://www.abola.pt/olaeusouox','abola.pt');
-INSERT INTO Link VALUES('http://www.abola.pt/olacomoestas','abola.pt');
+INSERT INTO Link VALUES('http://dioguinho.pt/francisco-macau-jamais-terei-algo-com-diana-ss4/','dioguinho.pt');
+INSERT INTO Link VALUES('http://www.engadget.com/2014/04/02/windows-phone-8-1-official/','engadget.com');
+INSERT INTO Link VALUES('http://www.jn.pt/PaginaInicial/Sociedade/Media/Interior.aspx?content_id=3792849','jn.pt');
+INSERT INTO Link VALUES('http://pplware.sapo.pt/informacao/deputados-europeus-aprovam-fim-de-roaming-para-web/','pplware.sapo.pt');
+INSERT INTO Link VALUES('http://abola.pt/nnh/ver.aspx?id=469627','abola.pt');
+INSERT INTO Link VALUES('http://www.publico.pt/sociedade/noticia/crato-insiste-na-prova-dos-docentes-e-no-devido-tempo-dara-instrucoes-praticas-1630844','publico.pt');
 
 /* Noticia, Link*/
-INSERT INTO LinkNoticia VALUES(1,'http://www.abola.pt/ojorgejesusladrou');
-INSERT INTO LinkNoticia VALUES(2,'http://www.abola.pt/fonsecapensaquestaem2013');
-INSERT INTO LinkNoticia VALUES(4,'http://www.abola.pt/ojorgejesusengasgouse');
-INSERT INTO LinkNoticia VALUES(4,'http://www.abola.pt/fonsecapensaquestaem2013');
+INSERT INTO LinkNoticia VALUES(1,'http://www.engadget.com/2014/04/02/windows-phone-8-1-official/');
+INSERT INTO LinkNoticia VALUES(2,'http://pplware.sapo.pt/informacao/deputados-europeus-aprovam-fim-de-roaming-para-web/');
+INSERT INTO LinkNoticia VALUES(4,'http://www.publico.pt/sociedade/noticia/crato-insiste-na-prova-dos-docentes-e-no-devido-tempo-dara-instrucoes-praticas-1630844');
+INSERT INTO LinkNoticia VALUES(4,'http://www.jn.pt/PaginaInicial/Sociedade/Media/Interior.aspx?content_id=3792849');
 
 /* Editor, Categoria */
 INSERT INTO Interesse VALUES('filetez','desporto');
