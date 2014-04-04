@@ -120,12 +120,10 @@ CREATE TABLE IF NOT EXISTS AvaliarComentario(
 	);
 
 /*Index*/
-CREATE INDEX noticia_index ON Noticia (idNoticia);
 CREATE INDEX notcat ON NoticiaCategoria (nome);
 CREATE INDEX coment ON Comentario (idNoticia);
 CREATE INDEX lknot ON LinkNoticia (idNoticia);
 CREATE INDEX ON Editor ((lower(username)));
-CREATE INDEX cat ON Categoria (nome);
 CREATE INDEX avalnoticia ON AvaliarNoticia (idNoticia);
 CREATE INDEX avalcomentario ON AvaliarComentario (idComentario);
 
