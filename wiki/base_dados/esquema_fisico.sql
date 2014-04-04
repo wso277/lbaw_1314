@@ -129,7 +129,7 @@ CREATE INDEX cat ON Categoria (nome);
 CREATE INDEX avalnoticia ON AvaliarNoticia (idNoticia);
 CREATE INDEX avalcomentario ON AvaliarComentario (idComentario);
 
-CREATE OR REPLACE FUNCTION deleteComentario() RETURNS TRIGGER AS $deleteComentario$ 
+/*CREATE OR REPLACE FUNCTION deleteComentario() RETURNS TRIGGER AS $deleteComentario$ 
 	BEGIN
 		DELETE FROM AvaliarComentario WHERE idComentario = OLD.idComentario;
 		RETURN OLD;
@@ -144,7 +144,7 @@ CREATE OR REPLACE FUNCTION deleteNoticia() RETURNS TRIGGER AS $deleteNoticia$
 		DELETE FROM LinkNoticia WHERE idNoticia = OLD.idNoticia;
 		RETURN OLD;
 	END;
-$deleteNoticia$ LANGUAGE plpgsql;
+$deleteNoticia$ LANGUAGE plpgsql;*/
 
 CREATE OR REPLACE FUNCTION deleteEditor() RETURNS TRIGGER AS $deleteEditor$ 
 	BEGIN
@@ -155,6 +155,6 @@ CREATE OR REPLACE FUNCTION deleteEditor() RETURNS TRIGGER AS $deleteEditor$
 	END;
 $deleteEditor$ LANGUAGE plpgsql;
 
-CREATE TRIGGER delComm BEFORE DELETE ON Comentario FOR EACH ROW EXECUTE PROCEDURE deleteComentario();
-CREATE TRIGGER delNot BEFORE DELETE ON Noticia FOR EACH ROW EXECUTE PROCEDURE deleteNoticia();
+/*CREATE TRIGGER delComm BEFORE DELETE ON Comentario FOR EACH ROW EXECUTE PROCEDURE deleteComentario();
+CREATE TRIGGER delNot BEFORE DELETE ON Noticia FOR EACH ROW EXECUTE PROCEDURE deleteNoticia();*/
 CREATE TRIGGER delUser BEFORE DELETE ON Editor FOR EACH ROW EXECUTE PROCEDURE deleteEditor();
