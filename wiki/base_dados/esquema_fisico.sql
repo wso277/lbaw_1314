@@ -38,15 +38,15 @@ CREATE TABLE IF NOT EXISTS Noticia(
 	conteudo VARCHAR NOT NULL, 
 	titulo VARCHAR(85) NOT NULL, 
 	data_post  DATE DEFAULT CURRENT_DATE, 
-	username VARCHAR(15) REFERENCES Editor
+	username VARCHAR(15) REFERENCES Editor ON DELETE CASCADE
 	);
 
 /* Comentários */
 CREATE TABLE IF NOT EXISTS Comentario(
 	idComentario SERIAL PRIMARY KEY,
 	conteudo VARCHAR(140) NOT NULL,
-	username VARCHAR(15) REFERENCES Editor, 
-	idNoticia INTEGER REFERENCES Noticia
+	username VARCHAR(15) REFERENCES Editor ON DELETE CASCADE, 
+	idNoticia INTEGER REFERENCES Noticia ON DELETE CASCADE
 	);
 
 /* Links */
@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS Link(
 CREATE TABLE IF NOT EXISTS LinkNoticia(
 	idNoticia INTEGER, 
 	href VARCHAR,
-	FOREIGN KEY(idNoticia) REFERENCES Noticia, 
-	FOREIGN KEY(href) REFERENCES Link
+	FOREIGN KEY(idNoticia) REFERENCES Noticia ON DELETE CASCADE, 
+	FOREIGN KEY(href) REFERENCES Link ON DELETE CASCADE
 	);
 
 /* Categorias */
@@ -72,23 +72,23 @@ CREATE TABLE IF NOT EXISTS Categoria(
 CREATE TABLE IF NOT EXISTS NoticiaCategoria(
 	idNoticia INTEGER,
 	nome VARCHAR,
-	FOREIGN KEY(idNoticia) REFERENCES Noticia,
-	FOREIGN KEY(nome) REFERENCES Categoria
+	FOREIGN KEY(idNoticia) REFERENCES Noticia ON DELETE CASCADE,
+	FOREIGN KEY(nome) REFERENCES Categoria ON DELETE CASCADE
 	);
 
 /* Interesses */
 CREATE TABLE IF NOT EXISTS Interesse(
 	username VARCHAR(15),
 	nome VARCHAR,
-	FOREIGN KEY(username) REFERENCES Editor,
-	FOREIGN KEY(nome) REFERENCES Categoria
+	FOREIGN KEY(username) REFERENCES Editor ON DELETE CASCADE,
+	FOREIGN KEY(nome) REFERENCES Categoria ON DELETE CASCADE
 	);
 
 /* Mensagem */
 CREATE TABLE IF NOT EXISTS Mensagem(
 	idMensagem SERIAL PRIMARY KEY,
-	emissor VARCHAR(15) REFERENCES Editor,
-	recetor VARCHAR(15) REFERENCES Editor,
+	emissor VARCHAR(15) REFERENCES Editor ON DELETE CASCADE,
+	recetor VARCHAR(15) REFERENCES Editor ON DELETE CASCADE,
 	titulo VARCHAR NOT NULL,
 	conteudo VARCHAR(140) NOT NULL
 	);
@@ -96,16 +96,16 @@ CREATE TABLE IF NOT EXISTS Mensagem(
 /* Amizade */
 CREATE TABLE IF NOT EXISTS Amizade(
 	amigo1 VARCHAR(15),
-	amigo2 VARCHAR(15) REFERENCES Editor,
-	FOREIGN KEY(amigo1) REFERENCES Editor,
+	amigo2 VARCHAR(15) REFERENCES Editor ON DELETE CASCADE,
+	FOREIGN KEY(amigo1) REFERENCES Editor ON DELETE CASCADE,
 	CHECK (amigo1<amigo2)
 	);
 
 /* AvaliarNoticia */
 CREATE TABLE IF NOT EXISTS AvaliarNoticia(
 	chave SERIAL PRIMARY KEY,
-	username VARCHAR(15) REFERENCES Editor,
-	idNoticia INTEGER REFERENCES Noticia,
+	username VARCHAR(15) REFERENCES Editor ON DELETE CASCADE,
+	idNoticia INTEGER REFERENCES Noticia ON DELETE CASCADE,
 	avaliacao INTEGER NOT NULL,
 	CHECK (avaliacao = -1 OR avaliacao = 1)
 	);
@@ -113,8 +113,8 @@ CREATE TABLE IF NOT EXISTS AvaliarNoticia(
 /* AvaliarComentario */
 CREATE TABLE IF NOT EXISTS AvaliarComentario(
 	chave SERIAL PRIMARY KEY,
-	username VARCHAR(15) REFERENCES Editor,
-	idComentario INTEGER REFERENCES Comentario,
+	username VARCHAR(15) REFERENCES Editor ON DELETE CASCADE,
+	idComentario INTEGER REFERENCES Comentario ON DELETE CASCADE,
 	avaliacao INTEGER NOT NULL,
 	CHECK (avaliacao = -1 OR avaliacao = 1)
 	);
