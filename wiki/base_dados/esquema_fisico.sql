@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS Categoria(
 CREATE TABLE IF NOT EXISTS NoticiaCategoria(
 	idNoticia INTEGER,
 	nome VARCHAR,
+	CONSTRAINT un UNIQUE(idNoticia,nome),
 	FOREIGN KEY(idNoticia) REFERENCES Noticia ON DELETE CASCADE,
 	FOREIGN KEY(nome) REFERENCES Categoria ON DELETE CASCADE
 	);
@@ -127,23 +128,6 @@ CREATE INDEX ON Editor ((lower(username)));
 CREATE INDEX avalnoticia ON AvaliarNoticia (idNoticia);
 CREATE INDEX avalcomentario ON AvaliarComentario (idComentario);
 
-/*CREATE OR REPLACE FUNCTION deleteComentario() RETURNS TRIGGER AS $deleteComentario$ 
-	BEGIN
-		DELETE FROM AvaliarComentario WHERE idComentario = OLD.idComentario;
-		RETURN OLD;
-	END;
-$deleteComentario$ LANGUAGE plpgsql;
-
-CREATE OR REPLACE FUNCTION deleteNoticia() RETURNS TRIGGER AS $deleteNoticia$ 
-	BEGIN
-		DELETE FROM AvaliarNoticia WHERE idNoticia = OLD.idNoticia;
-		DELETE FROM Comentario WHERE idNoticia = OLD.idNoticia;
-		DELETE FROM NoticiaCategoria WHERE idNoticia = OLD.idNoticia;
-		DELETE FROM LinkNoticia WHERE idNoticia = OLD.idNoticia;
-		RETURN OLD;
-	END;
-$deleteNoticia$ LANGUAGE plpgsql;*/
-
 CREATE OR REPLACE FUNCTION deleteEditor() RETURNS TRIGGER AS $deleteEditor$ 
 	BEGIN
 		DELETE FROM Amizade WHERE amigo1 = OLD.username OR amigo2 = OLD.username;
@@ -153,6 +137,12 @@ CREATE OR REPLACE FUNCTION deleteEditor() RETURNS TRIGGER AS $deleteEditor$
 	END;
 $deleteEditor$ LANGUAGE plpgsql;
 
-/*CREATE TRIGGER delComm BEFORE DELETE ON Comentario FOR EACH ROW EXECUTE PROCEDURE deleteComentario();
-CREATE TRIGGER delNot BEFORE DELETE ON Noticia FOR EACH ROW EXECUTE PROCEDURE deleteNoticia();*/
+CREATE OR REPLACE FUNCTION deleteCategoria() RETURNS TRIGGER AS $deleteCategoria$ 
+	BEGIN
+		DELETE FROM Noticia WHERE idNoticia IN (SELECT idNoticia FROM NoticiaCategoria WHERE nome = OLD.nome);
+		RETURN OLD;
+	END;
+$deleteCategoria$ LANGUAGE plpgsql;
+
 CREATE TRIGGER delUser BEFORE DELETE ON Editor FOR EACH ROW EXECUTE PROCEDURE deleteEditor();
+CREATE TRIGGER delCat BEFORE DELETE ON Categoria FOR EACH ROW EXECUTE PROCEDURE deleteCategoria();

@@ -45,10 +45,10 @@ INSERT INTO Categoria VALUES('metereologia');
 INSERT INTO Categoria VALUES('desportos motorizados');
 
 INSERT INTO NoticiaCategoria VALUES(1,'desporto');
-INSERT INTO NoticiaCategoria VALUES(2,'futebol');
+INSERT INTO NoticiaCategoria VALUES(1,'futebol');
 INSERT INTO NoticiaCategoria VALUES(3,'cinema');
 INSERT INTO NoticiaCategoria VALUES(4,'literatura');
-INSERT INTO NoticiaCategoria VALUES(5,'desporto');
+INSERT INTO NoticiaCategoria VALUES(3,'desporto');
 INSERT INTO NoticiaCategoria VALUES(6,'cultura');
 INSERT INTO NoticiaCategoria VALUES(5,'desporto');
 INSERT INTO NoticiaCategoria VALUES(4,'futebol');
