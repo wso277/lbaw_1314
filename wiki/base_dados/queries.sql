@@ -62,14 +62,18 @@ SELECT Noticia.titulo, Noticia.conteudo FROM Noticia,Editor WHERE Noticia.userna
 SELECT Link.homeLink FROM LinkNoticia, Link WHERE LinkNoticia.idNoticia = 1 AND Link.href = LinkNoticia.href;
 
 /*adicionar amizade*/
+BEGIN
 SELECT username FROM Editor Where username='user1';
 SELECT username FROM Editor Where username='user2';
 INSERT INTO Amizade VALUES ('user1', 'user2');
+COMMIT;
 
 /*send message*/
+BEGIN;
 SELECT username FROM Editor Where username='user1';
 SELECT username FROM Editor Where username='user2';
 INSERT INTO Mensagem VALUES (DEFAULT, 'user1', 'user2', 'titulo', 'conteudo');
+COMMIT;
 
 /*avaliar*/ transaction
 BEGIN;
