@@ -48,8 +48,8 @@ Update Editor SET pass = 'passhypersegura' WHERE username LIKE 'filetez';
 /*Fazer login*/
 SELECT username, pass FROM Editor WHERE Editor.username like 'something' and Editor.pass like 'fskfs';
 
-/*Registo*/ transaction
-BEGIN;
+/*Registo*/ 
+BEGIN TRANSACTION;
 SELECT username, pass FROM Editor WHERE Editor.username like 'something' and Editor.pass like 'fskfs';
 INSERT INTO Editor VALUES('filetez','Joao Filetes','Ali acola','987654321','welele@fe.up.pt','autista','asasasa','moderador','normal');
 COMMIT;
@@ -62,7 +62,7 @@ SELECT Noticia.titulo, Noticia.conteudo FROM Noticia,Editor WHERE Noticia.userna
 SELECT Link.homeLink FROM LinkNoticia, Link WHERE LinkNoticia.idNoticia = 1 AND Link.href = LinkNoticia.href;
 
 /*adicionar amizade*/
-BEGIN
+BEGIN;
 SELECT username FROM Editor Where username='user1';
 SELECT username FROM Editor Where username='user2';
 INSERT INTO Amizade VALUES ('user1', 'user2');
@@ -75,8 +75,8 @@ SELECT username FROM Editor Where username='user2';
 INSERT INTO Mensagem VALUES (DEFAULT, 'user1', 'user2', 'titulo', 'conteudo');
 COMMIT;
 
-/*avaliar*/ transaction
-BEGIN;
+/*avaliar*/
+BEGIN TRANSACTION;
 SELECT AvaliarNoticia.avaliacao FROM AvaliarNoticia WHERE AvaliarNoticia.idNoticia = 1 and AvaliarNoticia.username = 'user1';
 /*se existe*/
 UPDATE AvaliarNoticia SET avaliacao = 1 WHERE AvaliarNoticia.idNoticia = 1 and AvaliarNoticia.username = 'user1';
@@ -103,8 +103,8 @@ SELECT Noticia.idNoticia FROM Noticia, NoticiaCategoria WHERE NoticiaCategoria.n
 /* user por interesse */
 SELECT Editor.username FROM Editor, Interesse WHERE Interesse.nome like 'nome' and Editor.username = Interesse.username;
 
-/* publicacao */ transaction
-BEGIN;
+/* publicacao */
+BEGIN TRANSACTION;
 INSERT INTO Noticia VALUES (DEFAULT, conteudo, titulo, data, username);
 INSERT INTO Link VALUES (href, homeLink);
 INSERT INTO LinkNoticia VALUES (idNoticia, href);
@@ -112,4 +112,4 @@ COMMIT;
 
 /* Editar Comentário */
 SELECT Comentario.idComentario FROM Comentario, Noticia WHERE Comentario.username LIKE 'username' AND Comentario.idNoticia = Noticia.idNoticia;
-UPDATE Comentario SET Comentario.conteudo WHERE Comentario.idComentario = id;
+UPDATE Comentario SET conteudo = 'texto editado' WHERE Comentario.idComentario = id;

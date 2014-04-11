@@ -1,8 +1,8 @@
 /* username, nome, localidade, pass, email, profissão, foto, tipo, estado */
-INSERT INTO Editor VALUES('filetez','Joao Filetes','Ali acola','987654321','welele@fe.up.pt','autista','asasasa','moderador','normal');
-INSERT INTO Editor VALUES('rabandaz','Wiwson Rabanadas','Ali alem','987654321','welelf@fe.up.pt','autista','asasasa','moderador','normal');    
-INSERT INTO Editor VALUES('tiburoenz','Luis Tubarao','Ali no caralho','987654321','welela@fe.up.pt','autista','asasasa','moderador','normal');  
-INSERT INTO Editor VALUES('franganitoz','Fabio Franganito','Ali no caralhao te foda','987654321','welile@fe.up.pt','autista','asasasa','moderador','normal');  
+INSERT INTO Editor VALUES('filetez','Joao Filetes','Ali acola','987654321','welele@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');
+INSERT INTO Editor VALUES('rabandaz','Wiwson Rabanadas','Ali alem','987654321','welelf@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');    
+INSERT INTO Editor VALUES('tiburoenz','Luis Tubarao','Ali no caralho','987654321','welela@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');  
+INSERT INTO Editor VALUES('franganitoz','Fabio Franganito','Ali no caralhao te foda','987654321','welile@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');  
 INSERT INTO Editor VALUES('geof222','Geoffrey Smith','Issy-les-Moulineaux','IGZ62ZKX9KL','ut.mi.Duis@tempor.ca','jornalista','asasasa','editor','normal');
 INSERT INTO Editor VALUES('superDavis','Simon Davis','Grand-Rosiï¿½re-Hottomont','SAI17IAQ2YU','eget@Suspendissealiquet.org','fotografo','asasasa','editor','normal');
 INSERT INTO Editor VALUES('willimwallace87','William Wallace','Termini Imerese','ZGN89CEI2RF','per@non.edu','policia','asasasa','editor','normal');
@@ -176,4 +176,3 @@ INSERT INTO Interesse VALUES('willimwallace87','video-jogos');
 INSERT INTO Interesse VALUES('franganitoz','video-jogos');
 INSERT INTO Interesse VALUES('wolowizard','atualidade');
 INSERT INTO Interesse VALUES('wolowizard','video-jogos');
-
