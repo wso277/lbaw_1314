@@ -1,6 +1,7 @@
 <?php
 
-include_once($BASE_DIR, "database/users.php");
+include_once($BASE_DIR . 'database/users.php');
+include_once('../config/init.php');
 session_start();
 $sender = $_POST["emissor"];
 $receiver = $_POST["recetor"];
@@ -13,7 +14,7 @@ if(preg_match("/^[^;:\"]{6,15}$/", $sender) && preg_match("/^[^;:\"]{6,15}$/", $
 	else
 	{
 		if(strlen($content) > 140) echo "TOO LONG MESSAGE";
-		else send_message($sender, $receiver, $title, $content);
+		else sendMessage($sender, $receiver, $title, $content);
 	}
 }
 else echo "INVALID USER";

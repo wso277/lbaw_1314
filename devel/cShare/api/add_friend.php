@@ -1,12 +1,12 @@
 <?php
-include_once($BASE_DIR, "database/users.php");
+include_once($BASE_DIR . 'database/users.php');
+include_once('../config/init.php');
 session_start();
 $me = $_GET["amigo1"];
 $friend = $_GET["amigo2"];
 
 if(preg_match("/^[^;:\"]{6,15}$/", $me) && preg_match("/^[^;:\"]{6,15}$/", $friend)
 {
-	
 	if(strcasecmp($me,$friend) > 0)
 	{
 		$swap = $me;
