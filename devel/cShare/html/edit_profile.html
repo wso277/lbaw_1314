@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register</title>
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../css/register.css" rel="stylesheet">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../javascript/jQuery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../javascript/bootstrap.min.js"></script>
+		<script src="../javascript/register.js"></script>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-collapse">
+				<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="../images/cshare_xxs.png" height="24px"/></a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="#"><span class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-star"/>&nbsp;Favorites</a></li>
+						</ul>
+						<form class="navbar-form navbar-left" role="search">
+						
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search" style="width:200%">
+							</div>
+						</form>
+					</div>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <form role="form">
+        <h2>Edit your profile information</h2>
+        <hr class="colorgraph">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" name="job" id="job" class="form-control input-lg" placeholder="Job" tabindex="3">
+        </div>
+		  <div class="form-group">
+          <input type="text" name="local" id="local" class="form-control input-lg" placeholder="Local" tabindex="3">
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+        </div>
+		<div class="form-group">
+			<label for="picture"><h3>Picture</h3></label>
+			<input type="file" id="picture">
+		</div>
+		<div>
+		<h3>Interests</h3>
+		 <div class="checkbox">
+		 
+			<label>
+				<input type="checkbox"> Sports </input><br>
+				<input type="checkbox"> Culture </input><br>
+				<input type="checkbox"> Football </input><br>
+				<input type="checkbox"> Cinema </input><br>
+				<input type="checkbox"> Literature </input><br>
+				<input type="checkbox"> Agriculture </input><br>
+				<input type="checkbox"> Politics </input><br>
+				<input type="checkbox"> Sex </input><br>
+				<input type="checkbox"> Video-Games </input><br>
+				<input type="checkbox"> News </input><br>
+				<input type="checkbox"> Gastronomy </input><br>
+				<input type="checkbox"> Meteorology </input><br>
+				<input type="checkbox"> Motor Sports </input><br>
+			</label>
+
+		</div>
+		</div>
+
+       <hr class="colorgraph">
+       <div class="row">
+        <input type="submit" value="Edit" class="btn btn-success btn-block btn-lg" tabindex="7">
+      </div><br>
+    </form>
+  </div>
+</div>
+</div>
+	</body>
+</html>
