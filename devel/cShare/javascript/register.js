@@ -1,65 +1,30 @@
-$(function () {
-    $('.button-checkbox').each(function () {
+$(document).ready(function() {
+    $("#form").submit(function() {
+        var firstName = $('#first_name').val();
+        var lastName = $('#last_name').val();
+        var username = $('#display_name').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var passConf = $('#password_confirmation').val();
 
-        // Settings
-        var $widget = $(this),
-            $button = $widget.find('button'),
-            $checkbox = $widget.find('input:checkbox'),
-            color = $button.data('color'),
-            settings = {
-                on: {
-                    icon: 'glyphicon glyphicon-check'
-                },
-                off: {
-                    icon: 'glyphicon glyphicon-unchecked'
+        if (password == passConf) {
+            var name = firstName + " " + lastName;
+
+            $.ajax({url: "../api/register.php",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function(data) {
+                alert("REGISTER YARRRRR");
+
+                if (data[0] == "success") {
+                    window.location.replace("../index.php");
                 }
-            };
-
-        // Event Handlers
-        $button.on('click', function () {
-            $checkbox.prop('checked', !$checkbox.is(':checked'));
-            $checkbox.triggerHandler('change');
-            updateDisplay();
+            },
+            error: function(data) {
+                alert("NO REGISTER NO yarr.. :(");
+            }
         });
-        $checkbox.on('change', function () {
-            updateDisplay();
-        });
-
-        // Actions
-        function updateDisplay() {
-            var isChecked = $checkbox.is(':checked');
-
-            // Set the button's state
-            $button.data('state', (isChecked) ? "on" : "off");
-
-            // Set the button's icon
-            $button.find('.state-icon')
-                .removeClass()
-                .addClass('state-icon ' + settings[$button.data('state')].icon);
-
-            // Update the button's color
-            if (isChecked) {
-                $button
-                    .removeClass('btn-default')
-                    .addClass('btn-' + color + ' active');
-            }
-            else {
-                $button
-                    .removeClass('btn-' + color + ' active')
-                    .addClass('btn-default');
-            }
         }
-
-        // Initialization
-        function init() {
-
-            updateDisplay();
-
-            // Inject the icon if applicable
-            if ($button.find('.state-icon').length == 0) {
-                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
-            }
-        }
-        init();
     });
 });
