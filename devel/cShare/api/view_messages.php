@@ -24,6 +24,6 @@ if(preg_match("/^[^;:\"]{6,15}$/", $me)
 	
 	$mergedMessages = array_merge($sentMessages, $receivedMessages);
 	
-	return $mergedMessages;
+	echo $mergedMessages;
 }
 ?>
