@@ -64,6 +64,20 @@ function updatePassword($username, $pass) {
     return true;
 }
 
+function updatePhoto($username, $photo) {
+    global $conn;
+    $conn->beginTransaction();
+    $stmt = $conn->prepare("UPDATE Editor SET fotografia = ? WHERE username LIKE ?");
+    $stmt->execute(array($photo, $username));
+    $result = $stmt->fetch();
+    if ($result == false) {
+        $conn->rollBack();
+        return false;
+    }
+
+    return true;
+}
+
 function editUser($username, $localidade, $prof, $interesses, $email, $name)
 {
     global $conn;
