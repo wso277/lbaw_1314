@@ -16,28 +16,28 @@
 		global $conn;
 		$stmt = $conn->prepare("SELECT * FROM Editor WHERE username LIKE ?");
 		$stmt->execute(array($username));
-		return stmt->fetch(PDO::FETCH_ASSOC);
+		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
 	function getUserByLocal($local) {
 		global $conn;
 		$stmt = $conn->prepare("SELECT * FROM Editor WHERE localidade LIKE ?");
 		$stmt->execute(array($local));
-		return stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	function getUserByWork($work) {
 		global $conn;
 		$stmt = $conn->prepare("SELECT * FROM Editor WHERE profissao LIKE ?");
 		$stmt->execute(array($work));
-		return stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	function login($username,$pass) {
 		global $conn;
 		$stmt = $conn->prepare("SELECT * FROM Editor WHERE username LIKE ? AND password LIKE ?");
 		$stmt->execute(array($username,$pass));
-		$user = stmt->fetch(PDO::FETCH_ASSOC);
+		$user = $stmt->fetch(PDO::FETCH_ASSOC);
 		if ($user!=FALSE) {
 			return $user;
 		} else {
@@ -50,21 +50,21 @@
 		$conn->beginTransaction();
 		$stmt = $conn->prepare("UPDATE Editor SET localidade = ? AND profissao = ? WHERE username LIKE ?");
 		$stmt->execute(array($localidade,$prof,$username));
-		$result = stmt->fetch();
+		$result = $stmt->fetch();
 		if (result == FALSE) {
 			$conn->rollBack();
 			return false;
 		}
 		$stmt = $conn->prepare("DELETE FROM Interesse WHERE username LIKE ?");
 		$stmt->execute(array($username));
-		$result = stmt->fetch();
+		$result = $stmt->fetch();
 		if (result == FALSE) {
 			$conn->rollBack();
 			return false;
 		}
 		foreach ($interesses as $key => $interesse) {
 			$stmt = $conn->prepare("INSERT INTO Interesse VALUES(?,?)");
-			stmt->execute(array($username,$interesse));
+			$stmt->execute(array($username,$interesse));
 			if (result == FALSE) {
 				$conn->rollBack();
 				return false;
@@ -112,14 +112,14 @@
 
 	function getSentMessages($username) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor = ? AND Mensagem.recetor != ? AND Editor.username LIKE ?";)
+		$stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor = ? AND Mensagem.recetor != ? AND Editor.username LIKE ?");
 		$stmt->execute(array($username,$username,$username));
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	function getReceivedMessages($username) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor != ? AND Mensagem.recetor = ? AND Editor.username LIKE ?";)
+		$stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor != ? AND Mensagem.recetor = ? AND Editor.username LIKE ?");
 		$stmt->execute(array($username,$username,$username));
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
