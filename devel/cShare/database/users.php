@@ -149,3 +149,4 @@ function getReceivedMessages($username)
     $stmt->execute(array($username, $username, $username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+

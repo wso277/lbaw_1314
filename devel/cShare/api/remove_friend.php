@@ -24,6 +24,6 @@ if(preg_match("/^[^;:\"]{6,15}$/", $me) && preg_match("/^[^;:\"]{6,15}$/", $frie
 		header('HTTP/1.1 404 NOT FOUND', true, 404);
 	}
 }
-else echo "Invalid username length (must have 6-15 characters)";
+else echo "INVALID USER";
 
 ?>
