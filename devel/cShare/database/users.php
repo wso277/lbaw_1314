@@ -50,28 +50,29 @@ function login($username, $pass)
     }
 }
 
-function editUser($username, $localidade, $prof, $interesses)
+function editUser($username, $localidade, $prof, $interesses, $email, $name)
 {
     global $conn;
     $conn->beginTransaction();
-    $stmt = $conn->prepare("UPDATE Editor SET localidade = ? AND profissao = ? WHERE username LIKE ?");
-    $stmt->execute(array($localidade, $prof, $username));
+    $stmt = $conn->prepare("UPDATE Editor SET localidade = ? AND profissao = ? AND email = ? AND nome = ? WHERE username LIKE ?");
+    $stmt->execute(array($localidade, $prof, $email, $name, $username));
     $result = $stmt->fetch();
-    if (result == FALSE) {
+    if ($result == FALSE) {
         $conn->rollBack();
         return false;
     }
     $stmt = $conn->prepare("DELETE FROM Interesse WHERE username LIKE ?");
     $stmt->execute(array($username));
     $result = $stmt->fetch();
-    if (result == FALSE) {
+    if ($result == FALSE) {
         $conn->rollBack();
         return false;
     }
     foreach ($interesses as $key => $interesse) {
         $stmt = $conn->prepare("INSERT INTO Interesse VALUES(?,?)");
         $stmt->execute(array($username, $interesse));
-        if (result == FALSE) {
+        $result = $stmt->fetch();
+        if ($result == FALSE) {
             $conn->rollBack();
             return false;
         }
