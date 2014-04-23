@@ -41,7 +41,7 @@ INSERT INTO Categoria VALUES('video-jogos');
 INSERT INTO Categoria VALUES('atualidade');
 INSERT INTO Categoria VALUES('gastronomia'); 
 INSERT INTO Categoria VALUES('cultura');
-INSERT INTO Categoria VALUES('metereologia');
+INSERT INTO Categoria VALUES('meteorologia');
 INSERT INTO Categoria VALUES('desportos motorizados');
 
 INSERT INTO NoticiaCategoria VALUES(1,'desporto');

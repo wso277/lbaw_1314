@@ -10,21 +10,23 @@ $(document).ready(function() {
         if (password == passConf) {
             var name = firstName + " " + lastName;
 
-            $.ajax({url: "../api/register.php",
-            type: "POST",
-            data: data,
-            dataType: "json",
-            success: function(data) {
-                alert("REGISTER YARRRRR");
+            var data = "name=" + encodeURIComponent(name) + "&username=" + encodeURIComponent(username) + "&email=" + encodeURIComponent(email) + "&password=" + encodeURIComponent(password);
 
-                if (data[0] == "success") {
-                    window.location.replace("../index.php");
+            $.ajax({url: "../api/register.php",
+                type: "POST",
+                data: data,
+                dataType: "json",
+                success: function(data) {
+                    alert("REGISTER YARRRRR");
+
+                    if (data[0] == "success") {
+                        window.location.replace("../index.php");
+                    }
+                },
+                error: function(data) {
+                    alert("NO REGISTER NO yarr.. :(");
                 }
-            },
-            error: function(data) {
-                alert("NO REGISTER NO yarr.. :(");
-            }
-        });
+            });
         }
     });
 });
