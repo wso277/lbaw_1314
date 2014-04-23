@@ -1,8 +1,8 @@
 <?php
-include_once('../config/init.php');
-include_once($BASE_DIR.'database/users.php');
-
-$user = $_POST['username'];
+//include_once('../config/init.php');
+//include_once($BASE_DIR.'database/users.php');
+echo json_encode("cenas");
+/*$user = $_POST['username'];
 $pass = $_POST['pass'];
 
 if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
@@ -15,7 +15,7 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
                 $_SESSION['username'] = $user;
                 $_SESSION['tipo'] = $result['tipo_user'];
 
-                echo "SUCCESS!";
+                echo json_encode("success");
             }
             else {
                 echo "User is banned!";
@@ -30,4 +30,5 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
     }
 } else {
     echo "Invalid Username!";
-}
+}*/
+?>

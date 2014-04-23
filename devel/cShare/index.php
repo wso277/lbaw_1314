@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,17 +10,17 @@
         <title>cShare</title>
 
         <!-- Bootstrap -->
-        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="../javascript/jQuery.js"></script>
+        <script src="javascript/jQuery.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="../javascript/bootstrap.min.js"></script>
+        <script src="javascript/bootstrap.min.js"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-        <script src="../javascript/html5shiv.js"></script>
-        <script src="../javascript/respond.js"></script>
+        <script src="javascript/html5shiv.js"></script>
+        <script src="javascript/respond.js"></script>
         <![endif]-->
     </head>
 
@@ -49,9 +52,23 @@
                                 <input type="text" class="form-control" placeholder="Search" style="width:200%">
                             </div>
                         </form>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-off"/>&nbsp;Login</a></li>
-                        </ul>
+                        <?php
+                            if (!isset($_SESSION['username'])) {
+                                ?>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="html/login.html"><span class="glyphicon glyphicon-off"/>&nbsp;Login</a></li>
+                                </ul>
+                        <?php
+                            }
+                        else {
+                            ?>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-off"/>&nbsp;Logout</a></li>
+                            </ul>
+                        <?php
+                        }
+                        ?>
+
                     </div>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
