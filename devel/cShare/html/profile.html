@@ -11,6 +11,7 @@
     <link href="../css/profile.css" rel="stylesheet">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="../javascript/jQuery.js"></script>
+    <script type="text/javascript" src="../javascript/see_friends.js"></script>
     <script type="text/javascript" src="../javascript/add_friend.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="../javascript/bootstrap.min.js"></script>
@@ -168,7 +169,8 @@
                   </div>
                   <div class="modal-body" style="padding:5px;">
                     <div class="row" style="padding-left:7em">
-                        <table>
+                            <div id="friends_list">
+                        <table id="table">
                             <tr>
                                 <td>
                                   <div class="jumbotron" style="text-align:center;background-color:#fff;width:15em;height:7em">
@@ -206,6 +208,7 @@
                       </td>
                   </tr>
               </table>
+              </div>
           </div>
       </div>  
       <div class="panel-footer" style="margin-bottom:-14px;">
