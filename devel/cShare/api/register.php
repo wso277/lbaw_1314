@@ -18,7 +18,7 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
                         $result = createUser($name, $user, $location, $job, $email, $pass);
 
                         if ($result != false) {
-                            echo "Success!";
+                            echo json_encode("success");
                         }
                         else {
                             echo "Failure";
