@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$('#see_friends').click(function() {
-		var username = $("#username").text();
+		var username = $("#username").val();
 		var data = "username=" + encodeURIComponent(username);
 		var container = document.getElementById('friends_list');
 		container.innerHTML = "";

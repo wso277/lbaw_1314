@@ -1,11 +1,11 @@
 $(document).ready(function() {
     $("#form").submit(function() {
-        var firstName = $('#first_name').text();
-        var lastName = $('#last_name').text();
-        var username = $('#display_name').text();
-        var email = $('#email').text();
-        var password = $('#password').text();
-        var passConf = $('#password_confirmation').text();
+        var firstName = $('#first_name').val();
+        var lastName = $('#last_name').val();
+        var username = $('#display_name').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var passConf = $('#password_confirmation').val();
 
         if (password == passConf) {
             var name = firstName + " " + lastName;

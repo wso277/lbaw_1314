@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$('#add_friend').click(function(){
-		var username = $("#username").text();
+		var username = $("#username").val();
 		var data = "username=" + encodeURIComponent(username);
 
 		$.ajax({url: "../api/add_friend.php",
