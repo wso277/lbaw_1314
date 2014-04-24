@@ -104,8 +104,7 @@ function editUser($username, $localidade, $prof, $interesses, $email, $name)
     return true;
 }
 
-function addFriend($user1, $user2)
-{
+function addFriend($user1, $user2) {
     global $conn;
     $stmt = $conn->prepare("INSERT INTO Amizade VALUES(?,?)");
     $stmt->execute(array($user1, $user2));
@@ -117,8 +116,7 @@ function addFriend($user1, $user2)
     }
 }
 
-function removeUser($user1, $user2)
-{
+function removeUser($user1, $user2) {
     global $conn;
     $stmt = $conn->prepare("DELETE FROM Interesse WHERE amigo1 LIKE ? AND amigo2 LIKE ?");
     $stmt->execute(array($user1, $user2));
@@ -130,8 +128,7 @@ function removeUser($user1, $user2)
     }
 }
 
-function sendMessage($sender, $receiver, $title, $body)
-{
+function sendMessage($sender, $receiver, $title, $body) {
     global $conn;
     $stmt = $conn->prepare("INSERT INTO Mensagem VALUES(DEFAULT,?,?,?,?)");
     $stmt->execute(array($sender, $receiver, $title, $body));
@@ -143,19 +140,41 @@ function sendMessage($sender, $receiver, $title, $body)
     }
 }
 
-function getSentMessages($username)
-{
+function getSentMessages($username) {
     global $conn;
     $stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor = ? AND Mensagem.recetor != ? AND Editor.username LIKE ?");
     $stmt->execute(array($username, $username, $username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getReceivedMessages($username)
-{
+function getReceivedMessages($username) {
     global $conn;
     $stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor != ? AND Mensagem.recetor = ? AND Editor.username LIKE ?");
     $stmt->execute(array($username, $username, $username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function banUser($username) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE Editor SET estado_user = ? WHERE username LIKE ?");
+    return stmt->execute(array("ban",$username));
+}
+
+function banUserTemp($username) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE Editor SET estado_user = ? WHERE username LIKE ?");
+    return stmt->execute(array("bantemp",$username));
+}
+
+function promoteUser($username) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE Editor SET tipo_user = ? WHERE username LIKE ?");
+    return stmt->execute(array("moderador",$username));
+}
+
+function dispromoteUser($username) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE Editor SET tipo_user = ? WHERE username LIKE ?");
+    return stmt->execute(array("editor",$username));
 }
 
