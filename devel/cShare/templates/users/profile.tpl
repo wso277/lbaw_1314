@@ -180,14 +180,17 @@
         <p style="display:inline;float:left;margin-right:1em"><span class="glyphicon glyphicon-user"
                     ></span>&nbsp;
 
-        <div id="username" style="display:inline">Username:{$USERNAME}</div>
+        <div id="username" style="display:inline">Username:{$user[0].username}</div>
         </p>
 
-        <div class="btn-group btn-group-sm" style="display:inline">
-            <a href="{$BASE_URL}pages/users/edit_profile.php" class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-cog"/>&nbsp;Edit
-            </a>
-        </div>
+        {if ($USERNAME == $user[0].username)}
+            <div class="btn-group btn-group-sm" style="display:inline">
+                <a href="{$BASE_URL}pages/users/edit_profile.php" class="btn btn-primary" role="dislike">
+                    <span class="glyphicon glyphicon-cog"/>&nbsp;Edit
+                </a>
+            </div>
+        {/if}
+
     </div>
 
     <!--post history-->

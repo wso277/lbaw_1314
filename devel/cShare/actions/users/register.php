@@ -10,7 +10,7 @@ $pass = $_POST['password'];
 $pass_conf = $_POST['password_confirmation'];
 $email = $_POST['email'];
 $work = $_POST['work'];
-$pic = $BASE_DIR."images/assets/default.png";
+$pic = $BASE_URL."images/assets/default.png";
 $name = $firstName . " " . $lastName;
 
 //echo "cenas";

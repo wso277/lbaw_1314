@@ -14,14 +14,19 @@
 				<span class="glyphicon glyphicon-search" style="font-size:48px;margin:30% 30% 30% 30%;">
 				</span>
                 <td>
-                <td>
-                    <div id="search">
-                        <input class="form-control" type="text" value="{$search}"/>
-                    </div>
-                </td>
-                <td>
-                    <input type="submit" class="btn btn-success" value="Search"/>
-                </td>
+                    <form action="{$BASE_URL}pages/users/search.php" method="get"
+                          class="navbar-form navbar-left" role="search">
+                        <td>
+
+                            <div id="search">
+                                <input name="search" class="form-control" type="text" value="{$search}"/>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="submit" class="btn btn-success" value="Search"/>
+                        </td>
+
+                    </form>
             </tr>
         </table>
 
