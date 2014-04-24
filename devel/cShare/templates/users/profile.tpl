@@ -18,7 +18,7 @@
         <div class="panel panel-primary" style="height:100%;overflow:auto;">
             <div class="panel-body">
                 <div class="jumbotron" style="text-align:center;float:left;width:100%">
-                    <img src="../img/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
+                    <img src="".{$user[0].fotografia}."" width="128em" height="128em" style="float:left"/>
 
                     <div class="caption">
                         <h2>Maria Espinha</h2>
@@ -75,9 +75,7 @@
 
     <!--Profile-->
     <div>
-        <img class="profile-pic" src="http://www.thecvrighter.co.uk/wp-content/uploads/2012/06/Profile.jpg"
-             width="254em"
-             height="254em"/>
+        <img class="profile-pic" src="{$user[0].fotografia}" width="254em" height="254em"/>
     </div>
     <h1 style="margin-top:1em;">{$user[0].nome}</h1>
     <span class="glyphicon glyphicon-home" style="margin-top:1em"></span>&nbsp;&nbsp;Hometown: {$user[0].localidade}

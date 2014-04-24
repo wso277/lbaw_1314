@@ -19,8 +19,9 @@ if ($result != false) {
     $_SESSION['success_messages'][] = 'Login successful';
     $_SESSION['tipo'] = $result['tipo_user'];
     $_SESSION['estado'] = $result['estado_user'];
+    header('Location: '. $BASE_URL .'pages/homepage/home.php');
 } else {
     $_SESSION['error_messages'][] = 'Login failed';
+    header('Location: '. $BASE_URL .'pages/users/login.php');
 }
-header('Location: '. $BASE_URL .'pages/homepage/home.php');
 ?>

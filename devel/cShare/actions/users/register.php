@@ -10,7 +10,7 @@ $pass = $_POST['password'];
 $pass_conf = $_POST['password_confirmation'];
 $email = $_POST['email'];
 $work = $_POST['work'];
-
+$pic = $BASE_DIR."images/assets/default.png";
 $name = $firstName . " " . $lastName;
 
 //echo "cenas";
@@ -31,7 +31,7 @@ if (!isset($user) || !isset($pass) || !isset($name)
     exit;
 }
 
-$result = createUser($name, $user, $location, $work, $email, $pass);
+$result = createUser($name, $user, $location, $work, $email, $pass, $pic);
 
 if ($result != false) {
     $_SESSION['success_messages'][] = 'User registered successfully';
@@ -44,4 +44,3 @@ if ($result != false) {
 }
 
 //TODO HANDLE EXCEPTIONS
-?>

@@ -1,12 +1,12 @@
 <?php
 
-function createUser($name, $username, $local, $work, $email, $pass)
+function createUser($name, $username, $local, $work, $email, $pass, $pic)
 {
     global $conn;
     $stmt = $conn->prepare("INSERT INTO Editor VALUES(?,?,?,?,?,?,?,?,?)");
-    $stmt->execute(array($username, $name, $local, $pass, $email, $work, "../images/assets/default.png", "editor", "normal"));
+    $result = $stmt->execute(array($username, $name, $local, $pass, $email, $work, $pic, "editor", "normal"));
 
-    return true;
+    return $result;
 }
 
 function getUserByUsername($username)
@@ -78,24 +78,23 @@ function editUser($username, $localidade, $prof, $interesses, $email, $name)
 {
     global $conn;
     $conn->beginTransaction();
-    $stmt = $conn->prepare("UPDATE Editor SET localidade = ? AND profissao = ? AND email = ? AND nome = ? WHERE username LIKE ?");
-    $stmt->execute(array($localidade, $prof, $email, $name, $username));
-    $result = $stmt->fetch();
+    $stmt = $conn->prepare("UPDATE Editor SET localidade = '".$localidade."' , profissao = '".$prof . "' , email = '".$email ."' , nome = '".$name."' WHERE username LIKE '" . $username . "'");
+    $result = $stmt->execute();
     if ($result == FALSE) {
         $conn->rollBack();
         return false;
     }
     $stmt = $conn->prepare("DELETE FROM Interesse WHERE username LIKE ?");
-    $stmt->execute(array($username));
-    $result = $stmt->fetch();
+    $result = $stmt->execute(array($username));
+
     if ($result == FALSE) {
         $conn->rollBack();
         return false;
     }
     foreach ($interesses as $key => $interesse) {
         $stmt = $conn->prepare("INSERT INTO Interesse VALUES(?,?)");
-        $stmt->execute(array($username, $interesse));
-        $result = $stmt->fetch();
+        $result = $stmt->execute(array($username, $interesse));
+
         if ($result == FALSE) {
             $conn->rollBack();
             return false;
