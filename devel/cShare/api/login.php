@@ -1,7 +1,9 @@
 <?php
 //include_once('../config/init.php');
 //include_once($BASE_DIR.'database/users.php');
-echo json_encode("cenas");
+echo '{result:cenas}'; ?>
+<script alert("YARR");/>
+<?php
 /*$user = $_POST['username'];
 $pass = $_POST['pass'];
 

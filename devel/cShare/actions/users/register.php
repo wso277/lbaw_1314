@@ -1,37 +1,47 @@
 <?php
-  include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/users.php');  
+include_once('../../config/init.php');
+include_once($BASE_DIR . 'database/users.php');
 
-  if (!$_POST['username'] || !$_POST['realname'] || !$_POST['password']) {
+$firstName = $_POST['first_name'];
+$lastName = $_POST['last_name'];
+$user = $_POST['display_name'];
+$location = $_POST['local'];
+$pass = $_POST['password'];
+$pass_conf = $_POST['password_confirmation'];
+$email = $_POST['email'];
+$work = $_POST['work'];
+
+$name = $firstName . " " . $lastName;
+
+//echo "cenas";
+/*if (!$_POST['username'] || !$_POST['realname'] || !$_POST['password']) {*/
+/*if (!preg_match("/^[^;:\"]{6,15}$/", $user) || !preg_match("/^[^;:\"]{8,}$/", $pass) || !preg_match("/^[a-zA-Z ]+$/", $name)
+    || !preg_match("/^[a-zA-Z ]+$/", $location) || !preg_match("/^[a-zA-Z ]+$/", $work)
+    || !preg_match("/^[^@]+@[^@]+.[a-zA-Z]{2,6}$/", $email)
+    || $pass != $pass_conf) {
+*/
+if (!isset($user) || !isset($pass) || !isset($name)
+    || !isset($location) || !isset($work)
+    || !isset($email)
+    || $pass != $pass_conf) {
+
     $_SESSION['error_messages'][] = 'All fields are mandatory';
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL" . 'pages/users/register.php');
     exit;
-  }
+}
 
-  $realname = strip_tags($_POST['realname']);
-  $username = strip_tags($_POST['username']);
-  $password = $_POST['password'];
+$result = createUser($name, $user, $location, $work, $email, $pass);
 
-  $photo = $_FILES['photo'];
-  $extension = end(explode(".", $photo["name"]));
-
-  try {
-    createUser($realname, $username, $password);
-    move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/" . $username . '.' . $extension); // this is dangerous
-    chmod($BASE_DIR . "images/users/" . $username . '.' . $extension, 0644);
-  } catch (PDOException $e) {
-  
-    if (strpos($e->getMessage(), 'users_pkey') !== false) {
-      $_SESSION['error_messages'][] = 'Duplicate username';
-      $_SESSION['field_errors']['username'] = 'Username already exists';
-    }
-    else $_SESSION['error_messages'][] = 'Error creating user';
-
+if ($result != false) {
+    $_SESSION['success_messages'][] = 'User registered successfully';
+    header('Location: ' . $BASE_URL . 'pages/users/login.php');
+    exit;
+} else {
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL" . 'pages/users/register.php');
     exit;
-  }
-  $_SESSION['success_messages'][] = 'User registered successfully';  
-  header("Location: $BASE_URL");
+}
+
+//TODO HANDLE EXCEPTIONS
 ?>

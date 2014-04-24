@@ -3,14 +3,10 @@
 function createUser($name, $username, $local, $work, $email, $pass)
 {
     global $conn;
-    $stmt = $conn->prepare("INSERT INTO Editor VALUES(?,?,?,?,?,?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO Editor VALUES(?,?,?,?,?,?,?,?,?)");
     $stmt->execute(array($username, $name, $local, $pass, $email, $work, "../images/assets/default.png", "editor", "normal"));
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($result != FALSE) {
-        return $result;
-    } else {
-        return false;
-    }
+
+    return true;
 }
 
 function getUserByUsername($username)
@@ -40,7 +36,7 @@ function getUserByWork($work)
 function login($username, $pass)
 {
     global $conn;
-    $stmt = $conn->prepare("SELECT * FROM Editor WHERE username LIKE ? AND password LIKE ?");
+    $stmt = $conn->prepare("SELECT * FROM Editor WHERE username LIKE ? AND pass LIKE ?");
     $stmt->execute(array($username, $pass));
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user != FALSE) {
