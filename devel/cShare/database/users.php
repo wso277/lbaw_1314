@@ -157,24 +157,24 @@ function getReceivedMessages($username) {
 function banUser($username) {
     global $conn;
     $stmt = $conn->prepare("UPDATE Editor SET estado_user = ? WHERE username LIKE ?");
-    return stmt->execute(array("ban",$username));
+    return $stmt->execute(array("ban",$username));
 }
 
 function banUserTemp($username) {
     global $conn;
     $stmt = $conn->prepare("UPDATE Editor SET estado_user = ? WHERE username LIKE ?");
-    return stmt->execute(array("bantemp",$username));
+    return $stmt->execute(array("bantemp",$username));
 }
 
 function promoteUser($username) {
     global $conn;
     $stmt = $conn->prepare("UPDATE Editor SET tipo_user = ? WHERE username LIKE ?");
-    return stmt->execute(array("moderador",$username));
+    return $stmt->execute(array("moderador",$username));
 }
 
-function dispromoteUser($username) {
+function demoteUser($username) {
     global $conn;
     $stmt = $conn->prepare("UPDATE Editor SET tipo_user = ? WHERE username LIKE ?");
-    return stmt->execute(array("editor",$username));
+    return $stmt->execute(array("editor",$username));
 }
 

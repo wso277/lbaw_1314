@@ -11,6 +11,8 @@
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
                 <form action="{$BASE_URL}actions/users/edit_profile.php" class="form-signin" method="post"
                       enctype="multipart/form-data">
+                    <input type="hidden" name="username" id="username" class="form-control input-lg"
+                           value="{$user[0].username}" tabindex="2">
                     <h2>Edit your profile information</h2>
                     <hr class="colorgraph">
                     <div class="row">

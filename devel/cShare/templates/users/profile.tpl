@@ -4,6 +4,7 @@
     <link href="{$BASE_URL}css/profile.css" rel="stylesheet">
     <script type="text/javascript" src="{$BASE_URL}javascript/see_friends.js"></script>
     <script type="text/javascript" src="{$BASE_URL}javascript/add_friend.js"></script>
+    <script type="text/javascript" src="{$BASE_URL}javascript/profile.js"></script>
 
     {include file="common/nav.tpl"}
 
@@ -174,16 +175,38 @@
             </div>
         </div>
     </div>
+
+    {if ($PERMISSION == 'moderador') && $USERNAME != $user[0].username}
+        <br>
+        <div name="promote" id="promote" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+            <a class="btn btn-primary" role="dislike">
+                <span class="glyphicon glyphicon-chevron-up"/>&nbsp;Promote
+            </a>
+        </div>
+        <div name="demote" id="demote" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+            <a class="btn btn-primary" role="dislike">
+                <span class="glyphicon glyphicon-chevron-down"/>&nbsp;Demote
+            </a>
+        </div>
+        <div name="ban" id="ban" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+            <a class="btn btn-primary" role="dislike">
+                <span class="glyphicon glyphicon-remove"/>&nbsp;Ban
+            </a>
+        </div>
+    {/if}
+
     </div>
 
     <div style="display:block;margin-top:5em;margin-left:2em">
         <p style="display:inline;float:left;margin-right:1em"><span class="glyphicon glyphicon-user"
                     ></span>&nbsp;
 
-        <div id="username" style="display:inline">Username:{$user[0].username}</div>
+        <div style="display:inline">Username:
+            <div id="username" style="display:inline">{$user[0].username}</div>
+        </div>
         </p>
 
-        {if ($USERNAME == $user[0].username)}
+        {if ($USERNAME == $user[0].username) || $PERMISSION == 'moderador'}
             <div class="btn-group btn-group-sm" style="display:inline">
                 <a href="{$BASE_URL}pages/users/edit_profile.php" class="btn btn-primary" role="dislike">
                     <span class="glyphicon glyphicon-cog"/>&nbsp;Edit

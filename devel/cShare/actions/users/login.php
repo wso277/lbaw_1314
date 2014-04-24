@@ -14,7 +14,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 $result = login($username, $password);
-if ($result != false) {
+if ($result != false || $result[estado_user] == 'normal') {
     $_SESSION['username'] = $username;
     $_SESSION['success_messages'][] = 'Login successful';
     $_SESSION['tipo'] = $result['tipo_user'];

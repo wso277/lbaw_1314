@@ -4,7 +4,7 @@ include_once($BASE_DIR . 'database/users.php');
 
 $firstName = $_POST['first_name'];
 $lastName = $_POST['last_name'];
-$user = $_SESSION['username'];
+$user = $_POST['username'];
 $location = $_POST['local'];
 $email = $_POST['email'];
 $work = $_POST['work'];
