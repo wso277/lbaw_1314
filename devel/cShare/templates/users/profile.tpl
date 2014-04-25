@@ -276,7 +276,7 @@
                         <p> Conselho de Ministros aprovou envio do diploma vetado </p>
 
                         <p> por Cavaco Silva para a Assembleia da República.</p>
-                        <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                        <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
 
                         <div class="btn-group btn-group-sm">
                             <a href="#" class="btn btn-primary" role="like">
@@ -310,7 +310,7 @@
 
                         <p>O actual campeão do mundo de ciclismo de estrada mantém-se a 19 segundos da
                             liderança.</p>
-                        <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                        <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
 
                         <div class="btn-group btn-group-sm">
                             <a href="#" class="btn btn-primary" role="like">
