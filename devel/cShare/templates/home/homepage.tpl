@@ -39,7 +39,7 @@
                         <img src="http://imagens8.publico.pt/imagens.aspx/829708?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
                         <div class="caption">
                             <h2>Presidente do Bayern Munique condenado a três anos e meio de prisão</h2>
-                            <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                             <div class="btn-group btn-group-sm">
                                 <a href="#" class="btn btn-primary" role="like">
                                     <span class="glyphicon glyphicon-arrow-up"/>
@@ -57,7 +57,7 @@
                         <img src="http://imagens1.publico.pt/imagens.aspx/829711?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
                         <div class="caption">
                             <h2>Parlamento Europeu aprova carregador único para telemóveis</h2>
-                            <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                             <div class="btn-group btn-group-sm">
                                 <a href="#" class="btn btn-primary" role="like">
                                     <span class="glyphicon glyphicon-arrow-up"/>
@@ -75,7 +75,7 @@
                         <img src="http://imagens9.publico.pt/imagens.aspx/829719?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
                         <div class="caption">
                             <h2>Herbalife investigada nos EUA por suspeita de “esquema em pirâmide”</h2>
-                            <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                             <div class="btn-group btn-group-sm">
                                 <a href="#" class="btn btn-primary" role="like">
                                     <span class="glyphicon glyphicon-arrow-up"/>
@@ -93,7 +93,7 @@
                         <img src="http://imagens0.publico.pt/imagens.aspx/829650?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
                         <div class="caption">
                             <h2>Destroços no mar do Sul da China não eram de avião, desmentida teoria de mais horas de voo</h2>
-                            <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                             <div class="btn-group btn-group-sm">
                                 <a href="#" class="btn btn-primary" role="like">
                                     <span class="glyphicon glyphicon-arrow-up"/>
@@ -118,7 +118,7 @@
                 <h2 style="color:#b74934">Governo insiste no aumento dos descontos para a ADSE através do Parlamento</h2>
                 <p> Conselho de Ministros aprovou envio do diploma vetado  </p>
                 <p> por Cavaco Silva para a Assembleia da República.</p>
-                <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                 <div class="btn-group btn-group-sm">
                     <a href="#" class="btn btn-primary" role="like">
                         <span class="glyphicon glyphicon-arrow-up"/>
@@ -145,7 +145,7 @@
             <div class="caption">
                 <h2 style="color:#b74934">Rui Costa sobe mais dois lugares na Paris-Nice</h2>
                 <p>O actual campeão do mundo de ciclismo de estrada mantém-se a 19 segundos da liderança.</p>
-                <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                 <div class="btn-group btn-group-sm">
                     <a href="#" class="btn btn-primary" role="like">
                         <span class="glyphicon glyphicon-arrow-up"/>
@@ -174,7 +174,7 @@
                 <p> Há 70 milhões de anos, o Árctico não era tão frio como hoje.  </p>
                 <p> Os dinossauros também se davam bem lá, como revelam </p>
                 <p> cada vez mais os fósseis que se estão a encontrar.</p>
-                <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                 <div class="btn-group btn-group-sm">
                     <a href="#" class="btn btn-primary" role="like">
                         <span class="glyphicon glyphicon-arrow-up"/>
@@ -203,7 +203,7 @@
                 <p> É possível encontrar adeptos do Nápoles em vários pontos </p>
                 <p> do Porto, isto num dia em que os dragões recebem o conjunto </p>
                 <p> napolitano, na partida referente à primeira mão dos oitavos de final da Liga Europa.</p>
-                <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a>
+                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                 <div class="btn-group btn-group-sm">
                     <a href="#" class="btn btn-primary" role="like">
                         <span class="glyphicon glyphicon-arrow-up"/>

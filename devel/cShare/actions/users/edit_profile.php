@@ -65,7 +65,7 @@ if ($_POST['culture']) {
 }
 
 
-$result = editUser($user, $location, $work, $inter, $email, $name);
+$result = editUser($user, $location, $work, $inter, $email, $name, $pic);
 
 if ($result != false) {
     $_SESSION['success_messages'][] = 'User edited successfully';

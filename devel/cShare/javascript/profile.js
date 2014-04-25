@@ -68,4 +68,50 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('#bantemp').click(function() {
+
+        var data = "username=" + encodeURIComponent($('#username').text());
+
+        $.ajax({url: "../../api/bantemp.php",
+            type: "GET",
+            data: data,
+            dataType: "json",
+            success: function(data) {
+
+                if (data.msg == true) {
+                    alert("Temporary Ban successful!");
+                }
+                else {
+                    alert("Error Baning!");
+                }
+            },
+            error: function(data) {
+                alert("NO Temporary Ban NO yarr.. :(");
+            }
+        });
+    });
+
+    $('#unban').click(function() {
+
+        var data = "username=" + encodeURIComponent($('#username').text());
+
+        $.ajax({url: "../../api/unban.php",
+            type: "GET",
+            data: data,
+            dataType: "json",
+            success: function(data) {
+
+                if (data.msg == true) {
+                    alert("Unban successful!");
+                }
+                else {
+                    alert("Error Baning!");
+                }
+            },
+            error: function(data) {
+                alert("NO Unban NO yarr.. :(");
+            }
+        });
+    });
 });

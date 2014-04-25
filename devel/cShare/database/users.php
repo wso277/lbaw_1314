@@ -17,19 +17,24 @@ function getUserByUsername($username)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getUserByLocal($local)
-{
+function getUserByLocal($local) {
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM Editor WHERE localidade LIKE ?");
     $stmt->execute(array($local));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getUserByWork($work)
-{
+function getUserByWork($work) {
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM Editor WHERE profissao LIKE ?");
     $stmt->execute(array($work));
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getInterests($username) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM Interesse WHERE username LIKE ?");
+    $stmt->execute(array($username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -74,11 +79,11 @@ function updatePhoto($username, $photo) {
     return true;
 }
 
-function editUser($username, $localidade, $prof, $interesses, $email, $name)
+function editUser($username, $localidade, $prof, $interesses, $email, $name, $pic)
 {
     global $conn;
     $conn->beginTransaction();
-    $stmt = $conn->prepare("UPDATE Editor SET localidade = '".$localidade."' , profissao = '".$prof . "' , email = '".$email ."' , nome = '".$name."' WHERE username LIKE '" . $username . "'");
+    $stmt = $conn->prepare("UPDATE Editor SET localidade = '".$localidade."' , profissao = '".$prof . "' , email = '".$email ."' , nome = '".$name."' , fotografia = '".$pic."' WHERE username LIKE '" . $username . "'");
     $result = $stmt->execute();
     if ($result == FALSE) {
         $conn->rollBack();
@@ -164,6 +169,12 @@ function banUserTemp($username) {
     global $conn;
     $stmt = $conn->prepare("UPDATE Editor SET estado_user = ? WHERE username LIKE ?");
     return $stmt->execute(array("bantemp",$username));
+}
+
+function unbanUser($username) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE Editor SET estado_user = ? WHERE username LIKE ?");
+    return $stmt->execute(array("normal",$username));
 }
 
 function promoteUser($username) {

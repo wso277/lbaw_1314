@@ -100,6 +100,33 @@
         <a id="see_friends" class="btn btn-primary" data-toggle="modal" data-target="#friends" data-original-title>
             <span class="glyphicon glyphicon-th-list"/>&nbsp;See Friends
         </a>
+        <a id="see_friends" class="btn btn-primary" data-toggle="modal" data-target="#interests" data-original-title>
+            <span class="glyphicon glyphicon-th-list"/>&nbsp;Interests
+        </a>
+
+        <div class="modal fade" id="interests" tabindex="-1" role="dialog" aria-labelledby="contactLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="panel panel-primary" style="border-color:#428bca">
+                    <div class="panel-heading" style="background-color:#428bca;border-color:#428bca">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-th-list"></span>
+                            Interests</h4>
+                    </div>
+                    <div class="modal-body" style="padding:5px;">
+                        <div class="row" style="padding-left:4.8em;">
+                            <ul class="list-group">
+                                {foreach $interests as $inter}
+                                <li class="list-group-item" style="width:35em"> {$inter.nome} </li>
+                                {/foreach}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-footer" style="margin-bottom:-14px;">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="friends" tabindex="-1" role="dialog" aria-labelledby="contactLabel"
              aria-hidden="true">
@@ -193,6 +220,16 @@
                 <span class="glyphicon glyphicon-remove"/>&nbsp;Ban
             </a>
         </div>
+        <div name="bantemp" id="bantemp" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+            <a class="btn btn-primary" role="dislike">
+                <span class="glyphicon glyphicon-remove"/>&nbsp;Temporary Ban
+            </a>
+        </div>
+        <div name="unban" id="unban" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+            <a class="btn btn-primary" role="dislike">
+                <span class="glyphicon glyphicon-remove"/>&nbsp;Unban
+            </a>
+        </div>
     {/if}
 
     </div>
@@ -208,7 +245,7 @@
 
         {if ($USERNAME == $user[0].username) || $PERMISSION == 'moderador'}
             <div class="btn-group btn-group-sm" style="display:inline">
-                <a href="{$BASE_URL}pages/users/edit_profile.php" class="btn btn-primary" role="dislike">
+                <a href="{$BASE_URL}pages/users/edit_profile.php?username={$user[0].username}" class="btn btn-primary" role="dislike">
                     <span class="glyphicon glyphicon-cog"/>&nbsp;Edit
                 </a>
             </div>
