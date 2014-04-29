@@ -1,18 +1,24 @@
 /* username, nome, localidade, pass, email, profissão, foto, tipo, estado */
-INSERT INTO Editor VALUES('filetez','Joao Filetes','Ali acola','987654321','welele@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');
-INSERT INTO Editor VALUES('rabandaz','Wiwson Rabanadas','Ali alem','987654321','welelf@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');    
-INSERT INTO Editor VALUES('tiburoenz','Luis Tubarao','Porto','987654321','welela@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');  
-INSERT INTO Editor VALUES('franganitoz','Fabio Franganito','Lisboa','987654321','welile@fe.up.pt','superhyperdeveloper','asasasa','moderador','normal');  
-INSERT INTO Editor VALUES('geof222','Geoffrey Smith','Issy-les-Moulineaux','IGZ62ZKX9KL','ut.mi.Duis@tempor.ca','jornalista','asasasa','editor','normal');
-INSERT INTO Editor VALUES('superDavis','Simon Davis','Grand-Hottomont','SAI17IAQ2YU','eget@Suspendissealiquet.org','fotografo','asasasa','editor','normal');
-INSERT INTO Editor VALUES('willimwallace87','William Wallace','Termini Imerese','ZGN89CEI2RF','per@non.edu','policia','asasasa','editor','normal');
-INSERT INTO Editor VALUES('iamaspy','Jonh Reese','LA','DEQ45BAO8MJ','nonummy@arcuacorci.com','spy',NULL,'editor','bantemp');
-INSERT INTO Editor VALUES('tomscousin','Zane Cruise','Fort Saskatchewan','GQC66SBZ5QP','odio.Phasellus@magnaatortor.net','actor','afelis','editor','normal');
-INSERT INTO Editor VALUES('DiCaprio','Leonardo di Caprio','Lens-Saint-Remy','ELT31TCU0DE','dui.augue@afelis.edu','actor','DiCapriophoto','editor','normal');
-INSERT INTO Editor VALUES('donovan_95','Raymond Donova','California','JOR64XHP8RU','ipsum.Phasellus@Namac.ca','art student',NULL, 'editor', 'normal');
-INSERT INTO Editor VALUES('JG_1968','Jorge Gabriel','Hull','LYA56WRS6GB','jorgeGabriel@rtp.pt','Apresentador',NULL, 'editor','bantemp');
-INSERT INTO Editor VALUES('wolowizard','Erich Howard','Mumbai','UIB06QIM5KS','nulla@acfermentumvel.co.uk','student',NULL, 'editor', 'bantemp');
-INSERT INTO Editor VALUES('HardenOP','James Harden','Houston','QLO99FBN3YB','consectetuer@gravidamaurisut.edu','NBA Player','jameshardenpic','editor','normal'); 
+INSERT INTO Editor VALUES('filetez','Joao Filetes','Ali acola','987654321','welele@fe.up.pt','superhyperdeveloper','/~lbaw1353/proto/images/assets/default.png','moderador','normal');
+INSERT INTO Editor VALUES('rabandaz','Wiwson Rabanadas','Ali alem','987654321','welelf@fe.up.pt','superhyperdeveloper','/~lbaw1353/proto/images/assets/default.png','moderador','normal');    
+INSERT INTO Editor VALUES('tiburoenz','Luis Tubarao','Porto','987654321','welela@fe.up.pt','superhyperdeveloper','/~lbaw1353/proto/images/assets/default.png','moderador','normal');  
+INSERT INTO Editor VALUES('franganitoz','Fabio Franganito','Lisboa','987654321','welile@fe.up.pt','superhyperdeveloper','/~lbaw1353/proto/images/assets/default.png','moderador','normal');  
+INSERT INTO Editor VALUES('geof222','Geoffrey Smith','Issy-les-Moulineaux','IGZ62ZKX9KL','ut.mi.Duis@tempor.ca','jornalista','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('superDavis','Simon Davis','Grand-Hottomont','SAI17IAQ2YU','eget@Suspendissealiquet.org','fotografo','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('willimwallace87','William Wallace','Termini Imerese','ZGN89CEI2RF','per@non.edu','policia','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('iamaspy','Jonh Reese','LA','DEQ45BAO8MJ','nonummy@arcuacorci.com','spy','/~lbaw1353/proto/images/assets/default.png','editor','bantemp');
+INSERT INTO Editor VALUES('tomscousin','Zane Cruise','Fort Saskatchewan','GQC66SBZ5QP','odio.Phasellus@magnaatortor.net','actor','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('DiCaprio','Leonardo di Caprio','Lens-Saint-Remy','ELT31TCU0DE','dui.augue@afelis.edu','actor','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('donovan_95','Raymond Donova','California','JOR64XHP8RU','ipsum.Phasellus@Namac.ca','art student','/~lbaw1353/proto/images/assets/default.png', 'editor', 'normal');
+INSERT INTO Editor VALUES('JG_1968','Jorge Gabriel','Hull','LYA56WRS6GB','jorgeGabriel@rtp.pt','Apresentador','/~lbaw1353/proto/images/assets/default.png', 'editor','bantemp');
+INSERT INTO Editor VALUES('wolowizard','Erich Howard','Mumbai','UIB06QIM5KS','nulla@acfermentumvel.co.uk','student','/~lbaw1353/proto/images/assets/default.png', 'editor', 'bantemp');
+INSERT INTO Editor VALUES('HardenOP','James Harden','Houston','QLO99FBN3YB','consectetuer@gravidamaurisut.edu','NBA Player','/~lbaw1353/proto/images/assets/default.png','editor','normal'); 
+INSERT INTO Editor VALUES('cenascenas','Cenas Coiso','Vive alem','cenascenas','cenas@cenas.com','Sou um faz tudo','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('zechiclas3','Ze Anotnio','casa','zechiclas','zechiclas3@yarr.com','reformado','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('zefilhote','Ze Filho','filhos@filhos','zefilhote','filho@filho.com','filho da vida','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('zechiclas','Ze Cenas','Barco','zechiclas','yarr@pirates.pirate','Pirata','/~lbaw1353/proto/images/assets/default.png','editor','ban');
+INSERT INTO Editor VALUES('zechiclas2','Ze Fixe','Barco','zechiclas','zechiclas2@yarr.com','Pirata','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+INSERT INTO Editor VALUES('zechiclas1','Ze Manel','Barco','zechiclas','zechiclas1@yarr.com','Pirata','/~lbaw1353/proto/images/assets/default.png','editor','bantemp');
 
 INSERT INTO Noticia VALUES(DEFAULT,'Pinto da Costa foi visto a sair de um quarto de hotel, no porto, com uma jovem loira atualmente desconhcida para 
 	a comunicacao social.','Pinto da Costa em mais um caso extraconjugal','2000-12-16','filetez');

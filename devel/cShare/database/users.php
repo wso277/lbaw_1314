@@ -112,37 +112,19 @@ function editUser($username, $localidade, $prof, $interesses, $email, $name, $pi
 function addFriend($user1, $user2) {
     global $conn;
     $stmt = $conn->prepare("INSERT INTO Amizade VALUES(?,?)");
-    $stmt->execute(array($user1, $user2));
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($result != FALSE) {
-        return $result;
-    } else {
-        return false;
-    }
+    return $stmt->execute(array($user1, $user2));
 }
 
-function removeUser($user1, $user2) {
+function removeFriend($user1, $user2) {
     global $conn;
-    $stmt = $conn->prepare("DELETE FROM Interesse WHERE amigo1 LIKE ? AND amigo2 LIKE ?");
-    $stmt->execute(array($user1, $user2));
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($result != FALSE) {
-        return $result;
-    } else {
-        return false;
-    }
+    $stmt = $conn->prepare("DELETE FROM Amizade WHERE amigo1 LIKE ? AND amigo2 LIKE ?");
+    return $stmt->execute(array($user1, $user2));
 }
 
 function sendMessage($sender, $receiver, $title, $body) {
     global $conn;
     $stmt = $conn->prepare("INSERT INTO Mensagem VALUES(DEFAULT,?,?,?,?)");
-    $stmt->execute(array($sender, $receiver, $title, $body));
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($result != FALSE) {
-        return $result;
-    } else {
-        return false;
-    }
+    return $stmt->execute(array($sender, $receiver, $title, $body));
 }
 
 function getSentMessages($username) {
@@ -188,4 +170,3 @@ function demoteUser($username) {
     $stmt = $conn->prepare("UPDATE Editor SET tipo_user = ? WHERE username LIKE ?");
     return $stmt->execute(array("editor",$username));
 }
-

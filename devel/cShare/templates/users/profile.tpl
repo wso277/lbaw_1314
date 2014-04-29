@@ -2,8 +2,6 @@
 
 <body>
     <link href="{$BASE_URL}css/profile.css" rel="stylesheet">
-    <script type="text/javascript" src="{$BASE_URL}javascript/see_friends.js"></script>
-    <script type="text/javascript" src="{$BASE_URL}javascript/add_friend.js"></script>
     <script type="text/javascript" src="{$BASE_URL}javascript/profile.js"></script>
 
     {include file="common/nav.tpl"}
@@ -92,7 +90,7 @@
     <br/>
 
     <div class="btn-group btn-group-sm" style="margin-top:1em">
-        <a href="#" class="btn btn-primary" role="dislike">
+        <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver={$user[0].username}" class="btn btn-primary" role="dislike">
             <span class="glyphicon glyphicon-envelope"/>&nbsp;Send Message
         </a>
     </div>
