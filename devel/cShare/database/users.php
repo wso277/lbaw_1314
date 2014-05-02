@@ -173,7 +173,7 @@ function demoteUser($username) {
 
 function getFriends($username) {
     global $conn;
-    $stmt = $conn->prepare("SELECT e1.username,e2.username FROM Editor e1, Editor e2, Amizade WHERE e1.username = Amizade.amigo1 AND Amizade.amigo2 = e2.username AND (e1.username LIKE ? OR e2.username LIKE ?)");
+    $stmt = $conn->prepare("SELECT e1.username AS amigo1,e2.username AS amigo2 FROM Editor e1, Editor e2, Amizade WHERE e1.username = Amizade.amigo1 AND Amizade.amigo2 = e2.username AND (e1.username LIKE ? OR e2.username LIKE ?)");
     $stmt->execute(array($username,$username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

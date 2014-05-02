@@ -82,17 +82,28 @@
     <p style="display:block;"><span class="glyphicon glyphicon-briefcase" style="margin-top:0em"></span>&nbsp;&nbsp;Work:
         {$user[0].profissao}</p>
 
-    <div class="btn-group btn-group-sm">
-        <a class="btn btn-primary" id="add_friend">
-            <span class="glyphicon glyphicon-heart"/>&nbsp;Add Friend
-        </a>
-    </div>
-    <br/>
+    {if ($USERNAME != $user[0].username)}
+        <div class="btn-group btn-group-sm">
+            <a class="btn btn-primary" id="add_friend">
+                <span class="glyphicon glyphicon-heart"/>&nbsp;Add Friend
+            </a>
+        </div>
+        <br/>
+    {/if}
 
     <div class="btn-group btn-group-sm" style="margin-top:1em">
-        <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver={$user[0].username}" class="btn btn-primary" role="dislike">
-            <span class="glyphicon glyphicon-envelope"/>&nbsp;Send Message
-        </a>
+        {if ($USERNAME != $user[0].username)}
+            <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver={$user[0].username}"
+               class="btn btn-primary" role="dislike">
+                <span class="glyphicon glyphicon-envelope"/>&nbsp;Send Message
+            </a>
+        {else}
+            <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver="
+               class="btn btn-primary" role="dislike">
+                <span class="glyphicon glyphicon-envelope"/>&nbsp;Send Message
+            </a>
+        {/if}
+
     </div>
     <div class="btn-group btn-group-sm" style="display:block;margin-top:1em">
         <a id="see_friends" class="btn btn-primary" data-toggle="modal" data-target="#friends" data-original-title>
@@ -115,7 +126,7 @@
                         <div class="row" style="padding-left:4.8em;">
                             <ul class="list-group">
                                 {foreach $interests as $inter}
-                                <li class="list-group-item" style="width:35em"> {$inter.nome} </li>
+                                    <li class="list-group-item" style="width:35em"> {$inter.nome} </li>
                                 {/foreach}
                             </ul>
                         </div>
@@ -137,17 +148,21 @@
                     </div>
                     <div class="modal-body" style="padding:5px;">
                         {foreach $friends as $friend}
-                        <div class="row" style="padding-left:7em;padding-top:0.7em">
-                            <div class="user_image">
-                                <img src="{$friend.photo}"
-                                                     width="64em" height="64em" style="float:left"/>
+                            <div class="row" style="padding-left:7em;padding-top:0.7em">
+                                <div class="user_image">
+                                    <img src="{$friend.photo}"
+                                         width="64em" height="64em" style="float:left"/>
+                                </div>
+                                <div class="user_name" style="padding-left: 5em; padding-top: 0.7em">
+                                    <h4><a href="{$BASE_URL}pages/users/profile.php?username={$friend.username}"
+                                           style="text-decoration:none"> {$friend.name} </a>
+                                        <br/>
+                                        <small style="font-size:12px;padding-left:0.5em;color:#000">{$friend.friends}
+                                            amigo(s)
+                                        </small>
+                                    </h4>
+                                </div>
                             </div>
-                            <div class="user_name" style="padding-left: 5em; padding-top: 0.7em">
-                                <h4> <a href="#" style="text-decoration:none"> {$friend.name} </a>
-                                    <br/> <small style="font-size:12px;padding-left:0.5em;color:#000">{$friend.friends} amigo(s)</small>
-                                </h4>
-                            </div>
-                        </div>
                         {/foreach}
                     </div>
                     <div class="panel-footer" style="margin-bottom:-14px;">
@@ -199,7 +214,8 @@
 
         {if ($USERNAME == $user[0].username) || $PERMISSION == 'moderador'}
             <div class="btn-group btn-group-sm" style="display:inline">
-                <a href="{$BASE_URL}pages/users/edit_profile.php?username={$user[0].username}" class="btn btn-primary" role="dislike">
+                <a href="{$BASE_URL}pages/users/edit_profile.php?username={$user[0].username}" class="btn btn-primary"
+                   role="dislike">
                     <span class="glyphicon glyphicon-cog"/>&nbsp;Edit
                 </a>
             </div>
