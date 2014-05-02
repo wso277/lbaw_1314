@@ -17,7 +17,7 @@
         <div class="panel panel-primary" style="height:100%;overflow:auto;">
             <div class="panel-body">
                 <div class="jumbotron" style="text-align:center;float:left;width:100%">
-                    <img src="".{$user[0].fotografia}."" width="128em" height="128em" style="float:left"/>
+                    <img src="{$BASE_URL}images/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
 
                     <div class="caption">
                         <h2>Maria Espinha</h2>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="jumbotron" style="text-align:center;float:left;width:100%">
-                    <img src="../img/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
+                    <img src="{$BASE_URL}images/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
 
                     <div class="caption">
                         <h2>José Manuel</h2>
@@ -136,65 +136,21 @@
                             Friends</h4>
                     </div>
                     <div class="modal-body" style="padding:5px;">
-                        <div class="row" style="padding-left:7em">
-                            <div id="friends_list">
-                                <table id="table">
-                                    <tr>
-                                        <td>
-                                            <div class="jumbotron"
-                                                 style="text-align:center;background-color:#fff;width:15em;height:7em">
-                                                <img src="http://imagens1.publico.pt/imagens.aspx/829711?tp=UH&db=IMAGENS&w=749"
+                        {foreach $friends as $friend}
+                        <div class="row" style="padding-left:7em;padding-top:0.7em">
+                            <div class="user_image">
+                                <img src="{$friend.photo}"
                                                      width="64em" height="64em" style="float:left"/>
-
-                                                <div class="caption">
-                                                    <h4>Joao Cenas</h4>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="padding-left:5px">
-                                            <div class="jumbotron"
-                                                 style="text-align:center;background-color:#fff;width:15em;height:7em">
-                                                <img src="http://imagens1.publico.pt/imagens.aspx/829711?tp=UH&db=IMAGENS&w=749"
-                                                     width="64em" height="64em" style="float:left"/>
-
-                                                <div class="caption">
-                                                    <h4>Fabio Cego</h4>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="jumbotron"
-                                                 style="text-align:center;background-color:#fff;width:15em;height:7em">
-                                                <img src="http://imagens1.publico.pt/imagens.aspx/829711?tp=UH&db=IMAGENS&w=749"
-                                                     width="64em" height="64em" style="float:left"/>
-
-                                                <div class="caption">
-                                                    <h4>Coiso cegueta</h4>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td style="padding-left:5px">
-                                            <div class="jumbotron"
-                                                 style="text-align:center;background-color:#fff;width:15em;height:7em">
-                                                <img src="http://imagens1.publico.pt/imagens.aspx/829711?tp=UH&db=IMAGENS&w=749"
-                                                     width="64em" height="64em" style="float:left"/>
-
-                                                <div class="caption">
-                                                    <h4>Lel lelote</h4>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                            </div>
+                            <div class="user_name" style="padding-left: 5em; padding-top: 0.7em">
+                                <h4> <a href="#" style="text-decoration:none"> {$friend.name} </a>
+                                    <br/> <small style="font-size:12px;padding-left:0.5em;color:#000">{$friend.friends} amigo(s)</small>
+                                </h4>
                             </div>
                         </div>
+                        {/foreach}
                     </div>
                     <div class="panel-footer" style="margin-bottom:-14px;">
-                        <button style="" type="button" class="btn btn-primary btn-close" data-dismiss="modal">
-                            Close
-                        </button>
                     </div>
                 </div>
             </div>

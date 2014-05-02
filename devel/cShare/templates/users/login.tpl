@@ -27,7 +27,7 @@
                             <input id="remember" name="remember" type="checkbox" value="remember-me"/>
                             Remember me
                         </label>-->
-                        <a data-toggle="modal" data-target="#help" data-original-title class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                        <a href="" data-toggle="modal" data-target="#help" data-original-title class="pull-right need-help">Need help? </a><span class="clearfix"></span>
                     </form>
                 </div>
                 <a href="{$BASE_URL}pages/users/register.php" class="text-center new-account">Create an account </a>
