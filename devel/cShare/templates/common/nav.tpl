@@ -22,7 +22,7 @@
                     {if ($USERNAME != "")}
                         <li><a href="{$BASE_URL}pages/users/profile.php?username={$USERNAME}"><span
                                         class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
+                        <li><a href="{$BASE_URL}pages/users/profile.php?username={$USERNAME}#friends"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-star"/>&nbsp;Favorites</a></li>
                     {else}
                         <li><a href="#"><span class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>

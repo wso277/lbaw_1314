@@ -13,7 +13,6 @@ $work = $_POST['work'];
 $pic = $BASE_URL."images/assets/default.png";
 $name = $firstName . " " . $lastName;
 
-//echo "cenas";
 /*if (!$_POST['username'] || !$_POST['realname'] || !$_POST['password']) {*/
 /*if (!preg_match("/^[^;:\"]{6,15}$/", $user) || !preg_match("/^[^;:\"]{8,}$/", $pass) || !preg_match("/^[a-zA-Z ]+$/", $name)
     || !preg_match("/^[a-zA-Z ]+$/", $location) || !preg_match("/^[a-zA-Z ]+$/", $work)
@@ -22,10 +21,16 @@ $name = $firstName . " " . $lastName;
 */
 if (!isset($user) || !isset($pass) || !isset($name)
     || !isset($location) || !isset($work)
-    || !isset($email)
-    || $pass != $pass_conf) {
+    || !isset($email)) {
 
     $_SESSION['error_messages'][] = 'All fields are mandatory';
+    $_SESSION['form_values'] = $_POST;
+    header("Location: $BASE_URL" . 'pages/users/register.php');
+    exit;
+}
+
+if(strcmp($pass,$pass_conf) != 0) {
+    $_SESSION['error_messages'][] = 'Both passwords must be the same!';
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL" . 'pages/users/register.php');
     exit;

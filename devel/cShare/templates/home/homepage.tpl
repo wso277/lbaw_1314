@@ -25,205 +25,243 @@
 
         {include file="common/nav.tpl"}
 
-        <!-- separador de lado-->
-        <div class="pull-right" style="width:25%;position:fixed;margin-left:75%">
-            <div class="panel panel-primary">
-                <div class="panel-heading" style="position:fixed;width:25%;">Stuff your friends liked</div>
-            </div>
+        <div class="container">
+
+  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+    <div class="container" style="padding:0px">
+
+      <div style="float:left;margin-top:3em;">
+        <div>
+          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
         </div>
-
-        <div class="pull-right" style="margin-top:3em;width:25%;height:95.1%;position:fixed;margin-left:75%">
-            <div class="panel panel-primary" style="height:100%;overflow:auto;">
-                <div class="panel-body">
-                    <div class="jumbotron" style="text-align:center;float:left;">
-                        <img src="http://imagens8.publico.pt/imagens.aspx/829708?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
-                        <div class="caption">
-                            <h2>Presidente do Bayern Munique condenado a três anos e meio de prisão</h2>
-                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="like">
-                                    <span class="glyphicon glyphicon-arrow-up"/>
-                                </a>
-                            </div>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="dislike">
-                                    <span class="glyphicon glyphicon-arrow-down"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="jumbotron" style="text-align:center;float:left;">
-                        <img src="http://imagens1.publico.pt/imagens.aspx/829711?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
-                        <div class="caption">
-                            <h2>Parlamento Europeu aprova carregador único para telemóveis</h2>
-                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="like">
-                                    <span class="glyphicon glyphicon-arrow-up"/>
-                                </a>
-                            </div>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="dislike">
-                                    <span class="glyphicon glyphicon-arrow-down"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="jumbotron" style="text-align:center;float:left;">
-                        <img src="http://imagens9.publico.pt/imagens.aspx/829719?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
-                        <div class="caption">
-                            <h2>Herbalife investigada nos EUA por suspeita de “esquema em pirâmide”</h2>
-                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="like">
-                                    <span class="glyphicon glyphicon-arrow-up"/>
-                                </a>
-                            </div>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="dislike">
-                                    <span class="glyphicon glyphicon-arrow-down"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="jumbotron" style="text-align:center;float:left;">
-                        <img src="http://imagens0.publico.pt/imagens.aspx/829650?tp=UH&db=IMAGENS&w=749" width="128em" height="128em" style="float:left"/>
-                        <div class="caption">
-                            <h2>Destroços no mar do Sul da China não eram de avião, desmentida teoria de mais horas de voo</h2>
-                            <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="like">
-                                    <span class="glyphicon glyphicon-arrow-up"/>
-                                </a>
-                            </div>
-                            <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-primary" role="dislike">
-                                    <span class="glyphicon glyphicon-arrow-down"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <br/>
+        <div class="btn-group btn-group-sm" style="margin-left:1em">
+          <a href="" class="btn btn-success" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
         </div>
-
-
-        <div class="jumbotron" style="text-align:center;float:left;width:75%;">
-            <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-            <div class="caption">
-                <h2 style="color:#b74934">Governo insiste no aumento dos descontos para a ADSE através do Parlamento</h2>
-                <p> Conselho de Ministros aprovou envio do diploma vetado  </p>
-                <p> por Cavaco Silva para a Assembleia da República.</p>
-                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="like">
-                        <span class="glyphicon glyphicon-arrow-up"/>
-                    </a>
-                </div>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="dislike">
-                        <span class="glyphicon glyphicon-arrow-down"/>
-                    </a>
-                </div>
-            </div>
-            <p>
-            <div style="float:left;clear:left">
-                <h4>Posted by maxPoster93 at 21:36</h4>
-            </div>
-            <div style="float:right">
-                <h4>8987 points &nbsp;34 comments</h4>
-            </div>
-            </p>
+        <br/>
+        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+          <a href="" class="btn btn-success" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
         </div>
+      </div>
 
-        <div class="jumbotron" style="text-align:center;float:left;width:75%;">
-            <img src="http://imagens8.publico.pt/imagens.aspx/829728?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-            <div class="caption">
-                <h2 style="color:#b74934">Rui Costa sobe mais dois lugares na Paris-Nice</h2>
-                <p>O actual campeão do mundo de ciclismo de estrada mantém-se a 19 segundos da liderança.</p>
-                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="like">
-                        <span class="glyphicon glyphicon-arrow-up"/>
-                    </a>
-                </div>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="dislike">
-                        <span class="glyphicon glyphicon-arrow-down"/>
-                    </a>
-                </div>
-                <p>
-                <div style="float:left;clear:left">
-                    <h4>Posted by maxPoster93 at 21:36</h4>
-                </div>
-                <div style="float:right">
-                    <h4>8987 points &nbsp;34 comments</h4>
-                </div>
-                </p>
-            </div>
+      <div style="color:#f0f0f0;font-family:Ubuntu">
+        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+        <div style="padding-left:20em">
+          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
+          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
         </div>
+        <p>
+          <div style="float:left;clear:left;padding-left:4.5em">
+            <h4>Posted by maxPoster93 at 21:36</h4>
+          </div>
+          <div style="float:right">
+            <h4>8987 points &nbsp;34 comments</h4>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
 
-        <div class="jumbotron" style="text-align:center;float:left;width:75%;">
-            <img src="http://imagens5.publico.pt/imagens.aspx/829725?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-            <div class="caption">
-                <h2 style="color:#b74934">O T-rex tinha um primo mais pequeno no Alasca</h2>
-                <p> Há 70 milhões de anos, o Árctico não era tão frio como hoje.  </p>
-                <p> Os dinossauros também se davam bem lá, como revelam </p>
-                <p> cada vez mais os fósseis que se estão a encontrar.</p>
-                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="like">
-                        <span class="glyphicon glyphicon-arrow-up"/>
-                    </a>
-                </div>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="dislike">
-                        <span class="glyphicon glyphicon-arrow-down"/>
-                    </a>
-                </div>
-                <p>
-                <div style="float:left;clear:left">
-                    <h4>Posted by maxPoster93 at 21:36</h4>
-                </div>
-                <div style="float:right">
-                    <h4>8987 points &nbsp;34 comments</h4>
-                </div>
-                </p>
-            </div>
-        </div>
+  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+    <div class="container" style="padding:0px">
 
-        <div class="jumbotron" style="text-align:center;float:left;width:75%;">
-            <img src="http://www.abola.pt/img/fotos/porto/2011/dragao4.jpg" width="192em" height="192em" style="float:left"/>
-            <div class="caption">
-                <h2 style="color:#b74934">Adeptos italianos invadem Invicta</h2>
-                <p> É possível encontrar adeptos do Nápoles em vários pontos </p>
-                <p> do Porto, isto num dia em que os dragões recebem o conjunto </p>
-                <p> napolitano, na partida referente à primeira mão dos oitavos de final da Liga Europa.</p>
-                <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="like">
-                        <span class="glyphicon glyphicon-arrow-up"/>
-                    </a>
-                </div>
-                <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-primary" role="dislike">
-                        <span class="glyphicon glyphicon-arrow-down"/>
-                    </a>
-                </div>
-                <p>
-                <div style="float:left;clear:left">
-                    <h4>Posted by maxPoster93 at 21:36</h4>
-                </div>
-                <div style="float:right">
-                    <h4>8987 points &nbsp;34 comments</h4>
-                </div>
-                </p>
-            </div>
+      <div style="float:left;margin-top:3em;">
+        <div>
+          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
         </div>
+        <br/>
+        <div class="btn-group btn-group-sm" style="margin-left:1em">
+          <a href="" class="btn btn-success" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+          <a href="" class="btn btn-success" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
+        </div>
+      </div>
+
+      <div style="color:#f0f0f0;font-family:Ubuntu">
+        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+        <div style="padding-left:20em">
+          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
+          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
+        </div>
+        <p>
+          <div style="float:left;clear:left;padding-left:4.5em">
+            <h4>Posted by maxPoster93 at 21:36</h4>
+          </div>
+          <div style="float:right">
+            <h4>8987 points &nbsp;34 comments</h4>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+    <div class="container" style="padding:0px">
+
+      <div style="float:left;margin-top:3em;">
+        <div>
+          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm" style="margin-left:1em">
+          <a href="" class="btn btn-success" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+          <a href="" class="btn btn-success" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
+        </div>
+      </div>
+
+      <div style="color:#f0f0f0;font-family:Ubuntu">
+        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+        <div style="padding-left:20em">
+          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
+          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
+        </div>
+        <p>
+          <div style="float:left;clear:left;padding-left:4.5em">
+            <h4>Posted by maxPoster93 at 21:36</h4>
+          </div>
+          <div style="float:right">
+            <h4>8987 points &nbsp;34 comments</h4>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+    <div class="container" style="padding:0px">
+
+      <div style="float:left;margin-top:3em;">
+        <div>
+          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm" style="margin-left:1em">
+          <a href="" class="btn btn-success" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+          <a href="" class="btn btn-success" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
+        </div>
+      </div>
+
+      <div style="color:#f0f0f0;font-family:Ubuntu">
+        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+        <div style="padding-left:20em">
+          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
+          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
+        </div>
+        <p>
+          <div style="float:left;clear:left;padding-left:4.5em">
+            <h4>Posted by maxPoster93 at 21:36</h4>
+          </div>
+          <div style="float:right">
+            <h4>8987 points &nbsp;34 comments</h4>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+    <div class="container" style="padding:0px">
+
+      <div style="float:left;margin-top:3em;">
+        <div>
+          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm" style="margin-left:1em">
+          <a href="" class="btn btn-success" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+          <a href="" class="btn btn-success" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
+        </div>
+      </div>
+
+      <div style="color:#f0f0f0;font-family:Ubuntu">
+        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+        <div style="padding-left:20em">
+          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
+          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
+        </div>
+        <p>
+          <div style="float:left;clear:left;padding-left:4.5em">
+            <h4>Posted by maxPoster93 at 21:36</h4>
+          </div>
+          <div style="float:right">
+            <h4>8987 points &nbsp;34 comments</h4>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+    <div class="container" style="padding:0px">
+
+      <div style="float:left;margin-top:3em;">
+        <div>
+          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm" style="margin-left:1em">
+          <a href="" class="btn btn-success" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
+        </div>
+        <br/>
+        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+          <a href="" class="btn btn-success" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
+        </div>
+      </div>
+
+      <div style="color:#f0f0f0;font-family:Ubuntu">
+        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+        <div style="padding-left:20em">
+          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
+          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
+        </div>
+        <p>
+          <div style="float:left;clear:left;padding-left:4.5em">
+            <h4>Posted by maxPoster93 at 21:36</h4>
+          </div>
+          <div style="float:right">
+            <h4>8987 points &nbsp;34 comments</h4>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
 
     </body>
 </html>

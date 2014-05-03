@@ -129,7 +129,7 @@ function sendMessage($sender, $receiver, $title, $body) {
 
 function getSentMessages($username) {
     global $conn;
-    $stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor = ? AND Mensagem.recetor != ? AND Editor.username LIKE ?");
+    $stmt = $conn->prepare("SELECT Mensagem.recetor, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor = ? AND Mensagem.recetor != ? AND Editor.username LIKE ?");
     $stmt->execute(array($username, $username, $username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

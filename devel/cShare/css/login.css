@@ -42,7 +42,7 @@
 {
     margin-top: 20px;
     padding: 40px 0px 20px 0px;
-    background-color: #f7f7f7;
+    background-color: #222222;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -52,7 +52,7 @@
     font-size: 18px;
     font-weight: 400;
     display: block;
-    color: #332c2f;
+    color: #f9f9f9;
 }
 .profile-img
 {
@@ -67,11 +67,11 @@
 .need-help
 {
     margin-top: 10px;
-    color: #332c2f;
+    color: #f0f0f0;
 }
 .new-account
 {
     display: block;
     margin-top: 10px;
-    color: #332c2f;
+    color: #f9f9f9;
 }

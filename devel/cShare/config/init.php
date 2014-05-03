@@ -2,8 +2,8 @@
 session_set_cookie_params(3600, '/~lbaw1353'); //FIXME
 session_start();
 
-$BASE_DIR = '/opt/lbaw/lbaw1353/public_html/proto/'; //FIXME
-$BASE_URL = '/~lbaw1353/proto/'; //FIXME
+$BASE_DIR = '/opt/lbaw/lbaw1353/public_html/devel/'; //FIXME
+$BASE_URL = '/~lbaw1353/devel/'; //FIXME
 
 $conn = new PDO('pgsql:host=vdbm;dbname=lbaw1353', 'lbaw1353', 'cQ240ds1'); //FIXME
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

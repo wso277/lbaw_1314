@@ -1,312 +1,215 @@
 {include file="common/header.tpl"}
 
 <body>
-    <link href="{$BASE_URL}css/profile.css" rel="stylesheet">
-    <script type="text/javascript" src="{$BASE_URL}javascript/profile.js"></script>
+  <link href="{$BASE_URL}css/profile_stuff.css" rel="stylesheet">
+  <link href="{$BASE_URL}css/messages.css" rel="stylesheet">
+  <script type="text/javascript" src="{$BASE_URL}javascript/profile.js"></script>
+  <script type="text/javascript" src="{$BASE_URL}javascript/profile_stuff.js"></script>
+  <script type="text/javascript" src="{$BASE_URL}javascript/messages.js"></script>
 
-    {include file="common/nav.tpl"}
+  {include file="common/nav.tpl"}
 
-    <!-- separador de lado-->
-    <div class="pull-right" style="width:25%;position:fixed;margin-left:75%">
-        <div class="panel panel-primary">
-            <div class="panel-heading" style="position:fixed;width:25%;">Latest messages</div>
-        </div>
-    </div>
+  <div class="container">
+   <div class="row well" style="background-color:#222;color:#fff;border-color:#222;box-shadow: 1px 2px 2px #111;">
+    <div class="col-md-15">
+      <div class="panelx">
+        <img class="pic img-circle" src="{$user[0].fotografia}" alt="...">
+        <div class="name"><small>{$user[0].nome}, {$user[0].localidade}</small></div>
+      </div>
 
-    <div class="pull-right" style="margin-top:3em;width:25%;height:95.1%;position:fixed;margin-left:75%">
-        <div class="panel panel-primary" style="height:100%;overflow:auto;">
-            <div class="panel-body">
-                <div class="jumbotron" style="text-align:center;float:left;width:100%">
-                    <img src="{$BASE_URL}images/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
+      <br/><br/>
+      <div style="padding-left:33em">
 
-                    <div class="caption">
-                        <h2>Maria Espinha</h2>
-
-                        <p>Ve la esta noticia sobr...</p>
-
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="like">
-                                <span class="glyphicon glyphicon-envelope"/>&nbsp;Open
-                            </a>
-                        </div>
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="like">
-                                <span class="glyphicon glyphicon-ok"/>&nbsp;Read
-                            </a>
-                        </div>
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="dislike">
-                                <span class="glyphicon glyphicon-trash"/>&nbsp;Delete
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="jumbotron" style="text-align:center;float:left;width:100%">
-                    <img src="{$BASE_URL}images/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
-
-                    <div class="caption">
-                        <h2>José Manuel</h2>
-
-                        <p>Já viste o jogo de ontem?</p>
-
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="like">
-                                <span class="glyphicon glyphicon-envelope"/>&nbsp;Open
-                            </a>
-                        </div>
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="like">
-                                <span class="glyphicon glyphicon-ok"/>&nbsp;Read
-                            </a>
-                        </div>
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="dislike">
-                                <span class="glyphicon glyphicon-trash"/>&nbsp;Delete
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <!--Profile-->
-    <div>
-        <img class="profile-pic" src="{$user[0].fotografia}" width="254em" height="254em"/>
-    </div>
-    <h1 style="margin-top:1em;">{$user[0].nome}</h1>
-    <span class="glyphicon glyphicon-home" style="margin-top:1em"></span>&nbsp;&nbsp;Hometown: {$user[0].localidade}
-
-    <p style="display:block;"><span class="glyphicon glyphicon-briefcase" style="margin-top:0em"></span>&nbsp;&nbsp;Work:
-        {$user[0].profissao}</p>
-
-    {if ($USERNAME != $user[0].username)}
-        <div class="btn-group btn-group-sm">
-            <a class="btn btn-primary" id="add_friend">
-                <span class="glyphicon glyphicon-heart"/>&nbsp;Add Friend
-            </a>
-        </div>
-        <br/>
-    {/if}
-
-    <div class="btn-group btn-group-sm" style="margin-top:1em">
         {if ($USERNAME != $user[0].username)}
-            <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver={$user[0].username}"
-               class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-envelope"/>&nbsp;Send Message
-            </a>
-        {else}
-            <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver="
-               class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-envelope"/>&nbsp;Send Message
-            </a>
+        <div class="btn-group btn-group-sm">
+          <a class="btn btn-success" id="add_friend">
+            <i class="glyphicon glyphicon-heart"></i>&nbsp;Add Friend
+          </a>
+        </div>
         {/if}
-
-    </div>
-    <div class="btn-group btn-group-sm" style="display:block;margin-top:1em">
-        <a id="see_friends" class="btn btn-primary" data-toggle="modal" data-target="#friends" data-original-title>
-            <span class="glyphicon glyphicon-th-list"/>&nbsp;See Friends
+        <div class="btn-group btn-group-sm">
+          {if ($USERNAME != $user[0].username)}
+          <a class="btn btn-success" href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver={$user[0].username}">
+            <i class="glyphicon glyphicon-envelope"></i>&nbsp;Send Message
+          </a>
+          {else}
+          <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&receiver="
+          class="btn btn-success">
+          <i class="glyphicon glyphicon-envelope"></i>&nbsp;Send Message
         </a>
-        <a id="see_friends" class="btn btn-primary" data-toggle="modal" data-target="#interests" data-original-title>
-            <span class="glyphicon glyphicon-th-list"/>&nbsp;Interests
-        </a>
-
-        <div class="modal fade" id="interests" tabindex="-1" role="dialog" aria-labelledby="contactLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="panel panel-primary" style="border-color:#428bca">
-                    <div class="panel-heading" style="background-color:#428bca;border-color:#428bca">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-th-list"></span>
-                            Interests</h4>
-                    </div>
-                    <div class="modal-body" style="padding:5px;">
-                        <div class="row" style="padding-left:4.8em;">
-                            <ul class="list-group">
-                                {foreach $interests as $inter}
-                                    <li class="list-group-item" style="width:35em"> {$inter.nome} </li>
-                                {/foreach}
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="panel-footer" style="margin-bottom:-14px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="friends" tabindex="-1" role="dialog" aria-labelledby="contactLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="panel panel-primary" style="border-color:#428bca">
-                    <div class="panel-heading" style="background-color:#428bca;border-color:#428bca">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-th-list"></span>
-                            Friends</h4>
-                    </div>
-                    <div class="modal-body" style="padding:5px;">
-                        {foreach $friends as $friend}
-                            <div class="row" style="padding-left:7em;padding-top:0.7em">
-                                <div class="user_image">
-                                    <img src="{$friend.photo}"
-                                         width="64em" height="64em" style="float:left"/>
-                                </div>
-                                <div class="user_name" style="padding-left: 5em; padding-top: 0.7em">
-                                    <h4><a href="{$BASE_URL}pages/users/profile.php?username={$friend.username}"
-                                           style="text-decoration:none"> {$friend.name} </a>
-                                        <br/>
-                                        <small style="font-size:12px;padding-left:0.5em;color:#000">{$friend.friends}
-                                            amigo(s)
-                                        </small>
-                                    </h4>
-                                </div>
-                            </div>
-                        {/foreach}
-                    </div>
-                    <div class="panel-footer" style="margin-bottom:-14px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {if ($PERMISSION == 'moderador') && $USERNAME != $user[0].username}
-        <br>
-        <div name="promote" id="promote" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
-            <a class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-chevron-up"/>&nbsp;Promote
-            </a>
-        </div>
-        <div name="demote" id="demote" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
-            <a class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-chevron-down"/>&nbsp;Demote
-            </a>
-        </div>
-        <div name="ban" id="ban" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
-            <a class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-remove"/>&nbsp;Ban
-            </a>
-        </div>
-        <div name="bantemp" id="bantemp" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
-            <a class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-remove"/>&nbsp;Temporary Ban
-            </a>
-        </div>
-        <div name="unban" id="unban" class="btn-group btn-group-sm" style="display:block;margin-top:1em">
-            <a class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-remove"/>&nbsp;Unban
-            </a>
-        </div>
-    {/if}
-
-    </div>
-
-    <div style="display:block;margin-top:5em;margin-left:2em">
-        <p style="display:inline;float:left;margin-right:1em"><span class="glyphicon glyphicon-user"
-                    ></span>&nbsp;
-
-        <div style="display:inline">Username:
-            <div id="username" style="display:inline">{$user[0].username}</div>
-        </div>
-        </p>
-
-        {if ($USERNAME == $user[0].username) || $PERMISSION == 'moderador'}
-            <div class="btn-group btn-group-sm" style="display:inline">
-                <a href="{$BASE_URL}pages/users/edit_profile.php?username={$user[0].username}" class="btn btn-primary"
-                   role="dislike">
-                    <span class="glyphicon glyphicon-cog"/>&nbsp;Edit
-                </a>
-            </div>
         {/if}
-
+      </div>
+      {if ($PERMISSION == 'moderador') && $USERNAME != $user[0].username}
+      <div class="btn-group btn-group-sm">
+        <a class="btn btn-success" id="promote">
+          <i class="glyphicon glyphicon-chevron-up"></i>&nbsp;Promote
+        </a>
+      </div>
+      <div class="btn-group btn-group-sm">
+        <a class="btn btn-success" id="demote">
+          <i class="glyphicon glyphicon-chevron-down"></i>&nbsp;Demote
+        </a>
+      </div>
+      <div class="btn-group btn-group-sm">
+        <a class="btn btn-success" id="ban">
+          <i class="glyphicon glyphicon-remove"></i>&nbsp;Ban
+        </a>
+      </div>
+      <div class="btn-group btn-group-sm">
+        <a class="btn btn-success" id="bantemp">
+          <i class="glyphicon glyphicon-remove"></i>&nbsp;Temporary Ban
+        </a>
+      </div>
+      <div class="btn-group btn-group-sm">
+        <a class="btn btn-success" id="unban">
+          <i class="glyphicon glyphicon-remove"></i>&nbsp;Unban
+        </a>
+      </div>
+      {/if}
     </div>
 
-    <!--post history-->
-    <div class="pull-left post-history">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Post history</div>
+    <br><br><br>
+
+    
+
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active"><a href="#info" data-toggle="tab"><i class="glyphicon glyphicon-list-alt"></i> Info</a></li>
+      <li><a href="#messages" data-toggle="tab"><i class="glyphicon glyphicon-comment"></i> Messages</a></li>
+      <li><a href="#posts" data-toggle="tab"><i class="glyphicon glyphicon-time"></i> Post History</a></li>
+      <li><a href="#friends" data-toggle="tab"><i class="glyphicon glyphicon-list"></i> Friends</a></li>
+      <li><a href="#inter" data-toggle="tab"><i class="glyphicon glyphicon-ok"></i> Interests</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="info">
+        <div style="padding-left:3em;padding-top:1em">
+          <i class="glyphicon glyphicon-home"></i>&nbsp;Hometown: {$user[0].localidade}
+          <br/>
+          <br/>
+          <i class="glyphicon glyphicon-briefcase"></i>&nbsp;Work: {$user[0].profissao}
+          <br/>
+          <br/>
+          <i class="glyphicon glyphicon-user"></i>&nbsp;username: {$user[0].username}
         </div>
-    </div>
+      </div>
 
-    <div class="pull-left post-history">
-        <div class="panel panel-primary" style="height:100%;overflow:auto;">
-            <div class="panel-body">
 
-                <div class="jumbotron" style="text-align:center;float:left;width:100%;">
-                    <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
-                         height="192em"
-                         style="float:left"/>
-
-                    <div class="caption">
-                        <h2 style="color:#b74934">Governo insiste no aumento dos descontos para a ADSE através do
-                            Parlamento</h2>
-
-                        <p> Conselho de Ministros aprovou envio do diploma vetado </p>
-
-                        <p> por Cavaco Silva para a Assembleia da República.</p>
-                        <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="like">
-                                <span class="glyphicon glyphicon-arrow-up"/>
-                            </a>
-                        </div>
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="dislike">
-                                <span class="glyphicon glyphicon-arrow-down"/>
-                            </a>
-                        </div>
-                    </div>
-                    <p>
-
-                    <div style="float:left;clear:left">
-                        <h4>Posted by maxPoster93 at 21:36</h4>
-                    </div>
-                    <div style="float:right">
-                        <h4>8987 points &nbsp;34 comments</h4>
-                    </div>
-                    </p>
+      <div class="tab-pane" id="messages">
+        <div style="padding-top:1em">
+          <div class="col-md-6">
+            <div class="panel panel-primary" style="border-color:#777">
+              <div class="panel-heading" style="background-color:#428bca;border-color:#428bca">
+                <h3 class="panel-title">Messages Sent</h3>
+                <div class="pull-right">
+                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                    <i class="glyphicon glyphicon-filter"></i>
+                  </span>
                 </div>
-
-                <div class="jumbotron" style="text-align:center;float:left;width:100%;">
-                    <img src="http://imagens8.publico.pt/imagens.aspx/829728?tp=UH&db=IMAGENS" width="192em"
-                         height="192em"
-                         style="float:left"/>
-
-                    <div class="caption">
-                        <h2 style="color:#b74934">Rui Costa sobe mais dois lugares na Paris-Nice</h2>
-
-                        <p>O actual campeão do mundo de ciclismo de estrada mantém-se a 19 segundos da
-                            liderança.</p>
-                        <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="like">
-                                <span class="glyphicon glyphicon-arrow-up"/>
-                            </a>
-                        </div>
-                        <div class="btn-group btn-group-sm">
-                            <a href="#" class="btn btn-primary" role="dislike">
-                                <span class="glyphicon glyphicon-arrow-down"/>
-                            </a>
-                        </div>
-                        <p>
-
-                        <div style="float:left;clear:left">
-                            <h4>Posted by maxPoster93 at 21:36</h4>
-                        </div>
-                        <div style="float:right">
-                            <h4>8987 points &nbsp;34 comments</h4>
-                        </div>
-                        </p>
-                    </div>
-                </div>
-
+              </div>
+              <div class="panel-body">
+                <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+              </div>
+              <table class="table table-hover" id="dev-table">
+                <thead>
+                  <tr>
+                    <th>Message Title</th>
+                    <th>Receiver</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {foreach $sentMessages as $msg}
+                  <tr>
+                    <td><a href="#">{$msg.titulo}</a></td>
+                    <td><a href="{$BASE_URL}pages/users/profile.php?username={$msg.recetor}">{$msg.recetor}</a></td>
+                    <td><a href="">Delete</a></td>
+                  </tr>
+                  {/foreach}
+                </tbody>
+              </table>
             </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-primary" style="border-color:#777">
+              <div class="panel-heading" style="background-color:#5cb85c;border-color:#5cb85c">
+                <h3 class="panel-title">Messages Received</h3>
+                <div class="pull-right">
+                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                    <i class="glyphicon glyphicon-filter"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+              </div>
+              <table class="table table-hover" id="dev-table">
+                <thead>
+                  <tr>
+                    <th>Message Title</th>
+                    <th>Receiver</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {foreach $receivedMessages as $msg}
+                  <tr>
+                    <td><a href="#">{$msg.titulo}</a></td>
+                    <td><a href="{$BASE_URL}pages/users/profile.php?username={$msg.username}">{$msg.username}</a></td>
+                    <td><a href="">Delete</a></td>
+                  </tr>
+                  {/foreach}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
+
+
+      <div class="tab-pane" id="posts">
+        <a href=""><div class="well well-sm" style="margin:0px;background-color:#222;border-color:#222">Open GL Assignments <span class="pull-right"><i class="glyphicon glyphicon-time"></i> 12:20 AM 20 Dec 2014 </span></div></a>        
+      </div>
+
+      <a name="friends">
+        <div class="tab-pane" id="friends">
+         {foreach $friends as $friend}
+         <div class="row" style="padding-left:7em;padding-top:0.7em">
+          <div class="user_image">
+            <img src="{$friend.photo}"
+            width="64em" height="64em" style="float:left"/>
+          </div>
+          <div class="user_name" style="padding-left: 5em; padding-top: 0.7em">
+            <h4><a href="{$BASE_URL}pages/users/profile.php?username={$friend.username}"
+              style="text-decoration:none"> {$friend.name} </a>
+              <br/>
+              <small style="font-size:12px;padding-left:0.5em;color:#fff"> {$friend.friends}
+                amigo(s)
+              </small>
+            </h4>
+          </div>
+        </div>
+        {/foreach}
+      </div>
+    </a>
+
+
+    <div class="tab-pane" id="inter">
+      <div id="div_ul" style="padding-top:2em;padding-left:22em">
+        <ul class="list-group">
+          {foreach $interests as $inter}
+          <li class="list-group-item" style="width:35em;color:#000"> {$inter.nome} </li>
+          {/foreach}
+        </ul>
+      </div>
     </div>
+
+  </div>
+
+</div>
+</div>
+
+
+</div>
 
 
 </body>

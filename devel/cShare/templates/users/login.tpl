@@ -19,7 +19,7 @@
                     <form action="{$BASE_URL}actions/users/login.php" class="form-signin" method="post"
                           enctype="multipart/form-data">
                         <input id="username" name="username" type="text" class="form-control" placeholder="Username"
-                               required autofocus/>
+                               value="{$FORM_VALUES['username']}" required autofocus/>
                         <input id="password" name="password" type="password" class="form-control" placeholder="Password"
                                required/>
                         <input id="btn-login" class="btn btn-lg btn-success btn-block" type="submit" value="Login"/>
@@ -55,5 +55,8 @@
             <!-- /.modal-dialog -->
         </div>
     </div>
+
+    <br/><br/>
+    <div style="padding-left:31.5em;color:red;font-size:2em"> {$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]} </div>
 </body>
 </html>

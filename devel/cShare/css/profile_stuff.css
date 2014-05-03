@@ -1,14 +1,16 @@
 .pic
 {
-     margin-top:50px; 
-     width:120px;
-     margin-left:50px;
-     margin-bottom:-60px;
+     margin-top:10em; 
+     width:10em;
+     margin-left:4em;
+     margin-bottom:-5em;
 }
 
-.panel
+.panelx
 {
-    background-image:url("http://autoimagesize.com/wp-content/uploads/2014/01/rainbow-aurora-background-wallpaper-colour-images-rainbow-background.jpg"); 
+    background-image:url("/~lbaw1353/devel/images/background-user.jpg"); 
+    width:80em; 
+    height:15em;
 }
 
 .name

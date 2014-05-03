@@ -7,51 +7,57 @@
     <link href="{$BASE_URL}css/register.css" rel="stylesheet">
     {include file="common/nav.tpl"}
 
-    <div class="container">
+    <div class="container account-wall">
 
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
                 <form action="{$BASE_URL}actions/users/register.php" class="form-signin" method="post"
                       enctype="multipart/form-data">
-                    <h2>Please Register
-                        <small>It's free and always will be.</small>
+                    <h2 style="color:#f0f0f0">Please Register
+                        <small style="color:#f0f0f0">It's free and always will be.</small>
                     </h2>
                     <hr class="colorgraph">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <input type="text" name="first_name" id="first_name" class="form-control input-lg"
-                                       placeholder="First Name" tabindex="1" required>
+                                       placeholder="First Name" value="{$FORM_VALUES['first_name']}" tabindex="1" required>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <input type="text" name="last_name" id="last_name" class="form-control input-lg"
-                                       placeholder="Last Name" tabindex="2" required>
+                                       placeholder="Last Name" value="{$FORM_VALUES['last_name']}" tabindex="2" required>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"> 
                         <input type="text" name="display_name" id="display_name" class="form-control input-lg"
-                               placeholder="Username" tabindex="3" required>
+                               placeholder="Username" value="{$FORM_VALUES['display_name']}"  
+                        {literal} tabindex="3" required pattern="^[^;:&quot;]{6,15}">
+                        {/literal}
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" id="email" class="form-control input-lg"
-                               placeholder="Email Address" tabindex="4" required>
+                               placeholder="Email Address" value="{$FORM_VALUES['email']}" 
+                        {literal}  tabindex="4" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+                        {/literal} 
                     </div>
                     <div class="form-group">
                         <input type="text" name="local" id="local" class="form-control input-lg" placeholder="Hometown"
-                               tabindex="4" required>
+                               value="{$FORM_VALUES['local']}" tabindex="4" required>
                     </div>
                     <div class="form-group">
                         <input type="work" name="work" id="work" class="form-control input-lg" placeholder="Work"
-                               tabindex="4" required>
+                               value="{$FORM_VALUES['work']}" tabindex="4" required>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
+                                {literal} 
                                 <input type="password" name="password" id="password" class="form-control input-lg"
-                                       placeholder="Password" tabindex="5" required>
+                                       placeholder="Password" tabindex="5" required pattern="^[^;:&quot;]{8,}">
+                                {/literal} 
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -130,5 +136,9 @@
         </div>
         <!-- /.modal -->
     </div>
+
+
+    <br/><br/><br/>
+    <div style="padding-left:15em;color:red;font-size:3em"> {$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]} </div>
 </body>
 </html>

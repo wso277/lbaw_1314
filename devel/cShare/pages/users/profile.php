@@ -5,6 +5,8 @@ include_once($BASE_DIR .'database/users.php');
 $user = getUserByUsername($_GET['username']);
 $interests = getInterests($_GET['username']);
 $friends = getFriends($_GET['username']);
+$sentMessages = getSentMessages($_GET['username']);
+$receivedMessages = getReceivedMessages($_GET['username']);
 
 $result;
 
@@ -28,5 +30,7 @@ foreach($friends as $friend) {
 $smarty->assign('user', $user);
 $smarty->assign('interests', $interests);
 $smarty->assign('friends', $result);
+$smarty->assign('sentMessages', $sentMessages);
+$smarty->assign('receivedMessages', $receivedMessages);
 
 $smarty->display("users/profile.tpl");

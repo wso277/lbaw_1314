@@ -5,7 +5,7 @@
     <link href="{$BASE_URL}css/register.css" rel="stylesheet">
     {include file="common/nav.tpl"}
 
-    <div class="container">
+    <div class="container account-wall">
 
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -13,7 +13,7 @@
                       enctype="multipart/form-data">
                     <input type="hidden" name="username" id="username" class="form-control input-lg"
                            value="{$user[0].username}" tabindex="2">
-                    <h2>Edit your profile information</h2>
+                    <h2 style="color:#f0f0f0">Edit your profile information</h2>
                     <hr class="colorgraph">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -46,26 +46,48 @@
                                value="{$user[0].fotografia}" placeholder="Picture URL" tabindex="4">
                     </div>
                     <div>
-                        <h3>Interests</h3>
+                        <h3 style="color:#f0f0f0">Interests</h3>
 
-                        <div class="checkbox">
-
+                        <div class="checkbox" style="color:#f0f0f0">
                             <label>
-                                <input type="checkbox" name="sports" id="sports"> Sports </input><br>
-                                <input type="checkbox" name="culture" id="culture"> Culture </input><br>
-                                <input type="checkbox" name="football" id="football"> Football </input><br>
-                                <input type="checkbox" name="cinema" id="cinema"> Cinema </input><br>
-                                <input type="checkbox" name="literature" id="literature"> Literature </input><br>
-                                <input type="checkbox" name="agriculture" id="agriculture"> Agriculture </input><br>
-                                <input type="checkbox" name="politics" id="politics"> Politics </input><br>
-                                <input type="checkbox" name="sex" id="sex"> Sex </input><br>
-                                <input type="checkbox" name="video-games" id="video-games"> Video-Games </input><br>
-                                <input type="checkbox" name="news" id="news"> News </input><br>
-                                <input type="checkbox" name="gastronomy" id="gastronomy"> Gastronomy </input><br>
-                                <input type="checkbox" name="meteorology" id="meteorology"> Meteorology </input><br>
-                                <input type="checkbox" name="motor sports" id="motor_sports"> Motor Sports </input><br>
+                            <input type="checkbox" name="sports" id="sports" > Sports </input><br>
                             </label>
-
+                            <label>
+                            <input type="checkbox" name="culture" id="culture"> Culture </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="football" id="football"> Football </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="cinema" id="cinema"> Cinema </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="literature" id="literature"> Literature </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="agriculture" id="agriculture"> Agriculture </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="politics" id="politics"> Politics </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="sex" id="sex"> Sex </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="video-games" id="video-games"> Video-Games </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="news" id="news"> News </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="gastronomy" id="gastronomy"> Gastronomy </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="meteorology" id="meteorology"> Meteorology </input><br>
+                            </label>
+                            <label>
+                            <input type="checkbox" name="motor sports" id="motor_sports"> Motor Sports </input><br>
+                            </label>
                         </div>
                     </div>
 
