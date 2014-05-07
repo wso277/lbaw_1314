@@ -25,11 +25,20 @@
                 <div style="padding-left:33em">
 
                     {if ($USERNAME != $user[0].username)}
-                        <div class="btn-group btn-group-sm">
-                            <a class="btn btn-success" id="add_friend">
-                                <i class="glyphicon glyphicon-heart"></i>&nbsp;Add Friend
-                            </a>
-                        </div>
+                        {if ($isFriend)}
+                            <div class="btn-group btn-group-sm">
+                                <a class="btn btn-success" id="remove_friend">
+                                    <i class="glyphicon glyphicon-heart-empty"></i>&nbsp;Remove Friend
+                                </a>
+                            </div>
+                        {else}
+                            <div class="btn-group btn-group-sm">
+                                <a class="btn btn-success" id="add_friend">
+                                    <i class="glyphicon glyphicon-heart"></i>&nbsp;Add Friend
+                                </a>
+                            </div>
+                        {/if}
+
                     {/if}
                     <div class="btn-group btn-group-sm">
                         {if ($USERNAME != $user[0].username)}
@@ -87,11 +96,17 @@
                 <ul class="nav nav-tabs" id="myTab">
                     <li class="active"><a href="#info" data-toggle="tab"><i class="glyphicon glyphicon-list-alt"></i>
                             Info</a></li>
-                    <li><a href="#messages" data-toggle="tab"><i class="glyphicon glyphicon-comment"></i> Messages</a>
-                    </li>
+                    {if ($USERNAME == $user[0].username)}
+                        <li><a href="#messages" data-toggle="tab"><i class="glyphicon glyphicon-comment"></i>
+                                Messages</a>
+                        </li>
+                    {/if}
                     <li><a href="#posts" data-toggle="tab"><i class="glyphicon glyphicon-time"></i> Post History</a>
                     </li>
-                    <li><a href="#friends" data-toggle="tab"><i class="glyphicon glyphicon-list"></i> Friends</a></li>
+                    {if ($USERNAME == $user[0].username || $isFriend)}
+                        <li><a href="#friends" data-toggle="tab"><i class="glyphicon glyphicon-list"></i> Friends</a>
+                        </li>
+                    {/if}
                     <li><a href="#inter" data-toggle="tab"><i class="glyphicon glyphicon-ok"></i> Interests</a></li>
                 </ul>
 
@@ -140,11 +155,13 @@
                                         <tbody>
                                             {foreach $sentMessages as $msg}
                                                 <tr>
-                                                    <td><a href="#">{$msg.titulo}</a></td>
+                                                    <td><a href="{$BASE_URL}pages/users/see_message.php?id={$msg.idmensagem}">{$msg.titulo}</a></td>
                                                     <td>
                                                         <a href="{$BASE_URL}pages/users/profile.php?username={$msg.recetor}">{$msg.recetor}</a>
                                                     </td>
-                                                    <td><a href="">Delete</a></td>
+                                                    <td>
+                                                        <a href="{$BASE_URL}actions/users/delete_message.php?id={$msg.idmensagem}">Delete</a>
+                                                    </td>
                                                 </tr>
                                             {/foreach}
                                         </tbody>
@@ -179,11 +196,13 @@
                                         <tbody>
                                             {foreach $receivedMessages as $msg}
                                                 <tr>
-                                                    <td><a href="#">{$msg.titulo}</a></td>
+                                                    <td><a href="#messages">{$msg.titulo}</a></td>
                                                     <td>
                                                         <a href="{$BASE_URL}pages/users/profile.php?username={$msg.username}">{$msg.username}</a>
                                                     </td>
-                                                    <td><a href="">Delete</a></td>
+                                                    <td>
+                                                        <a href="{$BASE_URL}actions/users/delete_message.php?id={$msg.idmensagem}">Delete</a>
+                                                    </td>
                                                 </tr>
                                             {/foreach}
                                         </tbody>
@@ -218,7 +237,16 @@
                                                 amigo(s)
                                             </small>
                                         </h4>
+                                        {if ($USERNAME == $user[0].username)}
+                                            <div class="btn-group btn-group-sm">
+                                                <a class="btn btn-success" id="remove_friends"
+                                                   name="{$friend.username}">
+                                                    <i class="glyphicon glyphicon-heart-empty"></i>&nbsp;Remove Friend
+                                                </a>
+                                            </div>
+                                        {/if}
                                     </div>
+
                                 </div>
                             {/foreach}
                         </div>

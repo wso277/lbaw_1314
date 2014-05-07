@@ -2,6 +2,8 @@
 include_once('../../config/init.php');
 include_once($BASE_DIR .'database/users.php');
 
+session_start();
+
 $user = getUserByUsername($_GET['username']);
 $interests = getInterests($_GET['username']);
 $friends = getFriends($_GET['username']);
@@ -11,6 +13,8 @@ $receivedMessages = getReceivedMessages($_GET['username']);
 $result;
 
 $i = 0;
+
+$smarty->assign('isFriend', false);
 
 foreach($friends as $friend) {
     if (strcmp($friend['amigo1'], $user[0]['username']) == 0) {
@@ -24,7 +28,10 @@ foreach($friends as $friend) {
 
 
 	$result[$i] = array("username" => $userFriend[0]['username'], "name" => $userFriend[0]['nome'], "photo" => $userFriend[0]['fotografia'], "friends" => count($temp));
-	$i++;
+	if (strcmp($userFriend[0]['username'], $_SESSION['username']) == 0) {
+        $smarty->assign('isFriend', true);
+    }
+    $i++;
 }
 
 $smarty->assign('user', $user);

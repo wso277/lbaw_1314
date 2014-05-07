@@ -19,19 +19,19 @@
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <input type="text" name="first_name" id="first_name" class="form-control input-lg"
-                                        placeholder="First Name" tabindex="1">
+                                        placeholder="First Name" value="{$firstName}" tabindex="1">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <input type="text" name="last_name" id="last_name" class="form-control input-lg"
-                                        placeholder="Last Name" tabindex="2">
+                                        placeholder="Last Name" value="{$lastName}" tabindex="2">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <input type="text" name="work" id="work" class="form-control input-lg" placeholder="Work"
-                               value="{$user[0].profissao} "tabindex="3">
+                               value="{$user[0].profissao}" tabindex="3">
                     </div>
                     <div class="form-group">
                         <input type="text" name="local" id="local" class="form-control input-lg" placeholder="Local"

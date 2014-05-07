@@ -129,16 +129,23 @@ function sendMessage($sender, $receiver, $title, $body) {
 
 function getSentMessages($username) {
     global $conn;
-    $stmt = $conn->prepare("SELECT Mensagem.idMensagem, Mensagem.recetor, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor = ? AND Mensagem.recetor != ? AND Editor.username LIKE ? ORDER BY Mensagem.idMensagem DESC");
-    $stmt->execute(array($username, $username, $username));
+    $stmt = $conn->prepare("SELECT Mensagem.idMensagem, Mensagem.recetor, Mensagem.titulo FROM Mensagem WHERE Mensagem.emissor = ? AND Mensagem.recetor != ? ORDER BY Mensagem.idMensagem DESC");
+    $stmt->execute(array($username, $username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function getReceivedMessages($username) {
     global $conn;
-    $stmt = $conn->prepare("SELECT Editor.nome, Editor.username, Mensagem.idMensagem, Mensagem.titulo, Mensagem.conteudo FROM Editor,Mensagem WHERE Mensagem.emissor != ? AND Mensagem.recetor = ? AND Editor.username LIKE ? ORDER BY Mensagem.idMensagem DESC");
-    $stmt->execute(array($username, $username, $username));
+    $stmt = $conn->prepare("SELECT Mensagem.idMensagem, Mensagem.titulo FROM Mensagem WHERE Mensagem.emissor != ? AND Mensagem.recetor = ? ORDER BY Mensagem.idMensagem DESC");
+    $stmt->execute(array($username, $username));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getMessage($id) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT Mensagem.recetor, Mensagem.emissor, Mensagem.titulo, Mensagem.conteudo FROM Mensagem WHERE Mensagem.idMensagem = ?");
+    $stmt->execute(array($id));
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 function deleteMessage($idMensagem) {

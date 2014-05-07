@@ -27,241 +27,301 @@
 
         <div class="container">
 
-  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
-    <div class="container" style="padding:0px">
+            <div class="jumbotron"
+                 style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+                <div class="container" style="padding:0px">
 
-      <div style="float:left;margin-top:3em;">
-        <div>
-          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm" style="margin-left:1em">
-          <a href="" class="btn btn-success" role="like">
-            <span class="glyphicon glyphicon-arrow-up"/>
-          </a> 
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
-          <a href="" class="btn btn-success" role="dislike">
-            <span class="glyphicon glyphicon-arrow-down"/>
-          </a>
-        </div>
-      </div>
+                    <div style="float:left;margin-top:3em;">
+                        <div>
+                            <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
+                                                                      src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+                        </div>
+                        <br/>
 
-      <div style="color:#f0f0f0;font-family:Ubuntu">
-        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-        <div style="padding-left:20em">
-          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
-          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
-        </div>
-        <p>
-          <div style="float:left;clear:left;padding-left:4.5em">
-            <h4>Posted by maxPoster93 at 21:36</h4>
-          </div>
-          <div style="float:right">
-            <h4>8987 points &nbsp;34 comments</h4>
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
+                        <div class="btn-group btn-group-sm" style="margin-left:1em">
+                            <a href="" class="btn btn-success" role="like">
+                                <span class="glyphicon glyphicon-arrow-up"/>
+                            </a>
+                        </div>
+                        <br/>
 
-  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
-    <div class="container" style="padding:0px">
+                        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                            <a href="" class="btn btn-success" role="dislike">
+                                <span class="glyphicon glyphicon-arrow-down"/>
+                            </a>
+                        </div>
+                    </div>
 
-      <div style="float:left;margin-top:3em;">
-        <div>
-          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm" style="margin-left:1em">
-          <a href="" class="btn btn-success" role="like">
-            <span class="glyphicon glyphicon-arrow-up"/>
-          </a> 
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
-          <a href="" class="btn btn-success" role="dislike">
-            <span class="glyphicon glyphicon-arrow-down"/>
-          </a>
-        </div>
-      </div>
+                    <div style="color:#f0f0f0;font-family:Ubuntu">
+                        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
+                             height="192em" style="float:left"/>
 
-      <div style="color:#f0f0f0;font-family:Ubuntu">
-        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-        <div style="padding-left:20em">
-          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
-          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
-        </div>
-        <p>
-          <div style="float:left;clear:left;padding-left:4.5em">
-            <h4>Posted by maxPoster93 at 21:36</h4>
-          </div>
-          <div style="float:right">
-            <h4>8987 points &nbsp;34 comments</h4>
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
+                        <div style="padding-left:20em">
+                            <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do
+                                Parlamento</h2>
 
-  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
-    <div class="container" style="padding:0px">
+                            <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco
+                                Silva para a Assembleia da República. </p>
+                        </div>
+                        <p>
 
-      <div style="float:left;margin-top:3em;">
-        <div>
-          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm" style="margin-left:1em">
-          <a href="" class="btn btn-success" role="like">
-            <span class="glyphicon glyphicon-arrow-up"/>
-          </a> 
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
-          <a href="" class="btn btn-success" role="dislike">
-            <span class="glyphicon glyphicon-arrow-down"/>
-          </a>
-        </div>
-      </div>
+                        <div style="float:left;clear:left;padding-left:4.5em">
+                            <h4>Posted by maxPoster93 at 21:36</h4>
+                        </div>
+                        <div style="float:right">
+                            <h4>8987 points &nbsp;34 comments</h4>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-      <div style="color:#f0f0f0;font-family:Ubuntu">
-        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-        <div style="padding-left:20em">
-          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
-          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
-        </div>
-        <p>
-          <div style="float:left;clear:left;padding-left:4.5em">
-            <h4>Posted by maxPoster93 at 21:36</h4>
-          </div>
-          <div style="float:right">
-            <h4>8987 points &nbsp;34 comments</h4>
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
+            <div class="jumbotron"
+                 style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+                <div class="container" style="padding:0px">
 
-  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
-    <div class="container" style="padding:0px">
+                    <div style="float:left;margin-top:3em;">
+                        <div>
+                            <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
+                                                                      src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+                        </div>
+                        <br/>
 
-      <div style="float:left;margin-top:3em;">
-        <div>
-          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm" style="margin-left:1em">
-          <a href="" class="btn btn-success" role="like">
-            <span class="glyphicon glyphicon-arrow-up"/>
-          </a> 
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
-          <a href="" class="btn btn-success" role="dislike">
-            <span class="glyphicon glyphicon-arrow-down"/>
-          </a>
-        </div>
-      </div>
+                        <div class="btn-group btn-group-sm" style="margin-left:1em">
+                            <a href="" class="btn btn-success" role="like">
+                                <span class="glyphicon glyphicon-arrow-up"/>
+                            </a>
+                        </div>
+                        <br/>
 
-      <div style="color:#f0f0f0;font-family:Ubuntu">
-        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-        <div style="padding-left:20em">
-          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
-          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
-        </div>
-        <p>
-          <div style="float:left;clear:left;padding-left:4.5em">
-            <h4>Posted by maxPoster93 at 21:36</h4>
-          </div>
-          <div style="float:right">
-            <h4>8987 points &nbsp;34 comments</h4>
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
+                        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                            <a href="" class="btn btn-success" role="dislike">
+                                <span class="glyphicon glyphicon-arrow-down"/>
+                            </a>
+                        </div>
+                    </div>
 
-  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
-    <div class="container" style="padding:0px">
+                    <div style="color:#f0f0f0;font-family:Ubuntu">
+                        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
+                             height="192em" style="float:left"/>
 
-      <div style="float:left;margin-top:3em;">
-        <div>
-          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm" style="margin-left:1em">
-          <a href="" class="btn btn-success" role="like">
-            <span class="glyphicon glyphicon-arrow-up"/>
-          </a> 
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
-          <a href="" class="btn btn-success" role="dislike">
-            <span class="glyphicon glyphicon-arrow-down"/>
-          </a>
-        </div>
-      </div>
+                        <div style="padding-left:20em">
+                            <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do
+                                Parlamento</h2>
 
-      <div style="color:#f0f0f0;font-family:Ubuntu">
-        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-        <div style="padding-left:20em">
-          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
-          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
-        </div>
-        <p>
-          <div style="float:left;clear:left;padding-left:4.5em">
-            <h4>Posted by maxPoster93 at 21:36</h4>
-          </div>
-          <div style="float:right">
-            <h4>8987 points &nbsp;34 comments</h4>
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
+                            <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco
+                                Silva para a Assembleia da República. </p>
+                        </div>
+                        <p>
 
-  <div class="jumbotron" style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
-    <div class="container" style="padding:0px">
+                        <div style="float:left;clear:left;padding-left:4.5em">
+                            <h4>Posted by maxPoster93 at 21:36</h4>
+                        </div>
+                        <div style="float:right">
+                            <h4>8987 points &nbsp;34 comments</h4>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-      <div style="float:left;margin-top:3em;">
-        <div>
-          <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em" src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm" style="margin-left:1em">
-          <a href="" class="btn btn-success" role="like">
-            <span class="glyphicon glyphicon-arrow-up"/>
-          </a> 
-        </div>
-        <br/>
-        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
-          <a href="" class="btn btn-success" role="dislike">
-            <span class="glyphicon glyphicon-arrow-down"/>
-          </a>
-        </div>
-      </div>
+            <div class="jumbotron"
+                 style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+                <div class="container" style="padding:0px">
 
-      <div style="color:#f0f0f0;font-family:Ubuntu">
-        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
-        <div style="padding-left:20em">
-          <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do Parlamento</h2>
-          <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco Silva para a Assembleia da República. </p>
-        </div>
-        <p>
-          <div style="float:left;clear:left;padding-left:4.5em">
-            <h4>Posted by maxPoster93 at 21:36</h4>
-          </div>
-          <div style="float:right">
-            <h4>8987 points &nbsp;34 comments</h4>
-          </div>
-        </p>
-      </div>
-    </div>
-  </div>
+                    <div style="float:left;margin-top:3em;">
+                        <div>
+                            <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
+                                                                      src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+                        </div>
+                        <br/>
 
-</div>
+                        <div class="btn-group btn-group-sm" style="margin-left:1em">
+                            <a href="" class="btn btn-success" role="like">
+                                <span class="glyphicon glyphicon-arrow-up"/>
+                            </a>
+                        </div>
+                        <br/>
+
+                        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                            <a href="" class="btn btn-success" role="dislike">
+                                <span class="glyphicon glyphicon-arrow-down"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="color:#f0f0f0;font-family:Ubuntu">
+                        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
+                             height="192em" style="float:left"/>
+
+                        <div style="padding-left:20em">
+                            <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do
+                                Parlamento</h2>
+
+                            <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco
+                                Silva para a Assembleia da República. </p>
+                        </div>
+                        <p>
+
+                        <div style="float:left;clear:left;padding-left:4.5em">
+                            <h4>Posted by maxPoster93 at 21:36</h4>
+                        </div>
+                        <div style="float:right">
+                            <h4>8987 points &nbsp;34 comments</h4>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jumbotron"
+                 style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+                <div class="container" style="padding:0px">
+
+                    <div style="float:left;margin-top:3em;">
+                        <div>
+                            <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
+                                                                      src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+                        </div>
+                        <br/>
+
+                        <div class="btn-group btn-group-sm" style="margin-left:1em">
+                            <a href="" class="btn btn-success" role="like">
+                                <span class="glyphicon glyphicon-arrow-up"/>
+                            </a>
+                        </div>
+                        <br/>
+
+                        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                            <a href="" class="btn btn-success" role="dislike">
+                                <span class="glyphicon glyphicon-arrow-down"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="color:#f0f0f0;font-family:Ubuntu">
+                        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
+                             height="192em" style="float:left"/>
+
+                        <div style="padding-left:20em">
+                            <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do
+                                Parlamento</h2>
+
+                            <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco
+                                Silva para a Assembleia da República. </p>
+                        </div>
+                        <p>
+
+                        <div style="float:left;clear:left;padding-left:4.5em">
+                            <h4>Posted by maxPoster93 at 21:36</h4>
+                        </div>
+                        <div style="float:right">
+                            <h4>8987 points &nbsp;34 comments</h4>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jumbotron"
+                 style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+                <div class="container" style="padding:0px">
+
+                    <div style="float:left;margin-top:3em;">
+                        <div>
+                            <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
+                                                                      src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+                        </div>
+                        <br/>
+
+                        <div class="btn-group btn-group-sm" style="margin-left:1em">
+                            <a href="" class="btn btn-success" role="like">
+                                <span class="glyphicon glyphicon-arrow-up"/>
+                            </a>
+                        </div>
+                        <br/>
+
+                        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                            <a href="" class="btn btn-success" role="dislike">
+                                <span class="glyphicon glyphicon-arrow-down"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="color:#f0f0f0;font-family:Ubuntu">
+                        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
+                             height="192em" style="float:left"/>
+
+                        <div style="padding-left:20em">
+                            <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do
+                                Parlamento</h2>
+
+                            <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco
+                                Silva para a Assembleia da República. </p>
+                        </div>
+                        <p>
+
+                        <div style="float:left;clear:left;padding-left:4.5em">
+                            <h4>Posted by maxPoster93 at 21:36</h4>
+                        </div>
+                        <div style="float:right">
+                            <h4>8987 points &nbsp;34 comments</h4>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jumbotron"
+                 style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
+                <div class="container" style="padding:0px">
+
+                    <div style="float:left;margin-top:3em;">
+                        <div>
+                            <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
+                                                                      src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+                        </div>
+                        <br/>
+
+                        <div class="btn-group btn-group-sm" style="margin-left:1em">
+                            <a href="" class="btn btn-success" role="like">
+                                <span class="glyphicon glyphicon-arrow-up"/>
+                            </a>
+                        </div>
+                        <br/>
+
+                        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                            <a href="" class="btn btn-success" role="dislike">
+                                <span class="glyphicon glyphicon-arrow-down"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="color:#f0f0f0;font-family:Ubuntu">
+                        <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
+                             height="192em" style="float:left"/>
+
+                        <div style="padding-left:20em">
+                            <h2 style="margin-top:0px">Governo insiste no aumento dos descontos para a ADSE atr do
+                                Parlamento</h2>
+
+                            <p style="font-size:1.2em"> Conselho de Ministros aprovou envio do diploma vetado por Cavaco
+                                Silva para a Assembleia da República. </p>
+                        </div>
+                        <p>
+
+                        <div style="float:left;clear:left;padding-left:4.5em">
+                            <h4>Posted by maxPoster93 at 21:36</h4>
+                        </div>
+                        <div style="float:right">
+                            <h4>8987 points &nbsp;34 comments</h4>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </body>
 </html>
