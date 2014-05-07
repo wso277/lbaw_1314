@@ -9,7 +9,7 @@
 			exit;
 		}
 
-		foreach($links as $key->$link) {
+		foreach($links as $key=>$link) {
 			$stmt = $conn->prepare("INSERT INTO Link VALUES(?,?)");
 			if (!$stmt->execute(array($link['href'],$link['homeLink']))) {
 				$conn->rollBack();
@@ -85,7 +85,8 @@
 		global $conn;
 		$conn->beginTransaction();
 		$stmt = $conn->prepare("SELECT AvaliarNoticia.avaliacao FROM AvaliarNoticia WHERE AvaliarNoticia.idNoticia = ? AND AvaliarNoticia.username = ?");
-		if (!$stmt->execute(array($contentId,$username))) {
+		if (!
+        $stmt->execute(array($contentId,$username))) {
 			$conn->rollBack();
 			exit;
 		}
@@ -136,7 +137,7 @@
 
 	function getContentById($contentId) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT * FROM Noticia WHERE Noticia.idNoticia = ?");
+		$stmt = $conn->prepare("SELECT * FROM Noticia WHERE idNoticia = ?");
 		$stmt->execute(array($contentId));
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
