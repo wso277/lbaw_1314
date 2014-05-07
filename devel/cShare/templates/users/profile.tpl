@@ -66,6 +66,13 @@
         </a>
       </div>
       {/if}
+      {if ($USERNAME == $user[0].username) || $PERMISSION == 'moderador'}
+      <div class="btn-group btn-group-sm">
+        <a class="btn btn-success" href="{$BASE_URL}pages/users/edit_profile.php?username={$user[0].username}">
+          <i class="glyphicon glyphicon-cog"></i>&nbsp;Edit
+        </a>
+      </div>
+      {/if}
     </div>
 
     <br><br><br>
