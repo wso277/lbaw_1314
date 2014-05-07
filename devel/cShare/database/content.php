@@ -134,6 +134,13 @@
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	function getContentById($contentId) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM Noticia WHERE Noticia.idNoticia = ?");
+		$stmt->execute(array($contentId));
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
 	function editComment($username,$commentId,$content) {
 		global $conn;
 		$stmt = $conn->prepare("SELECT Comentario.idComentario FROM Comentario, Noticia WHERE Comentario.username LIKE ? AND Comentario.idNoticia = Noticia.idNoticia");
@@ -152,7 +159,7 @@
 
 	function getAllContentLikes() {
 		global $conn;
-		$stmt = $conn->prepare("SELECT Noticia.idNoticia, SUM (AvaliarNoticia.avaliacao) AS Pontuacao FROM AvaliarNoticia,Noticia WHERE AvaliarNoticia.idNoticia = Noticia.idNoticia GROUP BY Noticia.idNoticia ORDER BY Pontuacao DESC");
+		$stmt = $conn->prepare("SELECT Noticia.idNoticia, SUM (AvaliarNoticia.avaliacao) AS likes FROM AvaliarNoticia,Noticia WHERE AvaliarNoticia.idNoticia = Noticia.idNoticia GROUP BY Noticia.idNoticia ORDER BY likes DESC");
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
