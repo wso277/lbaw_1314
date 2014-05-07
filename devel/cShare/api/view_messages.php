@@ -1,7 +1,7 @@
 <?php
 include_once($BASE_DIR . 'database/users.php');
 include_once('../config/init.php');
-session_start();
+
 $me = $_GET["username"];
 
 if(preg_match("/^[^;:\"]{6,15}$/", $me)

@@ -2,7 +2,6 @@
 include_once('../config/init.php');
 include_once($BASE_DIR . 'database/users.php');
 
-session_start();
 $me = $_SESSION["username"];
 $friend = $_GET["username"];
 

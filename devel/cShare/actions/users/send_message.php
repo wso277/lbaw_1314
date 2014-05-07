@@ -2,7 +2,6 @@
 include_once('../../config/init.php');
 include_once($BASE_DIR . 'database/users.php');
 
-session_start();
 $sender = $_SESSION['username'];
 $receiver = $_POST['name'];
 $subject = $_POST['subject'];

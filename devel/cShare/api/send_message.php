@@ -2,7 +2,7 @@
 
 include_once($BASE_DIR . 'database/users.php');
 include_once('../config/init.php');
-session_start();
+
 $sender = $_POST["emissor"];
 $receiver = $_POST["recetor"];
 $title = $_POST["titulo"];

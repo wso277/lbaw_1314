@@ -10,9 +10,9 @@ $news;
 $i = 0;
 
 foreach($results as $result) {
-	$temp = getContentById($results['idNoticia']);
+	$temp = getContentById($results['idnoticia']);
 	$contentClipped = substr($temp['conteudo'],0,40);
-	$news[$i] = array("id" => $results['idNoticia'], "title" => $temp['titulo'], "content" => $contentClipped, "timestamp" => $temp['data_post'], "poster" => $temp['username'], "likes" => $results['likes']);
+	$news[$i++] = array("id" => $results['idnoticia'], "title" => $temp['titulo'], "content" => $contentClipped, "timestamp" => $temp['data_post'], "poster" => $temp['username'], "likes" => $results['likes']);
 }
 
 $smarty->assign('news',$news);
