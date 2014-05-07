@@ -27,6 +27,4 @@ $friend = $_GET["username"];
 	}*/
 //}
 //else echo "INVALID USER";
-	return json_encode($result);
-
-?> 
+	echo json_encode($result);
