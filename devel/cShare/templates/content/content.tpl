@@ -43,6 +43,7 @@
             <h4>{count($comments)} comments</h4>
         </div>
 
+        {if ($USERNAME != "")}
         <form action="{$BASE_URL}actions/content/comment.php" method="post">
             <div class="row" style="text-align:right;margin-left:4em">
                 <div class="col-lg-6">
@@ -55,6 +56,7 @@
                 </div>
             </div>
         </form>
+        {/if}
         <div> {{$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]}}</div>
         <div class="comments-container">
             {foreach $comments as $comment}
