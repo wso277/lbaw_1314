@@ -45,3 +45,51 @@ function downvote(id) {
         }
     });
 }
+
+function upvoteComment(id) {
+    var rate = 1;
+    var data = "rate=" + encodeURIComponent(rate) + "&commentID=" + encodeURIComponent(id);
+
+    $.ajax({url: "../../api/rate_comment.php",
+        type: "GET",
+        data: data,
+        dataType: "json",
+        success: function (data) {
+
+            if (data.msg == true) {
+                alert("Upvote with success");
+                //location.reload();
+            }
+            else {
+                alert("Error upvoting!" + data.msg);
+            }
+        },
+        error: function (data) {
+            alert("No luck " + data.msg);
+        }
+    });
+}
+
+function downvoteComment(id) {
+    var rate = -1;
+    var data = "rate=" + encodeURIComponent(rate) + "&commentID=" + encodeURIComponent(id);
+
+    $.ajax({url: "../../api/rate_comment.php",
+        type: "GET",
+        data: data,
+        dataType: "json",
+        success: function (data) {
+
+            if (data.msg == true) {
+                alert("Upvote with success!");
+                //location.reload();
+            }
+            else {
+                alert("Error downvoting!" + data.msg);
+            }
+        },
+        error: function (data) {
+            alert("No luck " + data.msg);
+        }
+    });
+}

@@ -16,13 +16,15 @@
 
         {if (isset($USERNAME))}
             <div class="btn-group btn-group-sm" style="margin-left:0.85em">
-                <a id="up" name="{$content.id}" class="btn btn-success" role="like" onclick="upvote({$content.idnoticia})">
+                <a id="up" name="{$content.id}" class="btn btn-success" role="like"
+                   onclick="upvote({$content.idnoticia})">
                     <span class="glyphicon glyphicon-arrow-up"/>
                 </a>
             </div>
             <br>
             <div class="btn-group btn-group-sm" style="margin-left:0.85em; margin-top: 0.3em">
-                <a id="down" name="{$content.id}" class="btn btn-success" role="dislike" onclick="downvote({$content.idnoticia})">
+                <a id="down" name="{$content.id}" class="btn btn-success" role="dislike"
+                   onclick="downvote({$content.idnoticia})">
                     <span class="glyphicon glyphicon-arrow-down"/>
                 </a>
             </div>
@@ -46,8 +48,8 @@
     <div class="content-text">
         <div class="text">
             <h3>Link para a noticia: {foreach $links as $link}
-                    <ahref
-                    ="{$link.href}">{$link.homelink}</a>&nbsp;{/foreach}
+                    <a href="{$link.href}">{$link.homelink}</a>
+                    &nbsp;{/foreach}
             </h3>
             {$content.conteudo}
         </div>
@@ -91,16 +93,39 @@
                     {$comment.content}
                 </div>
                 <div class="vote-buttons">
-                    <div class="btn-group btn-group-sm">
-                        <button type="button" class="btn btn-cmt">
-                            <span class="glyphicon glyphicon-arrow-down"/>
-                        </button>
-                    </div>
-                    <div class="btn-group btn-group-sm">
-                        <button type="button" class="btn btn-cmt">
-                            <span class="glyphicon glyphicon-arrow-up"/>
-                        </button>
-                    </div>
+                    {if (isset($USERNAME))}
+                        <div class="btn-group btn-group-sm">
+                            <a id="up" name="{$comment.id}" onclick="upvoteComment({$comment.id})">
+                                <button type="button" class="btn btn-cmt">
+                                    <span class="glyphicon glyphicon-arrow-up"/>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                            <a id="down" name="{$comment.id}"
+                               onclick="downvoteComment({$comment.id})">
+                                <button type="button" class="btn btn-cmt">
+                                    <span class="glyphicon glyphicon-arrow-down"/>
+                                </button>
+                            </a>
+                        </div>
+                    {else}
+                        <div class="btn-group btn-group-sm">
+                            <a id="up" name="{$comment.id}" href="{$BASE_URL}pages/users/login.php">
+                                <button type="button" class="btn btn-cmt">
+                                    <span class="glyphicon glyphicon-arrow-up"/>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                            <a id="down" href="{$BASE_URL}pages/users/login.php" name="{$comment.id}">
+                                <button type="button" class="btn btn-cmt">
+                                    <span class="glyphicon glyphicon-arrow-down"/>
+                                </button>
+                            </a>
+                        </div>
+                    {/if}
+
                     {if $comment.username == $USERNAME || $PERMISSION == 'moderador'}
                     <a class="btn btn-primary btn-md" data-toggle="modal" data-target="#edit" data-original-title>
                         Edit

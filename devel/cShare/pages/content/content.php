@@ -12,7 +12,7 @@ $i = 0;
 
 foreach($results as $result) {
 	$temp = getCommentLikes($_GET['id'],$result['idcomentario'],$result['username']);
-	$comments[$i] = array("username" => $result['username'], "photo" => getUserPhoto($result['username']), "content" => $result['conteudo'], "likes" => $temp['sum']);
+	$comments[$i] = array("id" => $result['idcomentario'], "username" => $result['username'], "photo" => getUserPhoto($result['username']), "content" => $result['conteudo'], "likes" => $temp['sum']);
 	$comments[$i]['content'] = str_replace("\n", "<br>", $comments[$i]['content']);
 	$i++;
 }
