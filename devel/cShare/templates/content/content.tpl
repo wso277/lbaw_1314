@@ -2,7 +2,7 @@
 
 <body>
     <link href="{$BASE_URL}css/content.css" rel="stylesheet">
-
+    <script type="text/javascript" src="{$BASE_URL}javascript/rating.js"></script>
     {include file="common/nav.tpl"}
 
     <!--webcontent-->
@@ -14,23 +14,40 @@
         <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
         <br>
 
-        <div class="btn-group btn-group-sm" style="margin-left:0.85em">
-            <a href="#" class="btn btn-primary" role="like">
-                <span class="glyphicon glyphicon-arrow-up"/>
-            </a>
-        </div>
-        <br>
-
-        <div class="btn-group btn-group-sm" style="margin-left:0.85em; margin-top: 0.3em">
-            <a href="#" class="btn btn-primary" role="dislike">
-                <span class="glyphicon glyphicon-arrow-down"/>
-            </a>
-        </div>
+        {if (isset($USERNAME))}
+            <div class="btn-group btn-group-sm" style="margin-left:0.85em">
+                <a id="up" name="{$content.id}" class="btn btn-success" role="like" onclick="upvote({$content.idnoticia})">
+                    <span class="glyphicon glyphicon-arrow-up"/>
+                </a>
+            </div>
+            <br>
+            <div class="btn-group btn-group-sm" style="margin-left:0.85em; margin-top: 0.3em">
+                <a id="down" name="{$content.id}" class="btn btn-success" role="dislike" onclick="downvote({$content.idnoticia})">
+                    <span class="glyphicon glyphicon-arrow-down"/>
+                </a>
+            </div>
+        {else}
+            <div class="btn-group btn-group-sm" style="margin-left:0.85em">
+                <a id="up" name="{$content.id}" href="{$BASE_URL}pages/users/login.php"
+                   class="btn btn-success" role="like">
+                    <span class="glyphicon glyphicon-arrow-up"/>
+                </a>
+            </div>
+            <br>
+            <div class="btn-group btn-group-sm" style="margin-left:0.85em; margin-top: 0.3em">
+                <a id="down" href="{$BASE_URL}pages/users/login.php" name="{$content.id}"
+                   class="btn btn-success" role="dislike">
+                    <span class="glyphicon glyphicon-arrow-down"/>
+                </a>
+            </div>
+        {/if}
     </div>
 
     <div class="content-text">
         <div class="text">
-            <h3>Link para a noticia: {foreach $links as $link}<ahref="{$link.href}">{$link.homelink}</a>&nbsp;{/foreach}
+            <h3>Link para a noticia: {foreach $links as $link}
+                    <ahref
+                    ="{$link.href}">{$link.homelink}</a>&nbsp;{/foreach}
             </h3>
             {$content.conteudo}
         </div>
@@ -44,18 +61,19 @@
         </div>
 
         {if ($USERNAME != "")}
-        <form action="{$BASE_URL}actions/content/comment.php" method="post">
-            <div class="row" style="text-align:right;margin-left:4em">
-                <div class="col-lg-6">
-                    <!--<img class="avatar-image" src="../img/facebook-icon-sm.png" style=";float:left"/>-->
-                    <textarea class="form-control" name="comment" style="resize: none" placeholder="Leave a comment..."
-                              rows="4"></textarea>
-                    <input type="hidden" name="id" value="{$content.idnoticia}"/>
-                    <input type="hidden" name="username" value="{$USERNAME}"/>
-                    <input type="submit" value="comment" class="btn btn-success" style="margin-top:0.2em"/>
+            <form action="{$BASE_URL}actions/content/comment.php" method="post">
+                <div class="row" style="text-align:right;margin-left:4em">
+                    <div class="col-lg-6">
+                        <!--<img class="avatar-image" src="../img/facebook-icon-sm.png" style=";float:left"/>-->
+                        <textarea class="form-control" name="comment" style="resize: none"
+                                  placeholder="Leave a comment..."
+                                  rows="4"></textarea>
+                        <input type="hidden" name="id" value="{$content.idnoticia}"/>
+                        <input type="hidden" name="username" value="{$USERNAME}"/>
+                        <input type="submit" value="comment" class="btn btn-success" style="margin-top:0.2em"/>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
         {/if}
         <div> {{$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]}}</div>
         <div class="comments-container">

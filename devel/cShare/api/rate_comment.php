@@ -6,6 +6,9 @@ $rate = $_GET['rate'];
 $commentId = $_GET['commentID'];
 $result;
 
-$result['msg'] = rateComment($commentId,$rate,$USERNAME);
+if ($rate == 1 || $rate == -1) {
+    $result['msg'] = rateComment($commentId, $rate, $_SESSION['username']);
+}
+
 
 echo json_encode($result);

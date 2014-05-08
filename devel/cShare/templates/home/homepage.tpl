@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>cShare</title>
+{include file="common/header.tpl"}
 
-        <!-- Bootstrap -->
-        <link href="{$BASE_URL}css/bootstrap.css" rel="stylesheet">
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="{$BASE_URL}javascript/jQuery.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="{$BASE_URL}javascript/bootstrap.min.js"></script>
+<body>
+    <script type="text/javascript" src="{$BASE_URL}javascript/rating.js"></script>
+    {include file="common/nav.tpl"}
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="{$BASE_URL}javascript/html5shiv.js"></script>
-        <script src="{$BASE_URL}javascript/respond.js"></script>
-        <![endif]-->
-    </head>
+    <div class="container">
 
-    <body>
-
-        {include file="common/nav.tpl"}
-
-        <div class="container">
-
-          {foreach $news as $new}
+        {foreach $news as $new}
             <div class="jumbotron"
                  style="border-radius:0px;padding-left:0px;padding-bottom:0px;padding-right:2em;margin-left:0px;margin-bottom:0.5em;background-color:#222222">
                 <div class="container" style="padding:0px">
@@ -39,18 +18,34 @@
                         </div>
                         <br/>
 
-                        <div class="btn-group btn-group-sm" style="margin-left:1em">
-                            <a href="" class="btn btn-success" role="like">
-                                <span class="glyphicon glyphicon-arrow-up"/>
-                            </a>
-                        </div>
-                        <br/>
+                        {if (isset($USERNAME))}
+                            <div class="btn-group btn-group-sm" style="margin-left:1em">
+                                <a id="up" name="{$new.id}" class="btn btn-success" role="like" onclick="upvote({$new.id})">
+                                    <span class="glyphicon glyphicon-arrow-up"/>
+                                </a>
+                            </div>
+                            <br/>
+                            <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                                <a id="down" name="{$new.id}" class="btn btn-success" role="dislike" onclick="downvote({$new.id})">
+                                    <span class="glyphicon glyphicon-arrow-down"/>
+                                </a>
+                            </div>
+                        {else}
+                            <div class="btn-group btn-group-sm" style="margin-left:1em">
+                                <a id="up" name="{$new.id}" href="{$BASE_URL}pages/users/login.php"
+                                   class="btn btn-success" role="like">
+                                    <span class="glyphicon glyphicon-arrow-up"/>
+                                </a>
+                            </div>
+                            <br/>
+                            <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
+                                <a id="down" href="{$BASE_URL}pages/users/login.php" name="{$new.id}"
+                                   class="btn btn-success" role="dislike">
+                                    <span class="glyphicon glyphicon-arrow-down"/>
+                                </a>
+                            </div>
+                        {/if}
 
-                        <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
-                            <a href="" class="btn btn-success" role="dislike">
-                                <span class="glyphicon glyphicon-arrow-down"/>
-                            </a>
-                        </div>
                     </div>
 
                     <div style="color:#f0f0f0;font-family:Ubuntu">
@@ -58,25 +53,28 @@
                              height="192em" style="float:left"/>
 
                         <div style="padding-left:20em">
-                            <h2 style="margin-top:0px"><a href="{$BASE_URL}pages/content/content.php?id={$new.id}" style="text-decoration:none">{$new.title}</a></h2>
+                            <h2 style="margin-top:0px"><a href="{$BASE_URL}pages/content/content.php?id={$new.id}"
+                                                          style="text-decoration:none">{$new.title}</a></h2>
 
                             <p style="font-size:1.2em">{$new.content}...</p>
                         </div>
                         <p>
 
                         <div style="float:left;clear:left;padding-left:4.5em">
-                            <h4>Posted by <a href="{$BASE_URL}pages/users/profile.php?username={$new.poster}" style="text-decoration:none">{$new.poster}</a> at {$new.timestamp}</h4>
+                            <h4>Posted by <a href="{$BASE_URL}pages/users/profile.php?username={$new.poster}"
+                                             style="text-decoration:none">{$new.poster}</a> at {$new.timestamp}</h4>
                         </div>
                         <div style="float:right">
-                            <h4>{$new.likes} {if $new.likes > 1 || $new.likes != -1}points{else}point{/if} &nbsp;{$new.ncomments} {if $new.ncomments > 1}comments{else}comment{/if}</h4>
+                            <h4>{$new.likes} {if $new.likes > 1 || $new.likes != -1}points{else}point{/if}
+                                &nbsp;{$new.ncomments} {if $new.ncomments > 1}comments{else}comment{/if}</h4>
                         </div>
                         </p>
                     </div>
                 </div>
             </div>
-          {/foreach}
+        {/foreach}
 
-        </div>
+    </div>
 
-    </body>
+</body>
 </html>
