@@ -16,13 +16,18 @@ body {
 }
 
 .webview {
-	width: 75%;
-	height: 75%;
+	width: 126em;
+    margin: 0em auto;
+    padding: 0px;
+    height: 100%;
 }
 
 .webview-div {
-	width: 100%;
-	height: 75%;
+	width: 125em;
+    margin: 3.6em auto;
+    padding: 0px;
+    height: 100%;
+    overflow: hidden;
 }
 
 .content-text {
@@ -65,4 +70,17 @@ body {
   color: #666;
   background-color: #e6e6e6;
   border-color: #e6e6e6;
+}
+
+html, body, iframe {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    margin: 2em auto;
 }
