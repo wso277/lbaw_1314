@@ -17,6 +17,13 @@ function getUserByUsername($username)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getuserPhoto($username) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT fotografia FROM Editor WHERE username LIKE ?");
+    $stmt->execute(array($username));
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 function getUserByLocal($local) {
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM Editor WHERE localidade LIKE ?");

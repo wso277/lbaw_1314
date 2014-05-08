@@ -74,6 +74,20 @@
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
+	function getCommentLikes($contentId,$commentId,$username) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT SUM (AvaliarComentario.avaliacao) FROM AvaliarComentario,Comentario,Noticia WHERE AvaliarComentario.idComentario = Comentario.idComentario AND Comentario.idNoticia = Noticia.idNoticia AND Comentario.username = AvaliarComentario.username AND Comentario.idNoticia = ? AND Comentario.idComentario = ? AND Comentario.username LIKE ?");
+		$stmt->execute(array($contentId,$commentId,$username));		
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+	function getCommentsByContentId($contentId) {
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM Comentario WHERE idNoticia = ?");
+		$stmt->execute(array($contentId));
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 	function getUserContent($username) {
 		global $conn;
 		$stmt = $conn->prepare("SELECT Noticia.titulo, Noticia.conteudo FROM Noticia,Editor WHERE Noticia.username = Editor.username AND Editor.username LIKE ?");
@@ -167,7 +181,7 @@
 
 	function getContentLinks($contentId) {
 		global $conn;
-		$stmt = $conn->prepare("SELECT Noticia.idNoticia, Link.homeLink FROM Noticia,Link,LinkNoticia WHERE Noticia.idNoticia = LinkNoticia.idNoticia AND LinkNoticia.href = Link.href AND Noticia.idNoticia = ?");
+		$stmt = $conn->prepare("SELECT Noticia.idNoticia, Link.href,Link.homeLink FROM Noticia,Link,LinkNoticia WHERE Noticia.idNoticia = LinkNoticia.idNoticia AND LinkNoticia.href = Link.href AND Noticia.idNoticia = ?");
 		$stmt->execute(array($contentId));
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}

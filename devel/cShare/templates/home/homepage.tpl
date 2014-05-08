@@ -58,17 +58,17 @@
                              height="192em" style="float:left"/>
 
                         <div style="padding-left:20em">
-                            <h2 style="margin-top:0px">{$new.title}</h2>
+                            <h2 style="margin-top:0px"><a href="{$BASE_URL}pages/content/content.php?id={$new.id}" style="text-decoration:none">{$new.title}</a></h2>
 
-                            <p style="font-size:1.2em">{$new.content} </p>
+                            <p style="font-size:1.2em">{$new.content}...</p>
                         </div>
                         <p>
 
                         <div style="float:left;clear:left;padding-left:4.5em">
-                            <h4>Posted by {$new.poster} at {$new.timestamp}</h4>
+                            <h4>Posted by <a href="{$BASE_URL}pages/users/profile.php?username={$new.poster}" style="text-decoration:none">{$new.poster}</a> at {$new.timestamp}</h4>
                         </div>
                         <div style="float:right">
-                            <h4>{$new.likes} points &nbsp;34 comments</h4>
+                            <h4>{$new.likes} {if $new.likes > 1 || $new.likes != -1}points{else}point{/if} &nbsp;{$new.ncomments} {if $new.ncomments > 1}comments{else}comment{/if}</h4>
                         </div>
                         </p>
                     </div>
