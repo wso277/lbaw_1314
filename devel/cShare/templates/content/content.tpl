@@ -43,16 +43,19 @@
             <h4>{count($comments)} comments</h4>
         </div>
 
-        <form action="{$BASE_URL}ations/content/comment.php" method="post">
+        <form action="{$BASE_URL}actions/content/comment.php" method="post">
             <div class="row" style="text-align:right;margin-left:4em">
                 <div class="col-lg-6">
                     <!--<img class="avatar-image" src="../img/facebook-icon-sm.png" style=";float:left"/>-->
-                    <textarea class="form-control" style="resize: none" placeholder="Leave a comment..."
+                    <textarea class="form-control" name="comment" style="resize: none" placeholder="Leave a comment..."
                               rows="4"></textarea>
+                    <input type="hidden" name="id" value="{$content.idnoticia}"/>
+                    <input type="hidden" name="username" value="{$USERNAME}"/>
+                    <input type="submit" value="comment" class="btn btn-success" style="margin-top:0.2em"/>
                 </div>
             </div>
         </form>
-
+        <div> {{$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]}}</div>
         <div class="comments-container">
             {foreach $comments as $comment}
             <div class="comment text">
