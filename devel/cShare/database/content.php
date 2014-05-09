@@ -171,18 +171,21 @@ function getContentById($contentId)
 function editComment($username, $commentId, $content)
 {
     global $conn;
-    $stmt = $conn->prepare("SELECT Comentario.idComentario FROM Comentario, Noticia WHERE Comentario.username LIKE ? AND Comentario.idNoticia = Noticia.idNoticia");
-    if (!$stmt->execute(array($username))) {
+    $conn->beginTransaction();
+    $stmt = $conn->prepare("SELECT Comentario.idComentario FROM Comentario, Noticia WHERE Comentario.username LIKE ? AND Comentario.idComentario = ? AND Comentario.idNoticia = Noticia.idNoticia");
+    $stmt->execute(array($username,$commentId));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result == NULL || !$result) {
         $conn->rollBack();
         exit;
+    } else {
+        $stmt = $conn->prepare("UPDATE Comentario SET conteudo = ? WHERE idComentario = ? AND username LIKE ?");
+        if (!$stmt->execute(array($content, $commentId,$username))) {
+            $conn->rollBack();
+            exit;
+        }
     }
-
-    $stmt = $conn->prepare("UPDATE Comentario SET conteudo = ? WHERE idComentario = ?");
-    if (!$stmt->execute(array($content, $commentId))) {
-        $conn->rollBack();
-        exit;
-    }
-    return $stmt->commit();
+    return $conn->commit();
 }
 
 function getAllContentLikes()
@@ -255,7 +258,7 @@ function editContent($contentId, $title, $content, $deletedLinks, $addedLinks)
         }
     }
 
-    return $stmt->commit();
+    return $conn->commit();
 }
 
 ?>

@@ -127,11 +127,11 @@
                     {/if}
 
                     {if $comment.username == $USERNAME || $PERMISSION == 'moderador'}
-                    <a class="btn btn-primary btn-md" data-toggle="modal" data-target="#edit" data-original-title>
+                    <a class="btn btn-primary btn-md" data-toggle="modal" data-target="#edit{$comment.cont}" data-original-title>
                         Edit
                     </a>
 
-                    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="contactLabel"
+                    <div class="modal fade" id="edit{$comment.cont}" tabindex="-1" role="dialog" aria-labelledby="contactLabel"
                          aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="panel panel-primary" style="border-color:#428bca">
@@ -141,18 +141,22 @@
                                     <h4 class="panel-title" id="contactLabel"><span
                                                 class="glyphicon glyphicon-wrench"></span> Edit comment</h4>
                                 </div>
-                                <form action="#" method="post" accept-charset="utf-8">
+                                <form action="{$BASE_URL}actions/content/edit_comment.php" method="post" accept-charset="utf-8">
                                     <div class="modal-body" style="padding: 5px;">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
                                                 <textarea style="resize:vertical;" class="form-control"
-                                                          placeholder="New Comment..." rows="6" name="comment"
+                                                          placeholder="New Comment..." rows="6" name="new_comment"
                                                           required></textarea>
+                                                <input type="hidden" value="{$content.idnoticia}" name="contentId"/>
+                                                <input type="hidden" value="{$comment.id}" name="commentId"/>
+                                                <input type="hidden" value="{$comment.username}" name="comment_username"/>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="panel-footer" style="margin-bottom:-14px;">
                                         <input type="submit" class="btn btn-success" value="Send"/>
+                                        </form>
                                         <input type="reset" class="btn btn-danger" value="Clear"/>
                                         <button style="float: right;" type="button" class="btn btn-primary btn-close"
                                                 data-dismiss="modal">Close
