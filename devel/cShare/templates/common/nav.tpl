@@ -37,21 +37,20 @@
                         <input name="search" type="text" class="form-control" placeholder="Search" style="width:200%">
                     </div>
                 </form>
+                <ul class="nav navbar-nav navbar-right">
+                    </li>
                 {if ($USERNAME != "")}
-                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{$BASE_URL}pages/content/publish.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
                         <li><a href="{$BASE_URL}actions/users/logout.php"><span class="glyphicon glyphicon-log-in"/>&nbsp;Logout</a>
                         </li>
-                    </ul>
                 {else}
-                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{$BASE_URL}pages/users/login.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
                         <li><a href="{$BASE_URL}pages/users/login.php"><span class="glyphicon glyphicon-log-in"/>&nbsp;Login</a>
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="{$BASE_URL}pages/users/register.php"><span class="glyphicon glyphicon-check"/>&nbsp;Register</a>
                         </li>
-                    </ul>
                 {/if}
+                </ul>
 
             </div>
         </div>
