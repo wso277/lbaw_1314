@@ -3,17 +3,17 @@
 }
 
 .placer {
-	float: left;
-	margin-left: 2em;
+    float: left;
+    margin-left: 2em;
 }
 
 .link-box {
-	width:130%;
+    width: 100%;
 }
 
 .link-form {
-	float:left;
-	margin-left:1em;
-	margin-top:0.5em;
-	width:32%
+    float: right;
+    margin-left: 1em;
+    margin-top: 0.5em;
+    width: 32%
 }
