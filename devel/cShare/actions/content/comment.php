@@ -15,8 +15,13 @@ if (!isset($contentId) || !isset($username)
     exit;
 }
 
-$result = comment($contentId,$username,$comment);
-
+try{
+	$result = comment($contentId,$username,$comment);
+}catch(PDOException $ex){
+	$_SESSION['error_messages'][] = 'Error commenting: ' . $ex->getMessage();
+	$_SESSION['form_values'] = $_POST;
+    header("Location: " . $BASE_URL . 'pages/content/content.php?id=' . $contentId);
+}
 if ($result != false) {
     $_SESSION['success_messages'][] = 'Comment successful';
     header('Location: ' . $BASE_URL . 'pages/content/content.php?id=' . $contentId);

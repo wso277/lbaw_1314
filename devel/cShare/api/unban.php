@@ -6,7 +6,11 @@ $user = $_GET['username'];
 $result;
 if ($_SESSION['tipo'] == 'moderador') {
     /*echo '"{msg:' . promoteUser($user) . '}"';*/
-    $result['msg'] = unbanUser($user);
+	try{
+		$result['msg'] = unbanUser($user);
+	}catch(PDOException $ex){
+		$result['msg'] = 'Error unbaning user!'. $ex->getMessage();
+	}
     echo json_encode($result);
     exit;
 }

@@ -23,8 +23,14 @@ if (!isset($sender) || !isset($receiver) || !isset($subject)
     exit;
 }
 
-$result = sendMessage($sender, $receiver, $subject, $message);
-
+try{
+	$result = sendMessage($sender, $receiver, $subject, $message);
+}catch(PDOException $ex){
+	$_SESSION['error_messages'][] = 'Error sending message: ' . $ex->getMessage();
+	$_SESSION['form_values'] = $_POST;
+	header("Location: $BASE_URL" . 'pages/users/send_message.php?sender='.$sender.'&receiver='.$_POST['name']);
+	exit;
+}
 if ($result != false) {
     $_SESSION['success_messages'][] = 'Message successfully sent';
     header('Location: ' . $BASE_URL . 'pages/users/profile.php?username='.$sender);

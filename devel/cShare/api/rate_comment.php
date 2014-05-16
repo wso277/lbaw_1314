@@ -7,7 +7,11 @@ $commentId = $_GET['commentID'];
 $result;
 
 if ($rate == 1 || $rate == -1) {
-    $result['msg'] = rateComment($commentId, $rate, $_SESSION['username']);
+	try{
+		$result['msg'] = rateComment($commentId, $rate, $_SESSION['username']);
+	}catch(PDOException $ex){
+		$result['msg'] = 'Error rating comment!' . $ex->getMessage();
+	}
 }
 
 

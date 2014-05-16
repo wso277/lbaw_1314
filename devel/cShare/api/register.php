@@ -8,15 +8,19 @@ $location = $_POST['location'];
 $pass = $_POST['pass'];
 $email = $_POST['email'];
 $job = $_POST['job'];
-
+$res;
 if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
     if (preg_match("/^[^;:\"]{8,}$/", $pass)) {
         if (preg_match("/^[a-zA-Z ]+$/", $name)) {
             if (preg_match("/^[a-zA-Z ]+$/", $location)) {
                 if (preg_match("/^[a-zA-Z ]+$/", $job)) {
                     if (preg_match("/^[^@]+@[^@]+.[a-zA-Z]{2,6}$/", $email)) {
-                        $result = createUser($name, $user, $location, $job, $email, $pass);
-
+						try{
+							$result = createUser($name, $user, $location, $job, $email, $pass);
+						}catch(PDOException $ex){
+							$res['msg'] = 'Error registering user!' . $ex->getMessage();
+							echo json_encode($res);
+						}
                         if ($result != false) {
                             echo json_encode("success");
                         }

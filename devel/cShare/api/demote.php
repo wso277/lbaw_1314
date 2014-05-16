@@ -6,8 +6,11 @@ $user = $_GET['username'];
 $result;
 if ($_SESSION['tipo'] == 'moderador') {
     /*echo '"{msg:' . promoteUser($user) . '}"';*/
-    $result['msg'] = demoteUser($user);
-
+	try{
+		$result['msg'] = demoteUser($user);
+	}catch(PDOExecption $ex){
+		$result['msg'] = 'Error demoting user!' . $ex->getMessage();
+	}
     echo json_encode($result);
 
     exit;

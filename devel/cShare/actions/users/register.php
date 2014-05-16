@@ -36,8 +36,14 @@ if(strcmp($pass,$pass_conf) != 0) {
     exit;
 }
 
-$result = createUser($name, $user, $location, $work, $email, $pass, $pic);
-
+try{
+	$result = createUser($name, $user, $location, $work, $email, $pass, $pic);
+}catch(PDOException $ex) {
+	$_SESSION['error_messages'][] = 'Error registering: ' . $ex->getMessage();
+	$_SESSION['form_values'] = $_POST;
+    header("Location: $BASE_URL" . 'pages/users/register.php');
+	exit;
+}
 if ($result != false) {
     $_SESSION['success_messages'][] = 'User registered successfully';
     header('Location: ' . $BASE_URL . 'pages/users/login.php');
