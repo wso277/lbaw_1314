@@ -10,21 +10,28 @@ $message = $_POST['message'];
 $i = 1;
 $links;
 
-while(true) {
-	$name = 'link'.$i;
-	$links[$i-1] = $_POST[$name];
+while (true) {
+    $name = 'link' . $i;
+    $temp = $_POST[$name];
+    if ($temp == null) {
+        break;
+    } else {
+        $links[$i - 1] = array("href" => $temp, "homeLink" => parse_url($temp)['host']);
+        $i++;
+    }
 }
 
 
 if (!isset($username) || !isset($title)
-    || !isset($photo) || !isset($message)) {
+    || !isset($photo) || !isset($message)
+) {
     $_SESSION['error_messages'][] = 'All fields are mandatory';
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL" . 'pages/content/publish.php');
     exit;
 }
 
-$result = publish($username,$title,$message,$links);
+$result = publish($username, $title, $message, $links);
 
 if ($result != false) {
     $_SESSION['success_messages'][] = 'Successfully published!';
