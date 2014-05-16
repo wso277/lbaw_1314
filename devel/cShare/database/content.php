@@ -5,7 +5,9 @@ function publish($username, $title, $body, $links)
     global $conn;
     $conn->beginTransaction();
     $stmt = $conn->prepare("INSERT INTO Noticia VALUES(DEFAULT,?,?,?,?)");
-    if (!$stmt->execute(array($body, $title, date('Y-m-d'), $username))) {
+    $res = $stmt->execute(array($body, $title, date('Y-m-d'), $username));
+    $id = $conn->lastInsertId('noticia_idnoticia_seq');
+    if (!$res) {
         $conn->rollBack();
         exit;
     }
@@ -16,13 +18,31 @@ function publish($username, $title, $body, $links)
             $conn->rollBack();
             exit;
         }
+
+        $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
+        if (!$stmt->execute(array($id, $link['href']))) {
+            $conn->rollBack();
+            exit;
+        }
     }
 
-    $stmt = $conn->prepare("INSERT INTO Noticia VALUES(DEFAULT,?,?,?,?)");
-    if (!$stmt->execute(array($body, $title, date('Y-m-d'), $username))) {
-        $conn->rollBack();
-        exit;
+    $stmt = $conn->prepare("SELECT AvaliarNoticia.avaliacao FROM AvaliarNoticia WHERE AvaliarNoticia.idNoticia = ? AND AvaliarNoticia.username = ?");
+    $stmt->execute(array($id, $username));
+    $res = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$res || $res == null) {
+        $stmt = $conn->prepare("INSERT INTO AvaliarNoticia VALUES (DEFAULT, ?, ?, ?)");
+        if (!$stmt->execute(array($username, $id, 1))) {
+            $conn->rollBack();
+            exit;
+        }
+    } else {
+        $stmt = $conn->prepare("UPDATE AvaliarNoticia SET avaliacao = ? WHERE AvaliarNoticia.idNoticia = ? AND AvaliarNoticia.username = ?");
+        if (!$stmt->execute(array(1, $id, $username))) {
+            $conn->rollBack();
+            exit;
+        }
     }
+
     return $conn->commit();
 }
 
@@ -173,14 +193,14 @@ function editComment($username, $commentId, $content)
     global $conn;
     $conn->beginTransaction();
     $stmt = $conn->prepare("SELECT Comentario.idComentario FROM Comentario, Noticia WHERE Comentario.username LIKE ? AND Comentario.idComentario = ? AND Comentario.idNoticia = Noticia.idNoticia");
-    $stmt->execute(array($username,$commentId));
+    $stmt->execute(array($username, $commentId));
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($result == NULL || !$result) {
         $conn->rollBack();
         exit;
     } else {
         $stmt = $conn->prepare("UPDATE Comentario SET conteudo = ? WHERE idComentario = ? AND username LIKE ?");
-        if (!$stmt->execute(array($content, $commentId,$username))) {
+        if (!$stmt->execute(array($content, $commentId, $username))) {
             $conn->rollBack();
             exit;
         }

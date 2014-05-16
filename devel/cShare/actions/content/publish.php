@@ -16,7 +16,8 @@ while (true) {
     if ($temp == null) {
         break;
     } else {
-        $links[$i - 1] = array("href" => $temp, "homeLink" => parse_url($temp)['host']);
+        $tmp = parse_url($temp);
+        $links[$i - 1] = array("href" => $temp, "homeLink" => $tmp['host']);
         $i++;
     }
 }
