@@ -13,15 +13,18 @@ if (!preg_match("/^[^;:\"]{6,15}$/", $_POST['username']) || !preg_match("/^[^;:\
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+try{
 $result = login($username, $password);
+}catch(PDOException $ex){
+	$_SESSION['error_messages'][] = 'Error logging in: ' . $ex->getMessage();
+	 header('Location: '. $BASE_URL .'pages/users/login.php');
+	 exit;
+}
 if ($result != false && $result[estado_user] == 'normal') {
     $_SESSION['username'] = $username;
     $_SESSION['success_messages'][] = 'Login successful';
     $_SESSION['tipo'] = $result['tipo_user'];
     $_SESSION['estado'] = $result['estado_user'];
     header('Location: '. $BASE_URL .'pages/homepage/home.php');
-} else {
-    $_SESSION['error_messages'][] = 'Login failed';
-    header('Location: '. $BASE_URL .'pages/users/login.php');
 }
 ?>

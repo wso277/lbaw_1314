@@ -15,9 +15,13 @@ if (!isset($commentId) || !isset($username)
     header("Location: $BASE_URL" . 'pages/content/content.php?id=' . $contentId);
     exit;
 }
-
-$result = editComment($username,$commentId,$comment);
-
+try{
+	$result = editComment($username,$commentId,$comment);
+}catch(PDOException $ex){
+	$_SESSION['error_messages'][] = 'Error editing comment: ' . $ex->getMessage();
+	$_SESSION['form_values'] = $_POST;
+    header("Location: " . $BASE_URL . 'pages/content/content.php?id=' . $contentId);
+}
 if ($result != false) {
     $_SESSION['success_messages'][] = 'Edit Comment successful';
     header('Location: ' . $BASE_URL . 'pages/content/content.php?id=' . $contentId);

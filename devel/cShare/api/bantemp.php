@@ -6,8 +6,12 @@ $user = $_GET['username'];
 $result;
 if ($_SESSION['tipo'] == 'moderador') {
     /*echo '"{msg:' . promoteUser($user) . '}"';*/
-    $result['msg'] = banUserTemp($user);
-    echo json_encode($result);
+	try{
+		$result['msg'] = banUserTemp($user);
+    }catch(PDOException $ex){
+		$result['msg'] = 'Error banning temporarily user!' . $ex->getMessage();
+	}
+	echo json_encode($result);
     exit;
 }
 

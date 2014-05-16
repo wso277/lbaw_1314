@@ -64,9 +64,14 @@ if ($_POST['culture']) {
     $inter[$i++] = 'culture';
 }
 
-
-$result = editUser($user, $location, $work, $inter, $email, $name, $pic);
-
+try{
+	$result = editUser($user, $location, $work, $inter, $email, $name, $pic);
+}catch(PDOException $ex){
+	$_SESSION['error_messages'][] = 'Error editing profile: ' . $ex->getMessage();
+	$_SESSION['form_values'] = $_POST;
+	header("Location: $BASE_URL" . 'pages/users/edit_profile.php');
+	exit;
+}
 if ($result != false) {
     $_SESSION['success_messages'][] = 'User edited successfully';
     header('Location: ' . $BASE_URL . 'pages/users/profile.php?username=' . $user);

@@ -5,7 +5,12 @@ include_once($BASE_DIR . 'database/users.php');
 $id = $_GET['id'];
 
 if (is_numeric($id)) {
-    $result = deleteMessage($id);
+	try{
+		$result = deleteMessage($id);
+	}catch(PDOException $ex){
+		$_SESSION['error_messages'][] = 'Error deleting message: ' . $ex->getMessage();
+		exit;
+	}
     if (!$result) {
     }
 

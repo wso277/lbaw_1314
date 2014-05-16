@@ -14,7 +14,13 @@ if(preg_match("/^[^;:\"]{6,15}$/", $sender) && preg_match("/^[^;:\"]{6,15}$/", $
 	else
 	{
 		if(strlen($content) > 140) echo "TOO LONG MESSAGE";
-		else sendMessage($sender, $receiver, $title, $content);
+		else {
+			try{
+				sendMessage($sender, $receiver, $title, $content);
+			}catch(PDOException $ex){
+				
+			}
+		}
 	}
 }
 else echo "INVALID USER";

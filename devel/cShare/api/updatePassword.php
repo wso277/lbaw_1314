@@ -7,13 +7,15 @@ $pass = $_POST['pass'];
 
 if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
     if (preg_match("/^[^;:\"]{8,}$/", $pass)) {
-        $result = updatePassword($user, $pass);
-
+	
+		try{
+			$result = updatePassword($user, $pass);
+		catch(PDOException $ex){
+			echo "Error updating password!". $ex->getMessage();
+		}
         if ($result != false) {
             echo "SUCCESS!";
-        } else {
-            echo "User is banned!";
-        }
+        } 
     } else {
         echo "Invalid Password!";
     }

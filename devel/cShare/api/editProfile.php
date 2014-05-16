@@ -8,14 +8,18 @@ $location = $_POST['location'];
 $email = $_POST['email'];
 $job = $_POST['job'];
 $favs = $_POST['favs'];
-
+$res;
 if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
     if (preg_match("/^[a-zA-Z ]+$/", $name)) {
         if (preg_match("/^[a-zA-Z ]+$/", $location)) {
             if (preg_match("/^[a-zA-Z ]+$/", $job)) {
                 if (preg_match("/^[^@]+@[^@]+.[a-zA-Z]{2,6}$/", $email)) {
-                    $result = editUser($user, $location, $job, $favs, $email, $name);
-
+					try{
+						$result = editUser($user, $location, $job, $favs, $email, $name);
+					}catch(PDOException $ex){
+						$res['msg'] = 'Error editing profile!' . $ex->getMessage();
+						echo json_encode($res);
+					}
                     if ($result != false) {
                         echo "Success!";
                     } else {

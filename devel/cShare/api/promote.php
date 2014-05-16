@@ -6,7 +6,11 @@ $user = $_GET['username'];
 $result;
 if ($_SESSION['tipo'] == 'moderador') {
     /*echo '"{msg:' . promoteUser($user) . '}"';*/
-    $result['msg'] = promoteUser($user);
+	try{
+		$result['msg'] = promoteUser($user);
+	}catch(PDOException $ex){
+		$result['msg'] = 'Error promoting user!' . $ex->getMessage();
+	}
         echo json_encode($result);
     exit;
 }

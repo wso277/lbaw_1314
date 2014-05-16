@@ -24,8 +24,13 @@ if (!isset($username) || !isset($title)
     exit;
 }
 
-$result = publish($username,$title,$message,$links);
-
+try{
+	$result = publish($username,$title,$message,$links);
+}catch(PDOException $ex){
+	$_SESSION['error_messages'][] = 'Error publishing: ' . $ex->getMessage();
+	$_SESSION['form_values'] = $_POST;
+    header("Location: " . $BASE_URL . 'pages/content/content.php');
+}
 if ($result != false) {
     $_SESSION['success_messages'][] = 'Successfully published!';
     header('Location: ' . $BASE_URL . 'pages/homepage/home.php?');
