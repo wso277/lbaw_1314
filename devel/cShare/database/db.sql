@@ -165,9 +165,9 @@ BEGIN
   SET likes = (SELECT
                  SUM(avaliacao)
                FROM AvaliarNoticia
-               WHERE idNoticia = OLD.idNoticia)
-  WHERE idNoticia = OLD.idNoticia;
-  RETURN OLD;
+               WHERE idNoticia = NEW.idNoticia)
+  WHERE idNoticia = NEW.idNoticia;
+  RETURN NEW;
 END;
 $updateLikes$ LANGUAGE plpgsql;
 
