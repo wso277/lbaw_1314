@@ -13,16 +13,26 @@ function publish($username, $title, $body, $links)
     }
 
     foreach ($links as $key => $link) {
-        $stmt = $conn->prepare("INSERT INTO Link VALUES(?,?)");
-        if (!$stmt->execute(array($link['href'], $link['homeLink']))) {
-            $conn->rollBack();
-            exit;
-        }
+        $stmt = $conn->prepare("SELECT FROM Link WHERE href = ?");
+        $stmt->execute(array($link['href']));
+        if ($stmt->fetch(PDO::FETCH_ASSOC) != NULL) {
+            $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
+            if (!$stmt->execute(array($id, $link['href']))) {
+                $conn->rollBack();
+                exit;
+            }
+        } else {
+            $stmt = $conn->prepare("INSERT INTO Link VALUES(?,?)");
+            if (!$stmt->execute(array($link['href'], $link['homeLink']))) {
+                $conn->rollBack();
+                exit;
+            }
 
-        $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
-        if (!$stmt->execute(array($id, $link['href']))) {
-            $conn->rollBack();
-            exit;
+            $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
+            if (!$stmt->execute(array($id, $link['href']))) {
+                $conn->rollBack();
+                exit;
+            }
         }
     }
 
@@ -245,7 +255,7 @@ function editContent($contentId, $title, $content, $photo, $links)
         $conn->rollBack();
         exit;
     }
-    
+
     $stmt = $conn->prepare("UPDATE Noticia SET fotografia = ? WHERE idNoticia = ?");
     if (!$stmt->execute(array($photo, $contentId))) {
         $conn->rollBack();
