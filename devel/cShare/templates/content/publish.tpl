@@ -20,6 +20,7 @@
             {if ($content.idnoticia >= 0)}
             <form id="public" action="{$BASE_URL}actions/content/edit_content.php" method="post" class="form"
                   role="form">
+                <input type="hidden" name="id" value="{$content.idnoticia}"/>
                 {else}
                 <form id="public" action="{$BASE_URL}actions/content/publish.php" method="post" class="form"
                       role="form">
