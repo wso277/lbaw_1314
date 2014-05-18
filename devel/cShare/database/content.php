@@ -13,16 +13,26 @@ function publish($username, $title, $body, $links)
     }
 
     foreach ($links as $key => $link) {
-        $stmt = $conn->prepare("INSERT INTO Link VALUES(?,?)");
-        if (!$stmt->execute(array($link['href'], $link['homeLink']))) {
-            $conn->rollBack();
-            exit;
-        }
+        $stmt = $conn->prepare("SELECT FROM Link WHERE href = ?");
+        $stmt->execute(array($link['href']));
+        if ($stmt->fetch(PDO::FETCH_ASSOC) != NULL) {
+            $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
+            if (!$stmt->execute(array($id, $link['href']))) {
+                $conn->rollBack();
+                exit;
+            }
+        } else {
+            $stmt = $conn->prepare("INSERT INTO Link VALUES(?,?)");
+            if (!$stmt->execute(array($link['href'], $link['homeLink']))) {
+                $conn->rollBack();
+                exit;
+            }
 
-        $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
-        if (!$stmt->execute(array($id, $link['href']))) {
-            $conn->rollBack();
-            exit;
+            $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
+            if (!$stmt->execute(array($id, $link['href']))) {
+                $conn->rollBack();
+                exit;
+            }
         }
     }
 
@@ -224,7 +234,7 @@ function getContentLinks($contentId)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function editContent($contentId, $title, $content, $deletedLinks, $addedLinks)
+function editContent($contentId, $title, $content, $photo, $links)
 {
     global $conn;
     $conn->beginTransaction();
@@ -246,15 +256,20 @@ function editContent($contentId, $title, $content, $deletedLinks, $addedLinks)
         exit;
     }
 
-    foreach ($deletedLinks as $link) {
-        $stmt = $conn->prepare("DELETE FROM LinkNoticia WHERE Noticia.idNoticia = ? AND href LIKE ?");
-        if (!$stmt->execute(array($contentId, $link['href']))) {
-            $conn->rollBack();
-            exit;
-        }
+    $stmt = $conn->prepare("UPDATE Noticia SET fotografia = ? WHERE idNoticia = ?");
+    if (!$stmt->execute(array($photo, $contentId))) {
+        $conn->rollBack();
+        exit;
     }
 
-    foreach ($addedLinks as $link) {
+    $stmt = $conn->prepare("DELETE FROM LinkNoticia WHERE Noticia.idNoticia = ?");
+    if (!$stmt->execute(array($contentId))) {
+        $conn->rollBack();
+        exit;
+    }
+
+
+    foreach ($links as $link) {
         $stmt = $conn->prepare("SELECT Link.href FROM Link WHERE Link.href = ?");
         $stmt->execute(array($link['href']));
         if ($stmt->fetch(PDO::FETCH_ASSOC) != NULL) {
