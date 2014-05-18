@@ -21,20 +21,20 @@ INSERT INTO Editor VALUES('zechiclas2','Ze Fixe','Barco','zechiclas','zechiclas2
 INSERT INTO Editor VALUES('zechiclas1','Ze Manel','Barco','zechiclas','zechiclas1@yarr.com','Pirata','/~lbaw1353/proto/images/assets/default.png','editor','bantemp');
 
 INSERT INTO Noticia VALUES(DEFAULT,'Pinto da Costa foi visto a sair de um quarto de hotel, no porto, com uma jovem loira atualmente desconhcida para 
-	a comunicacao social.','Pinto da Costa em mais um caso extraconjugal','2000-12-16','filetez');
+	a comunicacao social.','Pinto da Costa em mais um caso extraconjugal','2000-12-16','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg','filetez');
 INSERT INTO Noticia VALUES(DEFAULT,'A meio de uma conferencia que antecipou o jogo do benfica, Jorge Jesus emitiu sons semelhantes ao 
-	ladrar de um cao.','Jorge Jesus volta a ladrar','2000-12-16','rabandaz');
+	ladrar de um cao.','Jorge Jesus volta a ladrar','2000-12-16','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg','rabandaz');
 INSERT INTO Noticia VALUES(DEFAULT,'O atual treinador do benfica teve de ser assistido pelos paramedicos apos ter-se engasgado com agua.
-	','Jorge Jesus engasga-se a falar','2000-12-16','tiburoenz');
+	','Jorge Jesus engasga-se a falar','2000-12-16','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg','tiburoenz');
 INSERT INTO Noticia VALUES(DEFAULT,'Para vencer a crise, e apos uns meses de uma optima gestao por parte de Bruno de Carvalho, o Sporting decidiu 
 	propor um contrato a Bruno de Carvalho com uma clausula de 150 milhoes de euros.','Bruno de Carvalho tem clausula de rescisao de 150 milhoes de euros','2000-12-16','franganitoz');
 INSERT INTO Noticia VALUES(DEFAULT,'Apos 4 periodos muito renhidos, os Toronto Raptors conseguiram hoje uma vitoria crucial na sua caminhada rumo aos play-offs da NBA.'
-	,'Houton Rockets vencidos por Toronto Raptors','2013-04-02','HardenOP');
+	,'Houton Rockets vencidos por Toronto Raptors','2013-04-02','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg','HardenOP');
 INSERT INTO Noticia VALUES(DEFAULT,'Concurso Universitario de escala global volta a ter como vencedores um grupo de estudantes da Faculdade de Engenharia da Universidade do Porto. 
 	Pela primeira vez na historia do concurso, a instituicao vencedora ja havia arrecadado o mesmo premio ha dois anos atras.'
-	,'Made in FEUP','2013-02-02','rabandaz');
+	,'Made in FEUP','2013-02-02','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg','rabandaz');
 INSERT INTO Noticia VALUES(DEFAULT,'Barcelona continua a fazer falcatruas'
-	,'Ha muita gente que não digere a hegemonia do Barcelona','2013-04-02','wolowizard');
+	,'Ha muita gente que não digere a hegemonia do Barcelona','2013-04-02','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg','wolowizard');
 
 INSERT INTO Categoria VALUES('sports');
 INSERT INTO Categoria VALUES('football');
