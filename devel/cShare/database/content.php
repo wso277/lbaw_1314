@@ -224,7 +224,7 @@ function getContentLinks($contentId)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function editContent($contentId, $title, $content, $links)
+function editContent($contentId, $title, $content, $photo, $links)
 {
     global $conn;
     $conn->beginTransaction();
@@ -242,6 +242,12 @@ function editContent($contentId, $title, $content, $links)
 
     $stmt = $conn->prepare("UPDATE Noticia SET conteudo = ? WHERE idNoticia = ?");
     if (!$stmt->execute(array($content, $contentId))) {
+        $conn->rollBack();
+        exit;
+    }
+    
+    $stmt = $conn->prepare("UPDATE Noticia SET fotografia = ? WHERE idNoticia = ?");
+    if (!$stmt->execute(array($photo, $contentId))) {
         $conn->rollBack();
         exit;
     }
