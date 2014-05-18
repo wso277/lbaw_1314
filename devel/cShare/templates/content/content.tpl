@@ -50,10 +50,14 @@
                 &nbsp;{/foreach}
         </h3>
         {$content.conteudo}
+        {if ($USERNAME == $content.username || $PERMISSION == 'moderador')}
+            <br>
+            <br>
+            <a class="btn btn-primary btn-md" href="{$BASE_URL}pages/users/edit_content.php?id={$content.idnoticia}">
+                Edit Content
+            </a>
+        {/if}
     </div>
-    <a class="btn btn-primary btn-md" href="{$BASE_URL}pages/users/">
-        Edit Content
-    </a>
 
     <div class="comments-header">
         <br/>
@@ -172,5 +176,4 @@
 {/foreach}
 </div>
 </div>
-</body>
-</html>
+</body></html>

@@ -20,8 +20,8 @@
             <form id="public" action="{$BASE_URL}actions/content/publish.php" method="post" class="form" role="form">
                 <div class="row">
                     <div class="col-xs-6 col-md-6 form-group" style="width:100%">
-                        <input class="form-control" id="title" name="title" placeholder="Title" type="text" required
-                               autofocus/>
+                        <input class="form-control" id="title" name="title" value="{$content.titulo}"
+                               placeholder="Title" type="text" required autofocus/>
                     </div>
                 </div>
                 <div class="row">
