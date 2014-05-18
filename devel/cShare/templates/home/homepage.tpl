@@ -50,7 +50,7 @@
                 </div>
 
                 <div style="color:#f0f0f0;font-family:Ubuntu">
-                    <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em"
+                    <img src="{$new.photo}" width="192em"
                          height="192em" style="float:left"/>
 
                     <div style="padding-left:20em">
