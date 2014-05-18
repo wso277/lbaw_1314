@@ -13,7 +13,7 @@ $links;
 while (true) {
     $name = 'link' . $i;
     $temp = $_POST[$name];
-    if ($temp == null) {
+    if ($temp == null || $temp == "") {
         break;
     } else {
         $tmp = parse_url($temp);

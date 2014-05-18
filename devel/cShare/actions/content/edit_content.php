@@ -13,7 +13,7 @@
     while (true) {
         $name = 'link' . $i;
         $temp = $_POST[$name];
-        if ($temp == null) {
+        if ($temp == null || $temp == "") {
             break;
         } else {
             $tmp = parse_url($temp);
@@ -33,9 +33,10 @@
     try {
         $result = editContent($id, $title, $message, $photo, $links);
     } catch (PDOException $ex) {
+        var_dump($ex->getMessage());
         $_SESSION['error_messages'][] = 'Error publishing: ' . $ex->getMessage();
         $_SESSION['form_values'] = $_POST;
-        header("Location: " . $BASE_URL . 'pages/content/publish.php');
+        //header("Location: " . $BASE_URL . 'pages/content/publish.php');
     }
 
     if ($result != false) {
@@ -44,6 +45,6 @@
         exit;
     } else {
         $_SESSION['form_values'] = $_POST;
-        header("Location: " . $BASE_URL . 'pages/content/publish.php');
+        header("Location: " . $BASE_URL . 'pages/content/publish.php?id=' + $id);
         exit;
     }
