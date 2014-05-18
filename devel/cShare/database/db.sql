@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS Noticia(
 	titulo VARCHAR(85) NOT NULL, 
 	data_post  DATE DEFAULT CURRENT_DATE, 
 	fotografia VARCHAR NOT NULL,
+	likes INTEGER NOT NULL,
 	username VARCHAR(15) REFERENCES Editor ON DELETE CASCADE
 	);
 
@@ -127,6 +128,7 @@ CREATE INDEX notcat ON NoticiaCategoria (nome);
 CREATE INDEX coment ON Comentario (idNoticia);
 CREATE INDEX lknot ON LinkNoticia (idNoticia);
 CREATE INDEX ON Editor ((lower(username)));
+CREATE INDEX notIndex ON Noticia(likes);
 CREATE INDEX avalnoticia ON AvaliarNoticia (idNoticia);
 CREATE INDEX avalcomentario ON AvaliarComentario (idComentario);
 
@@ -146,5 +148,13 @@ CREATE OR REPLACE FUNCTION deleteCategoria() RETURNS TRIGGER AS $deleteCategoria
 	END;
 $deleteCategoria$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE FUNCTION updateLikes() RETURNS TRIGGER AS $updateLikes$ 
+	BEGIN
+		UPDATE Noticia SET likes = (SELECT SUM(avaliacao) FROM AvaliarNoticia WHERE idNoticia = OLD.idNoticia) WHERE idNoticia = (SELECT idNoticia FROM AvaliarNoticia WHERE idNoticia = OLD.idNoticia);
+		RETURN OLD;
+	END;
+$updateLikes$ LANGUAGE plpgsql;
+
+CREATE TRIGGER updateLikes AFTER INSERT ON AvaliarNoticia FOR EACH ROW EXECUTE PROCEDURE updateLikes();
 CREATE TRIGGER delUser BEFORE DELETE ON Editor FOR EACH ROW EXECUTE PROCEDURE deleteEditor();
 CREATE TRIGGER delCat BEFORE DELETE ON Categoria FOR EACH ROW EXECUTE PROCEDURE deleteCategoria();
