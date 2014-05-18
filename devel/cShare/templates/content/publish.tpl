@@ -58,9 +58,19 @@
 
             <div class="controls" id="profs">
                 <div class="input-append">
-                    <input autocomplete="off" class="span3 link-box" id="field1" name="link1" type="text"
-                           placeholder="Link" data-provide="typeahead" data-items="8"
-                           data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                    {if ($content.idnoticia >= 0)}
+                        {foreach $links as $link}
+                            <input autocomplete="off" class="span3 link-box" id="field{$link.i}" name="link{$link.i}"
+                                   type="text" placeholder="Link" value="{$link.link.href}" data-provide="typeahead"
+                                   data-items="8"/>
+                            <br>
+                            <br id="br"/>
+                        {/foreach}
+                    {else}
+                        <input autocomplete="off" class="span3 link-box" id="field1" name="link1" type="text"
+                               placeholder="Link" data-provide="typeahead" data-items="8"
+                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                    {/if}
                     <button id="b1" class="btn btn-primary add-more" type="button" style="margin-top:1em">+</button>
                 </div>
                 <br>

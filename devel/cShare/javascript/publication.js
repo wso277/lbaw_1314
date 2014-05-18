@@ -1,5 +1,11 @@
 $(document).ready(function () {
-    var next = 1;
+    var size = $('.input-append').find('[id="br"]').length;
+    var next;
+    if (size > 1) {
+        next = size;
+    } else {
+        next = 1;
+    }
 
     $(".add-more").click(function (e) {
         if (next < 7) {

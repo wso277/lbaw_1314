@@ -53,8 +53,10 @@
         {if ($USERNAME == $content.username || $PERMISSION == 'moderador')}
             <br>
             <br>
-            <a class="btn btn-primary btn-md" href="{$BASE_URL}pages/content/edit_content.php?id={$content.idnoticia}">
-                Edit Content
+            <a href="{$BASE_URL}pages/content/edit_content.php?id={$content.idnoticia}">
+                <button class="btn btn-primary btn-md">
+                    Edit Content
+                </button>
             </a>
         {/if}
     </div>
