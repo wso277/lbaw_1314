@@ -32,24 +32,20 @@ if (!isset($username) || !isset($title)
     exit;
 }
 
-<<<<<<< HEAD
 try{
 	$result = publish($username,$title,$message,$links);
 }catch(PDOException $ex){
 	$_SESSION['error_messages'][] = 'Error publishing: ' . $ex->getMessage();
 	$_SESSION['form_values'] = $_POST;
-    header("Location: " . $BASE_URL . 'pages/content/content.php');
+    header("Location: " . $BASE_URL . 'pages/content/publish.php');
 }
-=======
-$result = publish($username, $title, $message, $links);
 
->>>>>>> 1dfd94d5fa49cee2c2369d73eb7401a9d6796544
 if ($result != false) {
     $_SESSION['success_messages'][] = 'Successfully published!';
-    header('Location: ' . $BASE_URL . 'pages/homepage/home.php?');
+    header('Location: ' . $BASE_URL . 'pages/homepage/home.php');
     exit;
 } else {
     $_SESSION['form_values'] = $_POST;
-    header("Location: " . $BASE_URL . 'pages/content/content.php');
+    header("Location: " . $BASE_URL . 'pages/content/publish.php');
     exit;
 }
