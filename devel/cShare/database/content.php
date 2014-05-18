@@ -224,7 +224,7 @@ function getContentLinks($contentId)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function editContent($contentId, $title, $content, $deletedLinks, $addedLinks)
+function editContent($contentId, $title, $content, $links)
 {
     global $conn;
     $conn->beginTransaction();
@@ -246,15 +246,14 @@ function editContent($contentId, $title, $content, $deletedLinks, $addedLinks)
         exit;
     }
 
-    foreach ($deletedLinks as $link) {
-        $stmt = $conn->prepare("DELETE FROM LinkNoticia WHERE Noticia.idNoticia = ? AND href LIKE ?");
-        if (!$stmt->execute(array($contentId, $link['href']))) {
-            $conn->rollBack();
-            exit;
-        }
+    $stmt = $conn->prepare("DELETE FROM LinkNoticia WHERE Noticia.idNoticia = ?");
+    if (!$stmt->execute(array($contentId))) {
+        $conn->rollBack();
+        exit;
     }
 
-    foreach ($addedLinks as $link) {
+
+    foreach ($links as $link) {
         $stmt = $conn->prepare("SELECT Link.href FROM Link WHERE Link.href = ?");
         $stmt->execute(array($link['href']));
         if ($stmt->fetch(PDO::FETCH_ASSOC) != NULL) {
