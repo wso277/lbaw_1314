@@ -53,7 +53,7 @@
         {if ($USERNAME == $content.username || $PERMISSION == 'moderador')}
             <br>
             <br>
-            <a class="btn btn-primary btn-md" href="{$BASE_URL}pages/users/edit_content.php?id={$content.idnoticia}">
+            <a class="btn btn-primary btn-md" href="{$BASE_URL}pages/content/edit_content.php?id={$content.idnoticia}">
                 Edit Content
             </a>
         {/if}
@@ -90,7 +90,7 @@
             </div>
             <div class="comment-author">
                 <b>{$comment.username}</b>
-                &nbsp;{$comment.likes} {if $comment.likes > 1}points{else if $comment.likes != NULL}point{/if}{if $comment.likes == NULL}0 points{/if}
+                &nbsp;{$comment.likes} {if $comment.likes > 1}points{elseif $comment.likes != NULL}point{/if}{if $comment.likes == NULL}0 points{/if}
             </div>
             <div class="comment-text">
                 {$comment.content}

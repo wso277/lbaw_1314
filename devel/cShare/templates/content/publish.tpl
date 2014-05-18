@@ -17,28 +17,36 @@
         </div>
 
         <div class="col-sm-8 contact-form" style="float:left;clear:left">
-            <form id="public" action="{$BASE_URL}actions/content/publish.php" method="post" class="form" role="form">
-                <div class="row">
-                    <div class="col-xs-6 col-md-6 form-group" style="width:100%">
-                        <input class="form-control" id="title" name="title" value="{$content.titulo}"
-                               placeholder="Title" type="text" required autofocus/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 col-md-6 form-group" style="width:100%">
-                        <input class="form-control" id="photo" name="photo" placeholder="Image URL" type="text"/>
-                    </div>
-                </div>
-                <textarea class="form-control" style="resize: none" id="message" name="message" placeholder="Message"
-                          rows="10"></textarea>
-                <br/>
+            {if ($content.idnoticia >= 0)}
+            <form id="public" action="{$BASE_URL}actions/content/edit_content.php" method="post" class="form"
+                  role="form">
+                {else}
+                <form id="public" action="{$BASE_URL}actions/content/publish.php" method="post" class="form"
+                      role="form">
+                    {/if}
 
-                <div class="row">
-                    <div class="col-xs-12 col-md-12 form-group">
-                        <button class="btn btn-success pull-right" type="submit">Submit</button>
-                        <button class="btn btn-primary pull-right" style="margin-right:1em">Preview</button>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 form-group" style="width:100%">
+                            <input class="form-control" id="title" name="title" value="{$content.titulo}"
+                                   placeholder="Title" type="text" required autofocus/>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6 form-group" style="width:100%">
+                            <input class="form-control" id="photo" name="photo" value="{$content.fotografia}"
+                                   placeholder="Image URL" type="text"/>
+                        </div>
+                    </div>
+                    <textarea class="form-control" style="resize: none" id="message" name="message"
+                              placeholder="Message" rows="10">{$content.conteudo}</textarea>
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12 form-group">
+                            <button class="btn btn-success pull-right" type="submit">Submit</button>
+                            <button class="btn btn-primary pull-right" style="margin-right:1em">Preview</button>
+                        </div>
+                    </div>
         </div>
     </div>
 
