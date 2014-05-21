@@ -4467,7 +4467,6 @@ a.thumbnail.active {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  border-radius: 4px;
 }
 .alert h4 {
   margin-top: 0;
@@ -4526,9 +4525,9 @@ a.thumbnail.active {
   color: #66512c;
 }
 .alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d9534f;
 }
 .alert-danger hr {
   border-top-color: #e4b9c0;

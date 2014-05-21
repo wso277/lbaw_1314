@@ -190,6 +190,14 @@ function getContentByUsername($username)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getContentByTitle($title)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM Noticia WHERE titulo LIKE ?");
+    $stmt->execute(array($title));
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function getContentById($contentId)
 {
     global $conn;

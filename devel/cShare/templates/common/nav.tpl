@@ -60,7 +60,7 @@
 </nav>
 
 {if $ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1] != NULL}
-<div class="error"> 
+<div class="alert alert-danger"> 
     {$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]}  <a class="close" href="">X</a> 
 </div> 
 {/if}

@@ -4,6 +4,8 @@
 
     {include file="common/nav.tpl"}
 
+    <link href="{$BASE_URL}css/search.css" rel="stylesheet">
+
     <div class="count">
         Found {sizeof($results['user'])} results
     </div>
@@ -17,7 +19,6 @@
                     <form action="{$BASE_URL}pages/users/search.php" method="get"
                           class="navbar-form navbar-left" role="search">
                         <td>
-
                             <div id="search">
                                 <input name="search" class="form-control" type="text" value="{$search}"/>
                             </div>
@@ -25,7 +26,6 @@
                         <td>
                             <input type="submit" class="btn btn-success" value="Search"/>
                         </td>
-
                     </form>
             </tr>
         </table>
@@ -98,6 +98,7 @@
             </table>
         </div>-->
 
+        <div class="results">&nbsp;Search by Username: Found {count($results['user'])} {if count($results['user']) > 1} users {else if count($results['user']) == 1} user {/if} </div>
         {foreach $results['user'] as $user}
             <div class="media">
                 <a class="pull-left" href="{$BASE_URL}pages/users/profile.php?username={$user.username}">
@@ -108,6 +109,62 @@
                 <a href="{$BASE_URL}pages/users/profile.php?username={$user.username}">
                     <div class="media-body">
                         <h4 class="media-heading">{$user.nome}</h4>
+                    </div>
+                </a>
+            </div>
+        {/foreach}
+
+        <br/>
+
+        <div class="results">&nbsp;Search by Hometown: Found {count($results['local'])} {if count($results['local']) > 1 || count($results['local']) < 1} users {else if count($results['local']) == 1} user {/if} </div>
+        {foreach $results['local'] as $local}
+            <div class="media">
+                <a class="pull-left" href="{$BASE_URL}pages/users/profile.php?username={$local.username}">
+                    <img class="media-object" src="{$local.fotografia}"
+                         width="64px" height="64px">
+                </a>
+
+                <a href="{$BASE_URL}pages/users/profile.php?username={$local.username}">
+                    <div class="media-body">
+                        <h4 class="media-heading">{$local.nome}</h4>
+                    </div>
+                </a>
+            </div>
+        {/foreach}
+
+        <br/>
+
+        <div class="results">&nbsp;Search by Work: Found {count($results['work'])} {if count($results['work']) > 1 || count($results['work']) < 1} users {else if count($results['work']) == 1} user {/if} </div>
+        {foreach $results['work'] as $work}
+            <div class="media">
+                <a class="pull-left" href="{$BASE_URL}pages/users/profile.php?username={$work.username}">
+                    <img class="media-object" src="{$work.fotografia}"
+                         width="64px" height="64px">
+                </a>
+
+                <a href="{$BASE_URL}pages/users/profile.php?username={$work.username}">
+                    <div class="media-body">
+                        <h4 class="media-heading">{$work.nome}</h4>
+                    </div>
+                </a>
+            </div>
+        {/foreach}
+
+        <br/>
+
+        <div class="results">&nbsp;Found {count($results['content'])} news</div>
+        {foreach $results['content'] as $content}
+            <div class="media">
+                <a class="pull-left" href="{$BASE_URL}pages/users/content.php?id={$content.idnoticia}">
+                    <img class="media-object" src="{$content.fotografia}"
+                         width="64px" height="64px">
+                </a>
+
+                <a href="{$BASE_URL}pages/users/content.php?id={$content.idnoticia}">
+                    <div class="media-body">
+                        <h4 class="media-heading">{$content.titulo}</h4>
+
+                        <p>{substr($content.conteudo, 0, 250)}</p>
                     </div>
                 </a>
             </div>
@@ -143,9 +200,9 @@
                     -->
 
     </div>
-    <!--    </td>
+        </td>
         </td>
         </tr>
         </table>
-        </div>-->
+        </div>
 </body>
