@@ -136,9 +136,5 @@
         </div>
         <!-- /.modal -->
     </div>
-
-
-    <br/><br/><br/>
-    <div style="padding-left:15em;color:red;font-size:3em"> {$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]} </div>
 </body>
 </html>

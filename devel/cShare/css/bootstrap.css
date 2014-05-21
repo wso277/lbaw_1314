@@ -6,6 +6,33 @@
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 
+/* Mensagens de Erro */
+
+.error {
+  background-color: #FFAAAA;
+  padding: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.success {
+  background-color: #AAFFAA;
+  padding: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.close {
+  float: right;
+  text-decoration: none;
+  color: #666;
+}
+
+.field_error {
+  color: red;
+  font-size: 70%;
+}
+
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;

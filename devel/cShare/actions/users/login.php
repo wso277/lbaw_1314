@@ -26,5 +26,9 @@ if ($result != false && $result[estado_user] == 'normal') {
     $_SESSION['tipo'] = $result['tipo_user'];
     $_SESSION['estado'] = $result['estado_user'];
     header('Location: '. $BASE_URL .'pages/homepage/home.php');
+} else {
+    $_SESSION['error_messages'][] = 'Login failed';
+    header('Location: '. $BASE_URL .'pages/users/login.php');
+    exit;
 }
 ?>

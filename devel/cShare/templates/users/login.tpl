@@ -56,9 +56,5 @@
         <!-- /.modal-dialog -->
     </div>
 </div>
-
-<br/><br/>
-
-<div style="padding-left:31.5em;color:red;font-size:2em"> {$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]} </div>
 </body>
 </html>
