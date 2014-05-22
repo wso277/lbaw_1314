@@ -29,7 +29,7 @@ INSERT INTO Noticia VALUES(DEFAULT,'O atual treinador do benfica teve de ser ass
 INSERT INTO Noticia VALUES(DEFAULT,'Para vencer a crise, e apos uns meses de uma optima gestao por parte de Bruno de Carvalho, o Sporting decidiu 
 	propor um contrato a Bruno de Carvalho com uma clausula de 150 milhoes de euros.','Bruno de Carvalho tem clausula de rescisao de 150 milhoes de euros','2000-12-16','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg',0,'franganitoz');
 INSERT INTO Noticia VALUES(DEFAULT,'Apos 4 periodos muito renhidos, os Toronto Raptors conseguiram hoje uma vitoria crucial na sua caminhada rumo aos play-offs da NBA.'
-	,'Houton Rockets vencidos por Toronto Raptors','2013-04-02','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg',0,'HardenOP');
+	,'Houston Rockets vencidos por Toronto Raptors','2013-04-02','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg',0,'HardenOP');
 INSERT INTO Noticia VALUES(DEFAULT,'Concurso Universitario de escala global volta a ter como vencedores um grupo de estudantes da Faculdade de Engenharia da Universidade do Porto. 
 	Pela primeira vez na historia do concurso, a instituicao vencedora ja havia arrecadado o mesmo premio ha dois anos atras.'
 	,'Made in FEUP','2013-02-02','https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc3/t1.0-9/q71/s720x720/10402745_10152421997429485_8746506615932599125_n.jpg',0,'rabandaz');
