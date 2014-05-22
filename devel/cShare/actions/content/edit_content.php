@@ -21,7 +21,8 @@
             $i++;
         }
     }
-
+	
+	if(!isset($username)) echo 'NO USER';
     if (!isset($username) || !isset($title) || !isset($photo) || !isset($message)
     ) {
         $_SESSION['error_messages'][] = 'All fields are mandatory';
