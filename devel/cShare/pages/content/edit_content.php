@@ -14,4 +14,4 @@ foreach ($results as $link) {
 $smarty->assign('content', $content);
 $smarty->assign('links', $links);
 
-$smarty->display('content/publish.tpl');
+$smarty->display('content/edit.tpl');

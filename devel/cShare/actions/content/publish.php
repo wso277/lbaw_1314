@@ -9,8 +9,8 @@ $message = $_POST['message'];
 
 $i = 1;
 $links;
-
 while (true) {
+
     $name = 'link' . $i;
     $temp = $_POST[$name];
     if ($temp == null || $temp == "") {
@@ -22,7 +22,6 @@ while (true) {
     }
 }
 
-
 if (!isset($username) || !isset($title)
     || !isset($photo) || !isset($message)
 ) {
@@ -33,7 +32,8 @@ if (!isset($username) || !isset($title)
 }
 
 try{
-	$result = publish($username,$title,$message,$links);
+	
+	$result = publish($username,$title,$message, $photo,$links);
 }catch(PDOException $ex){
 	$_SESSION['error_messages'][] = 'Error publishing: ' . $ex->getMessage();
 	$_SESSION['form_values'] = $_POST;

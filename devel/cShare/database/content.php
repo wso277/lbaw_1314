@@ -1,19 +1,20 @@
 <?php
 
-function publish($username, $title, $body, $links)
+function publish($username, $title, $body, $photo, $links)
 {
     global $conn;
     $conn->beginTransaction();
-    $stmt = $conn->prepare("INSERT INTO Noticia VALUES(DEFAULT,?,?,?,?)");
-    $res = $stmt->execute(array($body, $title, date('Y-m-d'), $username));
-    $id = $conn->lastInsertId('noticia_idnoticia_seq');
+    $stmt = $conn->prepare("INSERT INTO Noticia VALUES(DEFAULT,?,?,?,?,?,?)");
+    $res = $stmt->execute(array($body, $title, date('Y-m-d'),$photo,0,$username));
+	$id = $conn->lastInsertId('noticia_idnoticia_seq');
     if (!$res) {
         $conn->rollBack();
         exit;
     }
-
+	var_dump($links);
     foreach ($links as $key => $link) {
-        $stmt = $conn->prepare("SELECT FROM Link WHERE href = ?");
+		
+        $stmt = $conn->prepare("SELECT * FROM Link WHERE href = ?");
         $stmt->execute(array($link['href']));
         if ($stmt->fetch(PDO::FETCH_ASSOC) != NULL) {
             $stmt = $conn->prepare("INSERT INTO LinkNoticia VALUES (?,?)");
@@ -270,13 +271,13 @@ function editContent($contentId, $title, $content, $photo, $links)
         exit;
     }
 
-    $stmt = $conn->prepare("DELETE FROM LinkNoticia WHERE Noticia.idNoticia = ?");
+    $stmt = $conn->prepare("DELETE FROM LinkNoticia WHERE idNoticia = ?");
     if (!$stmt->execute(array($contentId))) {
         $conn->rollBack();
         exit;
     }
 
-
+if(is_array($links)){
     foreach ($links as $link) {
         $stmt = $conn->prepare("SELECT Link.href FROM Link WHERE Link.href = ?");
         $stmt->execute(array($link['href']));
@@ -300,7 +301,7 @@ function editContent($contentId, $title, $content, $photo, $links)
             }
         }
     }
-
+	}
     return $conn->commit();
 }
 
