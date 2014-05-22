@@ -64,3 +64,8 @@
     {$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]}  <a class="close" href="">X</a> 
 </div> 
 {/if}
+{if $SUCCESS_MESSAGES[sizeof($SUCCESS_MESSAGES)-1] != NULL}
+<div class="alert alert-success"> 
+    {$SUCCESS_MESSAGES[sizeof($SUCCESS_MESSAGES)-1]}  <a class="close" href="">X</a> 
+</div> 
+{/if}
