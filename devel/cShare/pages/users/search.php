@@ -9,7 +9,7 @@ $results;
 
 if (preg_match("/^[^;:\"]{1,15}$/", $search)) {
     $query = "%".$search."%";
-    $answer = getUserByUsername($query);
+    $answer = searchUserByUsername(strtoupper($query));
 
     if (answer != false) {
         $results['user'] = $answer;
@@ -19,7 +19,7 @@ if (preg_match("/^[^;:\"]{1,15}$/", $search)) {
 
 //if (preg_match("/^[a-zA-Z ]+$/", $input)) {
     $query = "%".$search."%";
-    $answer = getUserByLocal($query);
+    $answer = getUserByLocal(strtoupper($query));
 
     if (answer != false) {
         $results['local'] = $answer;
@@ -28,7 +28,7 @@ if (preg_match("/^[^;:\"]{1,15}$/", $search)) {
 
 //if (preg_match("/^[a-zA-Z ]+$/", $input)) {
     $query = "%".$search."%";
-    $answer = getUserByWork($query);
+    $answer = getUserByWork(strtoupper($query));
 
     if (answer != false) {
         $results['work'] = $answer;
@@ -36,7 +36,7 @@ if (preg_match("/^[^;:\"]{1,15}$/", $search)) {
 //}
 
 $query = "%".$search."%";
-$answer = getContentByTitle($query);
+    $answer = getContentByTitle(strtoupper($query));
 
 if (answer != false) {
     $results['content'] = $answer;
