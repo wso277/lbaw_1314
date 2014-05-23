@@ -23,7 +23,7 @@
                 <div class="margintop">
                     <label style="color:#F0F0F0" for="destination">Subject</label>
                     <input type="text" class="form-control" name="subject" id="subject" placeholder="Enter subject"
-                           required="required"/>
+                           value="{$subject}" required="required"/>
                 </div>
             </div>
 
@@ -32,7 +32,8 @@
             <div class="col-lg-11 margintop">
                 <br>
                 <textarea name="message" id="message" class="form-control" cols="50" rows="9" required="required"
-                          placeholder="Message"></textarea>
+                          placeholder="Message">{$BASE_URL}pages/content/content.php?id={$id}
+                </textarea>
                 <button type="submit" class="btn btn-success pull-right" style="margin-top:1em" id="btnContactUs">
                     Send Message
                 </button>

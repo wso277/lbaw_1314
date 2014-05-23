@@ -1,8 +1,9 @@
 {include file="common/header.tpl"}
 
-<body>
+<body style="padding:3.6em">
 <link href="{$BASE_URL}css/content.css" rel="stylesheet">
 <script type="text/javascript" src="{$BASE_URL}javascript/rating.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/content.js"></script>
 {include file="common/nav.tpl"}
 
 <!--webcontent-->
@@ -50,15 +51,24 @@
                 &nbsp;{/foreach}
         </h3>
         {$content.conteudo}
+        <br>
+        <br>
         {if ($USERNAME == $content.username || $PERMISSION == 'moderador')}
-            <br>
-            <br>
             <a href="{$BASE_URL}pages/content/edit_content.php?id={$content.idnoticia}">
                 <button class="btn btn-primary btn-md">
                     Edit Content
                 </button>
             </a>
+
+            <button class="btn btn-primary btn-md" id="delete">
+                Delete Content
+            </button>
         {/if}
+        <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&subject={$content.titulo}&id={$content.idnoticia}">
+            <button class="btn btn-primary btn-md">
+                Refer to Friend
+            </button>
+        </a>
     </div>
 
     <div class="comments-header">
@@ -75,14 +85,13 @@
                     <!--<img class="avatar-image" src="../img/facebook-icon-sm.png" style=";float:left"/>-->
                     <textarea class="form-control" name="comment" style="resize: none" placeholder="Leave a comment..."
                               rows="4"></textarea>
-                    <input type="hidden" name="id" value="{$content.idnoticia}"/>
+                    <input type="hidden" id="contentId" name="id" value="{$content.idnoticia}"/>
                     <input type="hidden" name="username" value="{$USERNAME}"/>
                     <input type="submit" value="comment" class="btn btn-success" style="margin-top:0.2em"/>
                 </div>
             </div>
         </form>
     {/if}
-    <div> {{$ERROR_MESSAGES[sizeof($ERROR_MESSAGES)-1]}}</div>
     <div class="comments-container">
         {foreach $comments as $comment}
         <div class="comment text">

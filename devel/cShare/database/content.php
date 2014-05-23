@@ -137,7 +137,7 @@
     function getUserContent($username)
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT Noticia.titulo, Noticia.conteudo FROM Noticia,Editor WHERE Noticia.username = Editor.username AND Editor.username LIKE ?");
+        $stmt = $conn->prepare("SELECT Noticia.titulo, Noticia.data_post, Noticia.idNoticia FROM Noticia,Editor WHERE Noticia.username = Editor.username AND Editor.username LIKE ? ORDER BY Noticia.data_post DESC");
         $stmt->execute(array($username));
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -252,6 +252,15 @@
     {
         global $conn;
         $stmt = $conn->prepare("SELECT Noticia.idNoticia, Link.href,Link.homeLink FROM Noticia,Link,LinkNoticia WHERE Noticia.idNoticia = LinkNoticia.idNoticia AND LinkNoticia.href = Link.href AND Noticia.idNoticia = ?");
+        $stmt->execute(array($contentId));
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    function deleteContent($contentId)
+    {
+        global $conn;
+        $stmt = $conn->prepare("DELETE FROM Noticia WHERE idNoticia = ?");
         $stmt->execute(array($contentId));
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

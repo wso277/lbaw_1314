@@ -196,7 +196,7 @@
                                         <tbody>
                                             {foreach $receivedMessages as $msg}
                                                 <tr>
-                                                    <td><a href="#messages">{$msg.titulo}</a></td>
+                                                    <td><a href="{$BASE_URL}pages/users/see_message.php?id={$msg.idmensagem}">{$msg.titulo}</a></td>
                                                     <td>
                                                         <a href="{$BASE_URL}pages/users/profile.php?username={$msg.username}">{$msg.username}</a>
                                                     </td>
@@ -214,11 +214,12 @@
 
 
                     <div class="tab-pane" id="posts">
-                        <a href="">
-                            <div class="well well-sm" style="margin:0px;background-color:#222;border-color:#222">Open GL
-                                Assignments <span class="pull-right"><i class="glyphicon glyphicon-time"></i> 12:20 AM 20 Dec 2014 </span>
+                        {foreach $posts as $post}
+                        <a href="{$BASE_URL}pages/content/content.php?id={$post.idnoticia}">
+                            <div class="well well-sm" style="margin:0px;background-color:#222;border-color:#222">{$post.titulo} <span class="pull-right"><i class="glyphicon glyphicon-time"></i> {$post.data_post} </span>
                             </div>
                         </a>
+                        {/foreach}
                     </div>
 
                     <a name="friends">
