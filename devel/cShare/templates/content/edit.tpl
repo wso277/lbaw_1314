@@ -1,7 +1,3 @@
-{if !isset($PERMISSION)}
-{redirect page='homepage/home.php'}
-{else}
-
 {include file="common/header.tpl"}
 
 <body>
@@ -21,10 +17,9 @@
         </div>
 
         <div class="col-sm-8 contact-form" style="float:left;clear:left">
-        
-                <form id="public" action="{$BASE_URL}actions/content/publish.php" method="post" class="form"
-                      role="form">
-                   
+            <form id="public" action="{$BASE_URL}actions/content/edit_content.php" method="post" class="form"
+                  role="form">
+                <input type="hidden" name="id" value="{$content.idnoticia}"/>
 
                     <div class="row">
                         <div class="col-xs-6 col-md-6 form-group" style="width:100%">
@@ -59,10 +54,13 @@
 
             <div class="controls" id="profs">
                 <div class="input-append">
-                        <input autocomplete="off" class="span3 link-box" id="field1" name="link1" type="text"
-                               placeholder="Link" data-provide="typeahead" data-items="8"
-                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
-                   
+                        {foreach $links as $link}
+                            <input autocomplete="off" class="span3 link-box" id="field{$link.i}" name="link{$link.i}"
+                                   type="text" placeholder="Link" value="{$link.link.href}" data-provide="typeahead"
+                                   data-items="8"/>
+                            <br>
+                            <br id="br"/>
+                        {/foreach}
                     <button id="b1" class="btn btn-primary add-more" type="button" style="margin-top:1em">+</button>
                 </div>
                 <br>
@@ -79,4 +77,3 @@
 </div>
 
 </body></html>
-{/if}
