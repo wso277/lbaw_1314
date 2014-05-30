@@ -34,16 +34,17 @@
                 <form action="{$BASE_URL}pages/users/search.php" method="get"
                       class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input name="search" type="text" class="form-control" placeholder="Search" style="width:200%">
+                        <input name="search" type="text" class="form-control" placeholder="Search" style="width:175%%">
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     </li>
                 {if ($USERNAME != "")}
-                        <li><a href="" data-toggle="modal" data-target="#what" data-original-title><span class="glyphicon glyphicon-question-sign"/>&nbsp;What am I doing here?</a>
+                        <li><a href="" data-toggle="modal" data-target="#what" data-original-title><i class="glyphicon glyphicon-question-sign"></i>&nbsp;What am I doing here?</a></li>
                         <li><a href="{$BASE_URL}actions/users/logout.php"><span class="glyphicon glyphicon-log-in"/>&nbsp;Logout</a>
                         </li>
                 {else}
+                        <li><a href="" data-toggle="modal" data-target="#what" data-original-title><i class="glyphicon glyphicon-question-sign"></i>&nbsp;What am I doing here?</a></li>
                         <li><a href="{$BASE_URL}pages/users/login.php"><span class="glyphicon glyphicon-log-in"/>&nbsp;Login</a>
                         </li>
                         <li><a href="{$BASE_URL}pages/users/register.php"><span class="glyphicon glyphicon-check"/>&nbsp;Register</a>
