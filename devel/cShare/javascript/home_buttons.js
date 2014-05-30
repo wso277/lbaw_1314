@@ -6,7 +6,7 @@ $(document).ready(function () {
 
             var current = parseInt($('#current').val());
 
-            current += 2;
+            current += 4;
 
             var data = "current=" + current;
 

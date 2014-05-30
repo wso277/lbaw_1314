@@ -5,7 +5,7 @@ $(document).ready(function () {
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
             var current = parseInt($('#current').val());
 
-            current += 2;
+            current += 4;
 
             var data = "current=" + current;
 
