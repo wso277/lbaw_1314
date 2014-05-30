@@ -74,6 +74,10 @@
             </div>
         </div>
     {/foreach}
+    <div id="append">
+        <input type="hidden" id="current" value="{$current}"/>
+    </div>
+    <button id="load" class="btn btn-success">I want more fun!</button>
 
 </div>
 
