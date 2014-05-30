@@ -2,7 +2,7 @@
 include_once('../../config/init.php');
 include_once($BASE_DIR . 'database/content.php');
 
-$results = getAllContentLikes();
+    $results = getAllContentLikes(0);
 
 $news;
 $i = 0;
@@ -16,5 +16,6 @@ foreach ($results as $result) {
 }
 
 $smarty->assign('news', $news);
+    $smarty->assign('current', 0);
 
 $smarty->display('home/homepage.tpl');

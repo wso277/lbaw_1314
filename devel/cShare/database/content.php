@@ -239,11 +239,11 @@
         return $conn->commit();
     }
 
-    function getAllContentLikes()
+    function getAllContentLikes($current)
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT Noticia.idNoticia, SUM (AvaliarNoticia.avaliacao) AS likes FROM AvaliarNoticia,Noticia WHERE AvaliarNoticia.idNoticia = Noticia.idNoticia GROUP BY Noticia.idNoticia ORDER BY likes DESC");
-        $stmt->execute();
+        $stmt = $conn->prepare("SELECT idNoticia, likes FROM Noticia GROUP BY idNoticia ORDER BY likes DESC LIMIT ? OFFSET ?");
+        $stmt->execute(array(2, $current));
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
