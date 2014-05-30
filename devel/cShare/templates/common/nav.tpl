@@ -40,7 +40,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     </li>
                 {if ($USERNAME != "")}
-                        <li><a href=""><span class="glyphicon glyphicon-question-sign"/>&nbsp;What am I doing here?</a>
+                        <li><a href="" data-toggle="modal" data-target="#what" data-original-title><span class="glyphicon glyphicon-question-sign"/>&nbsp;What am I doing here?</a>
                         <li><a href="{$BASE_URL}actions/users/logout.php"><span class="glyphicon glyphicon-log-in"/>&nbsp;Logout</a>
                         </li>
                 {else}
@@ -68,3 +68,20 @@
     {$SUCCESS_MESSAGES[sizeof($SUCCESS_MESSAGES)-1]}  <a class="close" href="">X</a> 
 </div> 
 {/if}
+
+<div class="modal fade" id="what" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="panel panel-primary" style="border-color:#428bca">
+            <div class="panel-heading" style="background-color:#428bca;border-color:#428bca">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="panel-title" id="contactLabel"><span
+                            class="glyphicon glyphicon-question-sign"></span>What am I doing here?</h4>
+            </div>
+                <div class="modal-body" style="padding: 5px;">
+                    <h4>What can you do here you say?</h4></br>
+                    <p>You can do lots of stuff! Share news, evaluate them, share them, have fun with your friends, and much more!</p>
+                </div>
+        </div>
+    </div>
+</div>

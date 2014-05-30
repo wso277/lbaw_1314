@@ -45,7 +45,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
                     </button>
                     <h4 class="panel-title" id="contactLabel"><span
-                                class="glyphicon glyphicon-question-sign"></span> Forgot your password?</h4>
+                                class="glyphicon glyphicon-question-sign"></span>Help</h4>
                 </div>
                     <div class="modal-body" style="padding: 5px;">
                         <p>Enter your username in the username field and your password in the password field!</p><br/>
