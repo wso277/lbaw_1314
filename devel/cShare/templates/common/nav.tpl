@@ -23,11 +23,11 @@
                         <li><a href="{$BASE_URL}pages/users/profile.php?username={$USERNAME}"><span
                                         class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
                         <li><a href="{$BASE_URL}pages/users/profile.php?username={$USERNAME}#friends"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-star"/>&nbsp;Favorites</a></li>
+                        <li><a href="{$BASE_URL}pages/content/publish.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
                     {else}
                         <li><a href="#"><span class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-star"/>&nbsp;Favorites</a></li>
+                        <li><a href="{$BASE_URL}pages/users/login.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
                     {/if}
 
                 </ul>
@@ -40,11 +40,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     </li>
                 {if ($USERNAME != "")}
-                        <li><a href="{$BASE_URL}pages/content/publish.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
+                        <li><a href=""><span class="glyphicon glyphicon-question-sign"/>&nbsp;What am I doing here?</a>
                         <li><a href="{$BASE_URL}actions/users/logout.php"><span class="glyphicon glyphicon-log-in"/>&nbsp;Logout</a>
                         </li>
                 {else}
-                        <li><a href="{$BASE_URL}pages/users/login.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
                         <li><a href="{$BASE_URL}pages/users/login.php"><span class="glyphicon glyphicon-log-in"/>&nbsp;Login</a>
                         </li>
                         <li><a href="{$BASE_URL}pages/users/register.php"><span class="glyphicon glyphicon-check"/>&nbsp;Register</a>

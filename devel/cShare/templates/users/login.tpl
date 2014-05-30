@@ -27,6 +27,9 @@
                         <input id="remember" name="remember" type="checkbox" value="remember-me"/>
                         Remember me
                     </label>-->
+
+                    <a class="pull-left need-help" href="" data-toggle="modal" data-target="#forgot" data-original-title>Forgot your password?</a>
+
                     <a href="" data-toggle="modal" data-target="#help" data-original-title class="pull-right need-help">Need
                         help? </a><span class="clearfix"></span>
                 </form>
@@ -34,26 +37,22 @@
             <a href="{$BASE_URL}pages/users/register.php" class="text-center new-account">Create an account </a>
         </div>
     </div>
-    <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel">Help</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Enter your username in the username field and your password in the password field!</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-close" data-dismiss="modal">
-                        Close
+
+    <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="panel panel-primary" style="border-color:#428bca">
+                <div class="panel-heading" style="background-color:#428bca;border-color:#428bca">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
                     </button>
+                    <h4 class="panel-title" id="contactLabel"><span
+                                class="glyphicon glyphicon-question-sign"></span> Forgot your password?</h4>
                 </div>
+                    <div class="modal-body" style="padding: 5px;">
+                        <p>Enter your username in the username field and your password in the password field!</p><br/>
+                        <p>You will be redirected to the homepage after you log in</p>
+                    </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
 </div>
 </body>
