@@ -8,11 +8,8 @@ if (isset($_SESSION['username'])) {
     if (is_numeric($id)) {
         $result = getMessage($id);
 
+      	//TODO Links?
         $result['conteudo'] = str_replace("\n", "<br>", $result['conteudo']);
-      	//TODO SPLIT POR ESPAÇOS
-        if(strstr($result['conteudo'],$BASE_URL.'pages/content/content.php?id=') != false) {
-        	$result['conteudo'] = '<a href='.$result['conteudo'].'</a>';	
-        }
 
         $smarty->assign('msg', $result);
         $smarty->display('users/see_message.tpl');
