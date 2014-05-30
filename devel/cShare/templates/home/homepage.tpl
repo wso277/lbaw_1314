@@ -2,6 +2,7 @@
 
 <body>
 <script type="text/javascript" src="{$BASE_URL}javascript/rating.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/home.js"></script>
 {include file="common/nav.tpl"}
 
 <div class="container">
@@ -50,8 +51,7 @@
                 </div>
 
                 <div style="color:#f0f0f0;font-family:Ubuntu">
-                    <img src="{$new.photo}" width="192em"
-                         height="192em" style="float:left"/>
+                    <img src="{$new.photo}" width="192em" height="192em" style="float:left"/>
 
                     <div style="padding-left:20em">
                         <h2 style="margin-top:0px"><a href="{$BASE_URL}pages/content/content.php?id={$new.id}"
