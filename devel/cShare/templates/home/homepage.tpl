@@ -74,6 +74,8 @@
             </div>
         </div>
     {/foreach}
+    <input type="hidden" id="current" value="{$current}"/>
+    <button id="load" class="btn btn-success">I want more fun!</button>
 
 </div>
 
