@@ -6,7 +6,6 @@ $username = $_POST['username'];
 $title = $_POST['title'];
 $photo = $_POST['photo'];
 $message = $_POST['message'];
-
 $i = 1;
 $links;
 while (true) {
