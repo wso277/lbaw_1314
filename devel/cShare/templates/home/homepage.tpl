@@ -2,7 +2,12 @@
 
 <body>
 <script type="text/javascript" src="{$BASE_URL}javascript/rating.js"></script>
-<script type="text/javascript" src="{$BASE_URL}javascript/home.js"></script>
+{if (isset($USERNAME))}
+    <script type="text/javascript" src="{$BASE_URL}javascript/home_buttons.js"></script>
+{else}
+    <script type="text/javascript" src="{$BASE_URL}javascript/home_no_buttons.js"></script>
+{/if}
+
 {include file="common/nav.tpl"}
 
 <div class="container">

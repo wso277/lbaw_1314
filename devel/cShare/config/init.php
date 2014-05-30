@@ -30,5 +30,3 @@
     unset($_SESSION['error_messages']);
     unset($_SESSION['field_errors']);
     unset($_SESSION['form_values']);
-    unset($_SESSION['username']);
-    unset($_SESSION['tipo']);
