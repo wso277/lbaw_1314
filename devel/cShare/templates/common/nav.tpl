@@ -19,14 +19,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    {if ($USERNAME != "")}
+                    {if isset($USERNAME)}
                         <li><a href="{$BASE_URL}pages/users/profile.php?username={$USERNAME}"><span
                                         class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
                         <li><a href="{$BASE_URL}pages/users/profile.php?username={$USERNAME}#friends"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
                         <li><a href="{$BASE_URL}pages/content/publish.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
                     {else}
-                        <li><a href="#"><span class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
+                        <li><a href="{$BASE_URL}pages/users/login.php"><span class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
+                        <li><a href="{$BASE_URL}pages/users/login.php"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
                         <li><a href="{$BASE_URL}pages/users/login.php"><i class="glyphicon glyphicon-share"></i>&nbsp;Share It!</a>
                     {/if}
 
