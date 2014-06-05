@@ -5,6 +5,7 @@
 <body>
 
     <link href="{$BASE_URL}css/register.css" rel="stylesheet">
+    <script type="text/javascript" src="{$BASE_URL}javascript/btn_register.js"></script>
     <script type="text/javascript" src="{$BASE_URL}javascript/register.js"></script>
     {include file="common/nav.tpl"}
 
@@ -68,10 +69,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="row">
+                    <div class="row">
                         <div class="col-xs-4 col-sm-3 col-md-3">
             <span class="button-checkbox">
-              <button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
+              <button type="button" class="btn" data-color="info" id="agree" tabindex="7">I Agree</button>
               <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1" required>
             </span>
                         </div>
@@ -80,7 +81,7 @@
                                     href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set
                             out by this site, including our Cookie Use.
                         </div>
-                    </div>-->
+                    </div>
 
                     <hr class="colorgraph">
                     <div class="row">
