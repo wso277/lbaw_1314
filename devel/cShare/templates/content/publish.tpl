@@ -1,5 +1,5 @@
 {if !isset($PERMISSION)}
-{redirect page='homepage/home.php'}
+{redirect page='users/login.php'}
 {else}
 
 {include file="common/header.tpl"}

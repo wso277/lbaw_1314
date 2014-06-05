@@ -1,3 +1,6 @@
+{if !isset($PERMISSION)}
+{redirect page='users/login.php'}
+{else}
 {include file="common/header.tpl"}
 
 <body>
@@ -275,3 +278,4 @@
 
 </body>
 </html>
+{/if}
