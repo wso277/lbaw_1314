@@ -1,10 +1,11 @@
 {include file="common/header.tpl"}
 
-<script type="text/javascript" href="{$BASE_URL}javascript/btn_register.js"></script>
+<!--<script type="text/javascript" href="{$BASE_URL}javascript/btn_register.js"></script>-->
 
 <body>
 
     <link href="{$BASE_URL}css/register.css" rel="stylesheet">
+    <script type="text/javascript" src="{$BASE_URL}javascript/register.js"></script>
     {include file="common/nav.tpl"}
 
     <div class="container account-wall">
@@ -83,7 +84,7 @@
 
                     <hr class="colorgraph">
                     <div class="row">
-                        <input type="submit" value="Register" class="btn btn-success btn-block btn-lg" tabindex="7">
+                        <input type="submit" id="sub" value="Register" class="btn btn-success btn-block btn-lg" tabindex="7" disabled>
                     </div>
                 </form>
             </div>
