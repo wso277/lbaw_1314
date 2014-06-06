@@ -54,6 +54,26 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="forgot" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="panel panel-primary" style="border-color:#428bca">
+                <div class="panel-heading" style="background-color:#428bca;border-color:#428bca">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                    </button>
+                    <h4 class="panel-title" id="contactLabel"><span
+                                class="glyphicon glyphicon-question-sign"></span>Forgot your password?</h4>
+                </div>
+                    <div class="modal-body" style="padding: 5px;">
+                        <form action="{$BASE_URL}actions/users/password_recovery.php" class="form-signin" method="POST" enctype="multipart/form-data">
+                            <input type="text" name="username" placeholder="Enter your username">
+                            <input type="submit" value="Recover password" class="btn btn-lg btn-success btn-block">
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>
