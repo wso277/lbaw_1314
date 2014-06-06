@@ -32,5 +32,6 @@
     unset($_SESSION['form_values']);
 	
 	function logError($error) {
+		date_default_timezone_set("UTC");
 		file_put_contents('/opt/lbaw/lbaw1353/public_html/devel/errors.txt',date('Y-m-d H:i:s') . ' UTC -> ' . $error . "\r\n", FILE_APPEND);
 	}
