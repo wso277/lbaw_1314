@@ -12,7 +12,8 @@
 </div>
 
 <div class="left-panel">
-    <a href="#" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=gnomo.fe.up.pt{$BASE_URL}pages/content/content.php?id={$content.idnoticia}"
+       target="_new" class="btn" role="button"><img src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
     <br>
 
     {if (isset($USERNAME))}
@@ -59,9 +60,8 @@
                     Edit Content
                 </button>
             </a>
-
             <button class="btn btn-primary btn-md" id="delete">
-					Delete Content
+                Delete Content
             </button>
         {/if}
         <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&subject={$content.titulo}&id={$content.idnoticia}">
@@ -144,8 +144,8 @@
                    data-original-title>
                     Edit
                 </a>
-				<a class="btn btn-primary btn-md" onclick="removeComment({$comment.id})">
-                    Remove
+                <a class="btn btn-primary btn-md" onclick="removeComment({$comment.id})">
+                Remove
                 </a>
 
                 <div class="modal fade" id="edit{$comment.cont}" tabindex="-1" role="dialog"
@@ -183,7 +183,7 @@
                     </div>
                 </div>
             </div>
-			
+
         </div>
         {/if}
     </div>
