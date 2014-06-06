@@ -16,7 +16,8 @@ $password = $_POST['password'];
 try{
 $result = login($username, $password);
 }catch(PDOException $ex){
-	$_SESSION['error_messages'][] = 'Error logging in: ' . $ex->getMessage();
+	logError($ex->getMessage());
+	$_SESSION['error_messages'][] = 'Error logging in';
 	 header('Location: '. $BASE_URL .'pages/users/login.php');
 	 exit;
 }

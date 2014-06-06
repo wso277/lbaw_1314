@@ -32,5 +32,5 @@
     unset($_SESSION['form_values']);
 	
 	function logError($error) {
-		file_put_contents($BASE_DIR . 'log.txt', $error, FILE_APPEND);
+		file_put_contents('/opt/lbaw/lbaw1353/public_html/devel/errors.txt', $error . "\r\n", FILE_APPEND);
 	}

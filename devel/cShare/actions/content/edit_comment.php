@@ -18,7 +18,8 @@ if (!isset($commentId) || !isset($username)
 try{
 	$result = editComment($username,$commentId,$comment);
 }catch(PDOException $ex){
-	$_SESSION['error_messages'][] = 'Error editing comment: ' . $ex->getMessage();
+	logError($ex->getMessage());
+	$_SESSION['error_messages'][] = 'Error editing comment';
 	$_SESSION['form_values'] = $_POST;
     header("Location: " . $BASE_URL . 'pages/content/content.php?id=' . $contentId);
 }

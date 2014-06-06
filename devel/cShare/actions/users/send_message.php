@@ -26,7 +26,8 @@ if (!isset($sender) || !isset($receiver) || !isset($subject)
 try{
 	$result = sendMessage($sender, $receiver, $subject, $message);
 }catch(PDOException $ex){
-	$_SESSION['error_messages'][] = 'Error sending message: ' . $ex->getMessage();
+	logError($ex->getMessage());
+	$_SESSION['error_messages'][] = 'Error sending message';
 	$_SESSION['form_values'] = $_POST;
 	header("Location: $BASE_URL" . 'pages/users/send_message.php?sender='.$sender.'&receiver='.$_POST['name']);
 	exit;
