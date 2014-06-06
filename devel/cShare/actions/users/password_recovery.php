@@ -9,6 +9,7 @@ $user;
 try {
 	$user = getUserByUsername($username);
 }catch(PDOException $ex) {
+	logError($ex->getMessage());
 	$_SESSION['error_messages'][] = "Error validating username";
 	header("Location: $BASE_URL" . 'pages/users/login.php');
 	exit;
@@ -32,6 +33,7 @@ if (strcmp($type,"0") == 0) {
 				header("Location: $BASE_URL" . 'pages/users/password_recovery.php?user='.$user[0]['username']);
 			}
 		}catch(PDOException $ex) {
+			logError($ex->getMessage());
 			$_SESSION['error_messages'][] = "Error updating password!";
 			header("Location: $BASE_URL" . 'pages/users/password_recovery.php?user='.$user[0]['username']);
 		} 		
