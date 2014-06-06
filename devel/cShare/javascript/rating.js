@@ -10,12 +10,11 @@ function upvote(id) {
 
             if (data.msg == true) {
                 var text = $('#' + id).text();
-                alert(text);
                 var rate = parseInt(text);
-                alert(rate);
                 text = replaceAt(text, rate.toString().length - 1, rate + 1);
                 $('#' + id).text(text);
-                alert(text);
+                $('#up' + id).prop('disabled', true).button('refresh');
+                $('#down' + id).prop('disabled', false).button('refresh');
             }
         },
         error: function (data) {
@@ -39,7 +38,8 @@ function downvote(id) {
                 var rate = parseInt(text);
                 text = replaceAt(text, rate.toString().length - 1, rate - 1);
                 $('#' + id).text(text);
-                alert(text);
+                $('#up' + id).prop('disabled', false).button('refresh');
+                $('#down' + id).prop('disabled', true).button('refresh');
             }
         },
         error: function (data) {
