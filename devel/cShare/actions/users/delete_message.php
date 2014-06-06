@@ -8,11 +8,10 @@ if (is_numeric($id)) {
 	try{
 		$result = deleteMessage($id);
 	}catch(PDOException $ex){
-		$_SESSION['error_messages'][] = 'Error deleting message: ' . $ex->getMessage();
+		logError($ex->getMessage());
+		$_SESSION['error_messages'][] = 'Error deleting message';
 		exit;
 	}
-    if (!$result) {
-    }
 
     header("Location: " . $BASE_URL . "pages/users/profile.php?username=" . $_SESSION['username']);
 }

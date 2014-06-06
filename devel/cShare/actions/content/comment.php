@@ -16,7 +16,7 @@ if (!isset($contentId) || !isset($username)
 }
 
 try{
-	$result = comment('er',$username,$comment);
+	$result = comment($contentId,$username,$comment);
 }catch(PDOException $ex){
 	logError($ex->getMessage());
 	$_SESSION['error_messages'][] = 'Error commenting';

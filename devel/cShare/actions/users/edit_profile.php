@@ -67,7 +67,8 @@ if ($_POST['culture']) {
 try{
 	$result = editUser($user, $location, $work, $inter, $email, $name, $pic);
 }catch(PDOException $ex){
-	$_SESSION['error_messages'][] = 'Error editing profile: ' . $ex->getMessage();
+	logError($ex->getMessage());
+	$_SESSION['error_messages'][] = 'Error editing profile';
 	$_SESSION['form_values'] = $_POST;
 	header("Location: $BASE_URL" . 'pages/users/edit_profile.php');
 	exit;

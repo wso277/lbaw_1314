@@ -34,7 +34,8 @@ try{
 	
 	$result = publish($username,$title,$message, $photo,$links);
 }catch(PDOException $ex){
-	$_SESSION['error_messages'][] = 'Error publishing: ' . $ex->getMessage();
+	logError($ex->getMessage());
+	$_SESSION['error_messages'][] = 'Error publishing' ;
 	$_SESSION['form_values'] = $_POST;
     header("Location: " . $BASE_URL . 'pages/content/publish.php');
 }
