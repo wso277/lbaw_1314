@@ -66,7 +66,7 @@
                 </div>
                     <div class="modal-body" style="padding: 5px;">
                         <form action="{$BASE_URL}actions/users/password_recovery.php" class="form-signin" method="POST" enctype="multipart/form-data">
-                            <input type="text" name="username" placeholder="Enter your username">
+                            <input type="text" name="username" class="form-control" placeholder="Enter your username" required autofocus>
                             <input type="hidden" name="type" value="0">
                             <input type="submit" value="Recover password" class="btn btn-lg btn-success btn-block">
                         </form>

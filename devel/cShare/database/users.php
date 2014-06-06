@@ -79,17 +79,8 @@
     function updatePassword($username, $pass)
     {
         global $conn;
-        $conn->beginTransaction();
-        $stmt = $conn->prepare("UPDATE Editor SET password = ? WHERE username LIKE ?");
-        $stmt->execute(array($pass, $username));
-        $result = $stmt->fetch();
-        if ($result == false) {
-            $conn->rollBack();
-
-            return false;
-        }
-
-        return true;
+        $stmt = $conn->prepare("UPDATE Editor SET pass = ? WHERE username LIKE ?");
+        return $stmt->execute(array($pass, $username));
     }
 
     function updatePhoto($username, $photo)
