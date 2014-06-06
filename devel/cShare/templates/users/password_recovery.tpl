@@ -16,6 +16,7 @@
                     <input id="username" name="password" type="text" class="form-control" placeholder="New Password" required autofocus/>
                     <input id="password" name="password" type="password_confirmation" class="form-control" placeholder="Confirm Password"
                            required/>
+                    <input type="hidden" name="type" value="1">
                     <input id="btn-login" class="btn btn-lg btn-success btn-block" type="submit" value="Submit"/>
                 </form>
             </div>
