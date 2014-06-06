@@ -16,9 +16,10 @@ if (!isset($contentId) || !isset($username)
 }
 
 try{
-	$result = comment($contentId,$username,$comment);
+	$result = comment('er',$username,$comment);
 }catch(PDOException $ex){
-	$_SESSION['error_messages'][] = 'Error commenting: ' . $ex->getMessage();
+	logError($ex->getMessage());
+	$_SESSION['error_messages'][] = 'Error commenting';
 	$_SESSION['form_values'] = $_POST;
     header("Location: " . $BASE_URL . 'pages/content/content.php?id=' . $contentId);
 }

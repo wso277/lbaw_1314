@@ -30,3 +30,7 @@
     unset($_SESSION['error_messages']);
     unset($_SESSION['field_errors']);
     unset($_SESSION['form_values']);
+	
+	function logError($error) {
+		file_put_contents($BASE_DIR . 'log.txt', $error, FILE_APPEND);
+	}
