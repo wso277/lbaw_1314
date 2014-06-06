@@ -71,7 +71,8 @@
                                          style="text-decoration:none">{$new.poster}</a> at {$new.timestamp}</h4>
                     </div>
                     <div style="float:right">
-                        <h4>{$new.likes} {if $new.likes > 1 || $new.likes != -1}points{else}point{/if}
+                        <h4 id={$new.id}>{$new.likes} {if $new.likes > 1 || $new.likes !=
+                            -1}points{else}point{/if}
                             &nbsp;{$new.ncomments} {if $new.ncomments > 1}comments{else}comment{/if}</h4>
                     </div>
                     </p>
