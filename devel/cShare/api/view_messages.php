@@ -10,7 +10,8 @@ if(preg_match("/^[^;:\"]{6,15}$/", $me)
 	$sentMessages = getSentMessages($me);
 	$receivedMessages = getReceivedMessages($me);
 	}catch(PDOException $ex){
-		$result['msg'] = 'Error viewing messages!' . $ex->getMessage();
+		logError($ex->getMessage());
+		$result['msg'] = 'Error viewing messages!';
 		echo json_encode($result);
 	}
 	

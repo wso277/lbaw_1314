@@ -9,7 +9,8 @@ if ($_SESSION['tipo'] == 'moderador') {
 	try{
 		$result['msg'] = promoteUser($user);
 	}catch(PDOException $ex){
-		$result['msg'] = 'Error promoting user!' . $ex->getMessage();
+		logError($ex->getMessage());
+		$result['msg'] = 'Error promoting user!';
 	}
         echo json_encode($result);
     exit;

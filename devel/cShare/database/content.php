@@ -265,6 +265,15 @@
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+	
+	function deleteComment($commentId) 
+	{
+		global $conn;
+		$stmt = $conn->prepare("DELETE FROM Comentario WHERE idComentario = ?");
+		$stmt->execute(array($commentId));
+		
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
 
     function editContent($contentId, $title, $content, $photo, $links)
     {

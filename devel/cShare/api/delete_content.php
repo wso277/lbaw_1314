@@ -9,8 +9,9 @@ try{
 	$result['msg'] = deleteContent($id);
 	$_SESSION['success_messages'][] = 'Content successfully deleted!';
 }catch(PDOException $ex){
+	logError($ex->getMessage());
 	$result['msg'] = false;
-	$_SESSION['error_messages'][] = 'Error deleting the content!' . $ex->getMessage();
+	$_SESSION['error_messages'][] = 'Error deleting the content!';
 }
 if (!$result['msg']) {
 	$result['msg'] = false;

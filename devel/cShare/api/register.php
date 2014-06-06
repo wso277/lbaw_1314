@@ -18,7 +18,8 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
 						try{
 							$result = createUser($name, $user, $location, $job, $email, $pass);
 						}catch(PDOException $ex){
-							$res['msg'] = 'Error registering user!' . $ex->getMessage();
+							logError($ex->getMessage());
+							$res['msg'] = 'Error registering user!';
 							echo json_encode($res);
 						}
                         if ($result != false) {

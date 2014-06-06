@@ -18,7 +18,8 @@
             $i++;
         }
     } catch (PDOException $ex) {
-        $news[0] = 'Error loading more posts!' . $ex->getMessage();
+		logError($ex->getMessage());
+        $news[0] = 'Error loading more posts!';
     }
 
     echo json_encode($news);
