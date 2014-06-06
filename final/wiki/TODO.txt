@@ -1,0 +1,5 @@
+Organizar a Base de dados de modo a quando se faz uma pesquisa por categoria, o conteudo das noticas aparecer resumido (Idealmente, 2 ou 3 frases)
+
+Corrigir problema de import
+
+Corrigir enumerações
