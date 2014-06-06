@@ -9,7 +9,8 @@ if ($_SESSION['tipo'] == 'moderador') {
 	try{
 		$result['msg'] = unbanUser($user);
 	}catch(PDOException $ex){
-		$result['msg'] = 'Error unbaning user!'. $ex->getMessage();
+		logError($ex->getMessage());
+		$result['msg'] = 'Error unbaning user!';
 	}
     echo json_encode($result);
     exit;

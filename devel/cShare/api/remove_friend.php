@@ -15,7 +15,8 @@ if (preg_match("/^[^;:\"]{6,15}$/", $me) && preg_match("/^[^;:\"]{6,15}$/", $fri
 try{
     $result = removeFriend($me, $friend);
 }catch(PDOException $ex){
-	$res['msg'] = 'Error removing friend!' . $ex->getMessage();
+	logError($ex->getMessage());
+	$res['msg'] = 'Error removing friend!';
 }
     if ($result != false) {
         $res['msg'] = true;

@@ -9,7 +9,8 @@ if ($_SESSION['tipo'] == 'moderador') {
 	try{
 		$result['msg'] = demoteUser($user);
 	}catch(PDOExecption $ex){
-		$result['msg'] = 'Error demoting user!' . $ex->getMessage();
+		logError($ex->getMessage());
+		$result['msg'] = 'Error demoting user!';
 	}
     echo json_encode($result);
 

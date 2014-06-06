@@ -9,7 +9,8 @@ if ($_SESSION['tipo'] == 'moderador') {
     try{
 		$result['msg'] = banUser($user);
     }catch(PDOException $ex){
-		$result['msg'] = 'Error banning user!' . $ex->getMessage();
+		logError($ex->getMessage());
+		$result['msg'] = 'Error banning user!';
 	}
 	echo json_encode($result);
     exit;

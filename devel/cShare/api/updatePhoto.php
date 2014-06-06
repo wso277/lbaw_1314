@@ -11,7 +11,8 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
 	try{
 		$result = updatePhoto($user, "../images/assets/".$name);   //no extension
 	}catch(PDOException $ex){
-		$res['msg'] = "Error updating photo: " . $ex->getMessage();
+		logError($ex->getMessage());
+		$res['msg'] = "Error updating photo";
 		echo json_encode($res);
 	}
     if ($result != false) {

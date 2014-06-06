@@ -11,7 +11,8 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
 		try{
 			$result = updatePassword($user, $pass);
 		catch(PDOException $ex){
-			echo "Error updating password!". $ex->getMessage();
+			logError($ex->getMessage());
+			echo "Error updating password!";
 		}
         if ($result != false) {
             echo "SUCCESS!";

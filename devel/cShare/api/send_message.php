@@ -18,6 +18,7 @@ if(preg_match("/^[^;:\"]{6,15}$/", $sender) && preg_match("/^[^;:\"]{6,15}$/", $
 			try{
 				sendMessage($sender, $receiver, $title, $content);
 			}catch(PDOException $ex){
+				logError($ex->getMessage());
 				
 			}
 		}

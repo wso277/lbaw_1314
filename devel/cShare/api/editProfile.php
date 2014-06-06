@@ -17,7 +17,8 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
 					try{
 						$result = editUser($user, $location, $job, $favs, $email, $name);
 					}catch(PDOException $ex){
-						$res['msg'] = 'Error editing profile!' . $ex->getMessage();
+						logError($ex->getMessage());
+						$res['msg'] = 'Error editing profile!';
 						echo json_encode($res);
 					}
                     if ($result != false) {

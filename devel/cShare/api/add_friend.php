@@ -16,7 +16,8 @@ if (strcasecmp($me, $friend) > 0) {
 try{
 	$result = addFriend($me, $friend);
 }catch(PDOException $ex){
-	$res['msg'] = 'Error adding friend!' . $ex->getMessage();
+	logError($ex->getMessage());
+	$res['msg'] = 'Error adding friend!';
 }
 if ($result) {
     $res['msg'] = true;

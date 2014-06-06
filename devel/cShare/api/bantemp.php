@@ -9,7 +9,8 @@ if ($_SESSION['tipo'] == 'moderador') {
 	try{
 		$result['msg'] = banUserTemp($user);
     }catch(PDOException $ex){
-		$result['msg'] = 'Error banning temporarily user!' . $ex->getMessage();
+		logError($ex->getMessage());
+		$result['msg'] = 'Error banning temporarily user!';
 	}
 	echo json_encode($result);
     exit;

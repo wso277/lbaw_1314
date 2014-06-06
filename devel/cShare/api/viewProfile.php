@@ -6,7 +6,8 @@ if (preg_match("/^[^;:\"]{6,15}$/", $user)) {
 	try{
 		$result = getUserByUsername($user);
 	}catch(PDOException $ex){
-		$res['msg'] = 'Error getting user by username!' . $ex->getMessage();
+		logError($ex->getMessage());
+		$res['msg'] = 'Error getting user by username!';
 		echo json_encode($res);
 	}
 

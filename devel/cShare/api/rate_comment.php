@@ -10,7 +10,8 @@ if ($rate == 1 || $rate == -1) {
 	try{
 		$result['msg'] = rateComment($commentId, $rate, $_SESSION['username']);
 	}catch(PDOException $ex){
-		$result['msg'] = 'Error rating comment!' . $ex->getMessage();
+		logError($ex->getMessage());
+		$result['msg'] = 'Error rating comment!';
 	}
 }
 

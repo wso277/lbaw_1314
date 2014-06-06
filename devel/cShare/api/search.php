@@ -10,7 +10,8 @@ if (preg_match("/^[^;:\"]{6,15}$/", $input)) {
 	try{
 		$answer = getUserByUsername($query);
 	}catch(PDOException $ex){
-		$results['msg'] = 'Error getting user by username!'. $ex->getMessage();
+		logError($ex->getMessage());
+		$results['msg'] = 'Error getting user by username!';
 		echo json_encode($results);
 	}
     if (answer != false) {
@@ -23,7 +24,8 @@ if (preg_match("/^[a-zA-Z ]+$/", $input)) {
 	try{
 		$answer = getUserByLocal($query);
 	}catch(PDOException $ex){
-		$results['msg'] = 'Error getting user by local!'. $ex->getMessage();
+		logError($ex->getMessage());
+		$results['msg'] = 'Error getting user by local!';
 		echo json_encode($results);
 	}
     if (answer != false) {
@@ -37,7 +39,8 @@ if (preg_match("/^[a-zA-Z ]+$/", $input)) {
 		$answer = getUserByWork($query);
 		echo json_encode($results);
 	}catch(PDOException $ex){
-		$results['msg'] = 'Error getting user by work!'. $ex->getMessage();
+		logError($ex->getMessage());
+		$results['msg'] = 'Error getting user by work!';
 	}
     if (answer != false) {
         $results['work'] = $answer;
