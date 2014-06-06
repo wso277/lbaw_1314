@@ -101,7 +101,7 @@
     <div class="results">&nbsp;Found {count($results['content'])} news</div>
     {foreach $results['content'] as $content}
         <div class="media">
-            <a class="pull-left" href="{$BASE_URL}pages/users/content.php?id={$content.idnoticia}">
+            <a class="pull-left" href="{$BASE_URL}pages/content/content.php?id={$content.idnoticia}">
                 <img class="media-object" src="{$content.fotografia}" width="64px" height="64px">
             </a>
 
