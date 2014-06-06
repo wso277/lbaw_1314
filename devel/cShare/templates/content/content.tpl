@@ -144,7 +144,7 @@
                    data-original-title>
                     Edit
                 </a>
-				<a class="btn btn-primary btn-md" onclick="getBtnId({$comment.id})">
+				<a class="btn btn-primary btn-md" onclick="removeComment({$comment.id})">
                     Remove
                 </a>
 

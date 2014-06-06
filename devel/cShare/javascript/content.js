@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 });
 
-    function getBtnId(id){
+    function removeComment(id){
 
         var data = "id=" + encodeURIComponent(id);
         var x = $('#contentId').val();
