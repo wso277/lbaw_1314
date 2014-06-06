@@ -12,15 +12,17 @@ if (preg_match("/^[^;:\"]{6,15}$/", $me) && preg_match("/^[^;:\"]{6,15}$/", $fri
         $friend = $swap;
     }
 
-try{
-    $result = removeFriend($me, $friend);
-}catch(PDOException $ex){
-	logError($ex->getMessage());
-	$res['msg'] = 'Error removing friend!';
-}
-    if ($result != false) {
-        $res['msg'] = true;
-    }
+    try{
+        $result = removeFriend($me, $friend);
+        $_SESSION['success_messages'][] = "Friend removed with success";
+    }catch(PDOException $ex){
+       logError($ex->getMessage());
+       $res['msg'] = 'Error removing friend!';
+       $_SESSION['error_messages'][] = "Error removing friend";
+   }
+   if ($result != false) {
+    $res['msg'] = true;
+   }
 } else {
     $res['msg'] = "Invalid username";
 }
