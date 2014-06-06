@@ -19,8 +19,9 @@
 
                 <div style="float:left;margin-top:3em;">
                     <div>
-                        <a href="" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
-                                                                  src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=gnomo.fe.up.pt{$BASE_URL}pages/content/content.php?id={$new.id}"
+                           target="_new" class="btn" role="button"><img class="img-circle" style="padding-left:0.2em"
+                                                                        src="{$BASE_URL}images/facebook-icon-sm.png"/></a>
                     </div>
                     <br/>
 
@@ -28,14 +29,14 @@
                         <div class="btn-group btn-group-sm" style="margin-left:1em">
                             <button id="up{$new.id}" name="{$new.id}" class="btn btn-success" role="like"
                                     onclick="upvote({$new.id})">
-                            <span class="glyphicon glyphicon-arrow-up"/>
+                                <span class="glyphicon glyphicon-arrow-up"/>
                             </button>
                         </div>
                         <br/>
                         <div class="btn-group btn-group-sm " style="margin-left:1em; margin-top: 0.3em">
                             <button id="down{$new.id}" name="{$new.id}" class="btn btn-success" role="dislike"
-                               onclick="downvote({$new.id})">
-                                <span class="glyphicon glyphicon-arrow-down"/>
+                                    onclick="downvote({$new.id})">
+                            <span class="glyphicon glyphicon-arrow-down"/>
                             </button>
                         </div>
                     {else}
