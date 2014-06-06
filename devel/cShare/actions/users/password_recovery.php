@@ -17,6 +17,7 @@ if (strcmp($type,"0") == 0) {
 		$_SESSION['success_messages'] = "An e-mail containing the instructions how to recover your password has been sent to your inbox";
 		header("Location: $BASE_URL" . 'pages/homepage/home.php');
 	}catch(PDOException $ex){
+		logError($ex->getMessage());
 		$_SESSION['error_messages'] = "Error validating username";
 		header("Location: $BASE_URL" . 'pages/users/login.php');
 	}
@@ -25,6 +26,7 @@ if (strcmp($type,"0") == 0) {
 	try {	
 		$user = getUserByUsername($user);	
 	}catch(PDOException $ex) {
+		logError($ex->getMessage());
 		$password = $_POST['password'];
 		$passConf = $_POST['password_confirmation'];
 		if (strcmp($password,$passConf) == 0) {
