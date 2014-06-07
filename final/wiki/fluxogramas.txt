@@ -1,3 +1,0 @@
-promover utilizador
-banir
-despromover utilizador
