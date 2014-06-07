@@ -20,14 +20,14 @@
         <div class="btn-group btn-group-sm" style="margin-left:0.85em">
             <button id="up{$content.idnoticia}" name="{$content.id}" class="btn btn-success" role="like"
                     onclick="upvote({$content.idnoticia})">
-            <span class="glyphicon glyphicon-arrow-up"/>
+                <span class="glyphicon glyphicon-arrow-up"/>
             </button>
         </div>
         <br>
         <div class="btn-group btn-group-sm" style="margin-left:0.85em; margin-top: 0.3em">
             <button id="down{$content.idnoticia}" name="{$content.id}" class="btn btn-success" role="dislike"
-               onclick="downvote({$content.idnoticia})">
-                <span class="glyphicon glyphicon-arrow-down"/>
+                    onclick="downvote({$content.idnoticia})">
+            <span class="glyphicon glyphicon-arrow-down"/>
             </button>
         </div>
     {else}
@@ -101,8 +101,10 @@
                      style="float:left"/>
             </div>
             <div class="comment-author">
-                <b>{$comment.username}</b>
-                &nbsp;{$comment.likes} {if $comment.likes > 1}points{elseif $comment.likes != NULL}point{/if}{if $comment.likes == NULL}0 points{/if}
+                <b>{$comment.username}&nbsp;</b>
+
+                <div id="{$comment.id}" style="display:inline">{$comment.likes} {if $comment.likes >
+                    1}points{elseif $comment.likes != NULL}point{/if}{if $comment.likes == NULL}0 points{/if}</div>
             </div>
             <div class="comment-text">
                 {$comment.content}
@@ -110,18 +112,16 @@
             <div class="vote-buttons">
                 {if (isset($USERNAME))}
                     <div class="btn-group btn-group-sm">
-                        <a id="up" name="{$comment.id}" onclick="upvoteComment({$comment.id})">
-                            <button type="button" class="btn btn-cmt">
-                                <span class="glyphicon glyphicon-arrow-up"/>
-                            </button>
-                        </a>
+                        <button id="up{$comment.id}" name="{$comment.id}" type="button" class="btn btn-cmt"
+                                onclick="upvoteComment({$comment.id})">
+                            <span class="glyphicon glyphicon-arrow-up"/>
+                        </button>
                     </div>
                     <div class="btn-group btn-group-sm">
-                        <a id="down" name="{$comment.id}" onclick="downvoteComment({$comment.id})">
-                            <button type="button" class="btn btn-cmt">
-                                <span class="glyphicon glyphicon-arrow-down"/>
-                            </button>
-                        </a>
+                        <button id="down{$comment.id}" name="{$comment.id}" type="button" class="btn btn-cmt"
+                                onclick="downvoteComment({$comment.id})">
+                            <span class="glyphicon glyphicon-arrow-down"/>
+                        </button>
                     </div>
                 {else}
                     <div class="btn-group btn-group-sm">
@@ -146,7 +146,7 @@
                     Edit
                 </a>
                 <a class="btn btn-primary btn-md" onclick="removeComment({$comment.id})">
-                Remove
+                    Remove
                 </a>
 
                 <div class="modal fade" id="edit{$comment.cont}" tabindex="-1" role="dialog"

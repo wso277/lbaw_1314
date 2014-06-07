@@ -59,11 +59,12 @@ function upvoteComment(id) {
         success: function (data) {
 
             if (data.msg == true) {
-                alert("Upvote with success");
-                //location.reload();
-            }
-            else {
-                alert("Error upvoting!" + data.msg);
+                var text = $('#' + id).text();
+                var rate = parseInt(text);
+                text = replaceAt(text, rate.toString().length - 1, rate + 1);
+                $('#' + id).text(text);
+                $('#up' + id).prop('disabled', true).button('refresh');
+                $('#down' + id).prop('disabled', false).button('refresh');
             }
         },
         error: function (data) {
@@ -83,11 +84,13 @@ function downvoteComment(id) {
         success: function (data) {
 
             if (data.msg == true) {
-                alert("Upvote with success!");
-                //location.reload();
-            }
-            else {
-                alert("Error downvoting!" + data.msg);
+
+                var text = $('#' + id).text();
+                var rate = parseInt(text);
+                text = replaceAt(text, rate.toString().length - 1, rate - 1);
+                $('#' + id).text(text);
+                $('#up' + id).prop('disabled', false).button('refresh');
+                $('#down' + id).prop('disabled', true).button('refresh');
             }
         },
         error: function (data) {
