@@ -7,7 +7,7 @@
     if (is_numeric($id)) {
         try {
             $result = deleteMessage($id);
-            $_SESSION['sucess_messages'][] = 'Message successfully deleted!';
+            $_SESSION['success_messages'][] = 'Message successfully deleted!';
         } catch (PDOException $ex) {
             logError($ex->getMessage());
             $_SESSION['error_messages'][] = 'Error deleting message';
