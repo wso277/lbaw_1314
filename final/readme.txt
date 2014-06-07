@@ -1,5 +1,3 @@
-READ ME
-
 Necessário registo e posterior log in ou então fazer log in direto com as contas de teste ( csharetestmod e csharetestuser, com passwords 11111111 ). São contas de teste, uma vez que além do registo, não existe qualquer presença destas na base de dados.
 Após o log in é redirecionado para a home page. Pode consultar o seu perfil clicando no ícone que o reencaminhará para o seu perfil, sendo que dentro do mesmo tem acesso aos seus dados pessoais, às suas mensagens privadas, ao histórico de publicações, à sua lista de amigos e à sua lista de interesses. Ainda no seu perfil tem dois botões, um que permite enviar mensagens e outro que permite a editção dos seus dados pessoais e dos seus interesses.
 

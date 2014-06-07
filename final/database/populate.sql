@@ -20,50 +20,41 @@ INSERT INTO Editor VALUES('AAntunesD','Diogo Andrade Antunes','Vila Real de Sant
 INSERT INTO Editor VALUES('JoaoCAP','Joao Castro Pato','Guimaraes','147258369','joaocastrop2@yarr.com','Barman','/~lbaw1353/proto/images/assets/default.png','editor','normal');
 INSERT INTO Editor VALUES('NunoFer','Nuno Ferreira','Lisboa','NunoFerre','nuninho@yarr.com','escritor','/~lbaw1353/proto/images/assets/default.png','editor','bantemp');
 
-/* 1 */
+/*Test Users*/
+INSERT INTO Editor VALUES('csharetestmod','Moderador de teste','Local de teste','11111111','csharetestmod@cshare.com','moderador','/~lbaw1353/proto/images/assets/default.png','moderador','normal'
+INSERT INTO Editor VALUES('csharetestuser','Editor de teste','Local de teste','11111111','csharetestuser@cshare.com','editor','/~lbaw1353/proto/images/assets/default.png','editor','normal');
+
+
+
 INSERT INTO Noticia VALUES(DEFAULT,'«Ganhar é sempre o grande objetivo de um jogo. Na primeira parte tivemos o jogo bem controlado, fomos mais contundentes, tivemos as melhores oportunidades, podíamos ter aproveitado melhor algumas situações de superioridade», diz Paulo Bento.','«Fomos felizes, mas há que realçar o nosso esforço» - Paulo Bento','2014-06-07','http://www.abola.pt/img/fotos/seleccao/2014/paulobento01.jpg',0,'JC_1993');
-/* 2 */
 INSERT INTO Noticia VALUES(DEFAULT,'Há ladrões que não têm a noção do ridículo! Quem é que não conhece as Go Pro?", diz Malcom Fox na página de YouTube onde foi difundido o filme. ','Ciclista filma momento em que é assaltado','2014-06-06','http://s2.glbimg.com/kV0VcKFyuFQUsohbwfxTmKHlyV4=/s.glbimg.com/jo/g1/f/original/2014/06/06/de27_2.jpg',0,'SrPinto');
-/* 3 */
 INSERT INTO Noticia VALUES(DEFAULT,'Estou com receio de que possamos voltar a uma guerra fria. Isto está complicado!
 	','Obama dá um mês a Putin para "voltar ao caminho da lei internacional"','2014-05-06','http://imagens9.publico.pt/imagens.aspx/844009?tp=UH&db=IMAGENS&w=749',0,'wSoAwNsS');
-/* 4 */
 INSERT INTO Noticia VALUES(DEFAULT,'Que grande jogo! Esperei durante meses, dormi na fila durante horas mas fui o primeiro a comprar este grande jogo!','"Watch Dogs" vende 4 milhões de cópias em uma semana','2014-06-03','http://s2.glbimg.com/jkBEiqf846W7zsAARayZhg57Cd4=/300x225/s.glbimg.com/jo/g1/f/original/2014/05/29/sem-titulo-16.jpg',0,'wolowizard');
-/* 5 */
 INSERT INTO Noticia VALUES(DEFAULT,'Para informar todas as pessoas que frequentam as instalações da FEUP'
 	,'Vaga de assaltos nas imediações da Faculdade de Engenharia da Universidade do Porto.','2014-06-06','http://jpn.c2com.up.pt/imagens/feup_parque_estacionamento.jpg',0,'Zezinho_11');
-/* 6 */
 INSERT INTO Noticia VALUES(DEFAULT,'Angelina Jolie não vai interpretar mais papéis no cinema. Após o filme autobiográfico de Cleópatra, a atriz norte-americana irá dedicar-se em exclusivo à realização.
 A estrela de Hollywood tem estado ausente do cinema desde que contracenou com Johnny Depp em "O Turista", interpretando o papel de Elise Clifton-Ward, uma mulher misteriosa.
 Agora regressa no novo filme de fantasia da Disney, "Maléfica", que tem estreia marcada em Portugal esta quinta-feira. A sua interpretação de rainha malvada já ocupa o primeiro lugar na Box Office dos Estados Unidos, arrebatando o filme "X-Men - Dias de um futuro esquecido".
 Angelina Jolie tem sido uma das atrizes mais requisitadas de Hollywood durante 15 anos. A estrela de cinema protagonizou filmes bem conhecidos como "A Troca", "Mr. e Mrs. Smith", e a famosa adaptação ao cinema do popular vídeojogo "Tomb Raider", onde interpretou Lara Croft.','Angelina Jolie vai dedicar-se à realização','2014-06-03','http://www.jn.pt/Storage/JN/2014/big/ng3367136.jpg',0,'wolowizard');
-/* 7 */
 INSERT INTO Noticia VALUES(DEFAULT,'Neste país faz-te tudo muito devagar...'
 	,'Aprovada a realização de eleições primárias no PS a 28 de setembro.','2014-06-06','http://www.jn.pt/Storage/JN/2014/big/ng3373340.jpg',0,'JoaoCAP');
-/* 8 */
 INSERT INTO Noticia VALUES(DEFAULT,'E ainda se queixam de países em crise.. O que não falta é dinheiro'
 	,'Procura de bilhetes para o Mundial três vezes superior à oferta','2014-06-06','http://www.jn.pt/Storage/JN/2014/big/ng3373064.JPG',0,'JPLeitao');
-/* 9 */
 INSERT INTO Noticia VALUES(DEFAULT,'Cristina Scuccia, a freira sensação de 25 anos concorrente no "The Voice" italiano, venceu esta quinta-feira o concurso com 62% dos votos do público. A religiosa esperou pela aprovação do Papa Francisco para continuar em prova. Quem sabe, sabe!'
 	,'Freira Cristina Scuccia vence "The Voice" italiano.','2014-06-06','http://www.jn.pt/Storage/JN/2014/big/ng3373666.jpg',0,'SrPinto');
-/* 10 */
 INSERT INTO Noticia VALUES(DEFAULT,'Uma ativista das Femen destruiu a estátua de cera do presidente russo no museu Grévin, em Paris, com uma estaca de metal e enquanto gritava "Putin é um ditador"'
 	,'Ativista das Femen esfaqueia Putin de cera em Paris','2014-06-05','http://www.jn.pt/Storage/JN/2014/big/ng3372587.jpg',0,'ferreirinha');
-/* 11 */
 INSERT INTO Noticia VALUES(DEFAULT,'Achei por bem partilhar: Entre janeiro e março deste ano, a Santa Casa da Misericórdia de Lisboa já pagou 119 milhões de euros em prémios resultantes de apostas feitas no território nacional. O que corresponde a metade do total do dinheiro gasto pelos apostadores neste jogo no mesmo período de tempo: 238 milhões.  Os restantes 119 milhões vão reverter a favor dos beneficiários, tal como acontece com todos os jogos sociais. 
 	Só com este jogo, a Santa Casa da Misericórdia de Lisboa (SCML) encaixou, por dia e em média, 1,32 milhões de euros a repartir pelo Estado e pela obra social.
 No total do ano passado, a SCML registou um valor recorde nas apostas, cerca de 1790 milhões de euros, em todos os jogos - Euromilhões, Lotaria Instantânea, Totoloto, Lotaria Clássica, Joker, Lotaria Popular e Totobola. No primeiro trimestre de 2014, as vendas brutas destes jogos é de aproximadamente 453,7 milhões. O que, segundo a SCML, corresponde a um crescimento de 6,1% face ao período homólogo de 2013 (mais 26 milhões de euros).'
 	,'Santa Casa ganha 1,3 milhões por dia com o Euromilhões','2014-06-06','http://www.jn.pt/Storage/JN/2014/medium/ng3373289.JPG',0,'wSoAwNsS');
-/* 12 */
 INSERT INTO Noticia VALUES(DEFAULT,'Muito bom!'
 	,'Angelina Jolie é a nova "Maléfica" ','2014-06-06','http://brightcove.vo.llnwd.net/d21/unsecured/media/659647086001/201406/1450/659647086001_3604937374001_mal420.jpg?pubId=659647086001',0,'JoaoCAP');
-/* 13 */
 INSERT INTO Noticia VALUES(DEFAULT,'O presidente norte-americano, Barack Obama, comparou, esta sexta-feira, a "grande geração" que derrotou Hitler com os militares que se alistaram nas forças armadas dos EUA após os atentados de 11 de Setembro e agora regressam das guerras no Iraque e Afeganistão. '
 	,'Obama compara desembarque do Dia D com geração do 11 de Setembro" ','2014-06-06','http://www.jn.pt/Storage/JN/2014/big/ng3373862.jpg',0,'PMoreira');
-/* 14 */
 INSERT INTO Noticia VALUES(DEFAULT,'Pedro Passos Coelho disse que os juízes do Tribunal Constitucional deveriam “ser melhores”'
 	,'Oposição pede intervenção do Presidente, PSD desdramatiza" ','2014-06-06','http://imagens7.publico.pt/imagens.aspx/844017?tp=UH&db=IMAGENS',0,'PMoreira');
-/* 15 */
 INSERT INTO Noticia VALUES(DEFAULT,'Um ministro de um estado indiano fez comentários controversos sobre a violação, numa altura em que a Índia acabou de ver mais um crime chocante, com duas adolescentes violadas por um grupo de homens, mortas e deixadas enforcadas numa árvore.
 “Este é um crime social que depende de homens e mulheres. Às vezes é certo, outras vezes é errado”, disse Babulal Gaur, ministro do Interior do estado indiano do Madhya Pradesh (centro), e do partido BJP, do recém-eleito primeiro-ministro Narendra Modi. A violação só pode ser considerado crime, acrescentou, citado pela agência Reuters, se for feita queixa à polícia.'
 	,'Ministro de estado indiano diz que violação “às vezes é certo, outras vezes é errado"','2014-06-06','http://imagens6.publico.pt/imagens.aspx/844096?tp=UH&db=IMAGENS&w=749',0,'donovan_95');
