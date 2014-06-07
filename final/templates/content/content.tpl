@@ -103,8 +103,9 @@
             <div class="comment-author">
                 <b>{$comment.username}&nbsp;</b>
 
-                <div id="{$comment.id}" style="display:inline">{$comment.likes} {if $comment.likes >
-                    1}points{elseif $comment.likes != NULL}point{/if}{if $comment.likes == NULL}0 points{/if}</div>
+                <div id="{$comment.id}"
+                     style="display:inline">{$comment.likes}{if $comment.likes > 1} points{elseif $comment.likes != NULL}
+                        point{/if}{if $comment.likes == NULL}0 points{/if}</div>
             </div>
             <div class="comment-text">
                 {$comment.content}
