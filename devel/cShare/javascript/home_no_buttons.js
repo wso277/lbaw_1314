@@ -1,5 +1,11 @@
 $(document).ready(function () {
+    var current = 0;
 
+    /*for (; current < parseInt($('#current').val());) {
+     show(current);
+     }*/
+
+    document.getElementById('current').value = current;
     $(window).scroll(function () {
 
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {

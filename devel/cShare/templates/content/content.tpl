@@ -18,16 +18,17 @@
 
     {if (isset($USERNAME))}
         <div class="btn-group btn-group-sm" style="margin-left:0.85em">
-            <a id="up" name="{$content.id}" class="btn btn-success" role="like" onclick="upvote({$content.idnoticia})">
-                <span class="glyphicon glyphicon-arrow-up"/>
-            </a>
+            <button id="up{$content.idnoticia}" name="{$content.id}" class="btn btn-success" role="like"
+                    onclick="upvote({$content.idnoticia})">
+            <span class="glyphicon glyphicon-arrow-up"/>
+            </button>
         </div>
         <br>
         <div class="btn-group btn-group-sm" style="margin-left:0.85em; margin-top: 0.3em">
-            <a id="down" name="{$content.id}" class="btn btn-success" role="dislike"
+            <button id="down{$content.idnoticia}" name="{$content.id}" class="btn btn-success" role="dislike"
                onclick="downvote({$content.idnoticia})">
                 <span class="glyphicon glyphicon-arrow-down"/>
-            </a>
+            </button>
         </div>
     {else}
         <div class="btn-group btn-group-sm" style="margin-left:0.85em">
