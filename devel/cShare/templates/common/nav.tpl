@@ -82,15 +82,15 @@
             </div>
                 <div class="modal-body" style="padding: 5px;">
                     <h4>What can you do here you say?</h4></br>
-					{if  $smarty.server.REQUEST_URI|strstr: 'home'}
-                    <p>As a <b>Visitor</b>, you can see all our content, who posted it and share news via Facebook. Plus, you can <span class="glyphicon glyphicon-check"></span><b>Register</b> to our great website!</p>
-					<p>If you are already a member, please <span class="glyphicon glyphicon-log-in"></span><b> Log In</b>. From this page you can go to your <span class="glyphicon glyphicon-user"></span><b>Profile</b>, <span class="glyphicon glyphicon-share"></span><b>Share</b> content, see your <span class="glyphicon glyphicon-list"></span><b>Friends</b>,
-					<span class="glyphicon glyphicon-arrow-up"></span><b>Upvote</b> or <span class="glyphicon glyphicon-arrow-down"></span><b>Downvote</b> a news and all the things a <b>Visitor</b> can do.</p>
-					{elseif $smarty.server.REQUEST_URI|strstr: 'publish'}
+					{if $smarty.server.REQUEST_URI|strstr: 'publish'}
 					<p>This page allows you to publish a fresh new content!</p>
 					<p>The <b>Title</b> must have 85 alphanumeric characters at most.</p>
 					<p>You can also provide an URL to some image representing your content.</>
 					<p>Besides this, you can give an URL to the news page</p>
+					{else}
+                    <p>As a <b>Visitor</b>, you can see all our content, who posted it and share news via Facebook. Plus, you can <span class="glyphicon glyphicon-check"></span><b>Register</b> to our great website!</p>
+					<p>If you are already a member, please <span class="glyphicon glyphicon-log-in"></span><b> Log In</b>. From this page you can go to your <span class="glyphicon glyphicon-user"></span><b>Profile</b>, <span class="glyphicon glyphicon-share"></span><b>Share</b> content, see your <span class="glyphicon glyphicon-list"></span><b>Friends</b>,
+					<span class="glyphicon glyphicon-arrow-up"></span><b>Upvote</b> or <span class="glyphicon glyphicon-arrow-down"></span><b>Downvote</b> a news and all the things a <b>Visitor</b> can do.</p>
 					{/if}
 				</div>
         </div>
