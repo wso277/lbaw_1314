@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>User Search</title>
+
+	<!-- Bootstrap -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../css/profile.css" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../javascript/jQuery.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../javascript/bootstrap.min.js"></script>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../javascript/html5shiv.js"></script>
+    <script src="../javascript/respond.js"></script>
+    <![endif]-->
+    </head>
+
+    <body>
+
+     <!-- barra de cima-->
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar-collapse">
+       <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../images/cshare_xxs.png" height="24px"/></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <ul class="nav navbar-nav">
+        <li><a href="#"><span class="glyphicon glyphicon-user"/>&nbsp;Profile</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-list"/>&nbsp;Friends</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-star"/>&nbsp;Favorites</a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+         <input type="text" class="form-control" placeholder="Search" style="width:200%">
+       </div>
+     </form>
+     <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-off"/>&nbsp;Logout</a></li>
+    </ul>
+  </div>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+
+<!-- separador de lado-->
+<div class="pull-right" style="width:25%;position:fixed;margin-left:75%">
+  <div class="panel panel-primary">
+   <div class="panel-heading" style="position:fixed;width:25%;">Latest messages</div>
+ </div>
+</div>
+
+<div class="pull-right" style="margin-top:3em;width:25%;height:95.1%;position:fixed;margin-left:75%">
+  <div class="panel panel-primary" style="height:100%;overflow:auto;">
+   <div class="panel-body">
+    <div class="jumbotron" style="text-align:center;float:left;width:100%">
+     <img src="../img/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
+     <div class="caption">
+      <h2>Maria Espinha</h2>
+      <p>Ve la esta noticia sobr...</p>
+      <div class="btn-group btn-group-sm">
+        <a href="#" class="btn btn-primary" role="like">
+          <span class="glyphicon glyphicon-envelope"/>&nbsp;Open
+        </a> 
+      </div>
+      <div class="btn-group btn-group-sm">
+       <a href="#" class="btn btn-primary" role="like">
+        <span class="glyphicon glyphicon-ok"/>&nbsp;Read
+      </a> 
+    </div>
+    <div class="btn-group btn-group-sm">
+     <a href="#" class="btn btn-primary" role="dislike">
+      <span class="glyphicon glyphicon-trash"/>&nbsp;Delete
+    </a>
+  </div>
+</div>
+</div>
+
+<div class="jumbotron" style="text-align:center;float:left;width:100%">
+  <img src="../img/profile-pic.jpg" width="128em" height="128em" style="float:left"/>
+  <div class="caption">
+    <h2>José Manuel</h2>
+    <p>Já viste o jogo de ontem?</p>
+    <div class="btn-group btn-group-sm">
+      <a href="#" class="btn btn-primary" role="like">
+        <span class="glyphicon glyphicon-envelope"/>&nbsp;Open
+      </a> 
+    </div>
+    <div class="btn-group btn-group-sm">
+      <a href="#" class="btn btn-primary" role="like">
+        <span class="glyphicon glyphicon-ok"/>&nbsp;Read
+      </a> 
+    </div>
+    <div class="btn-group btn-group-sm">
+      <a href="#" class="btn btn-primary" role="dislike">
+        <span class="glyphicon glyphicon-trash"/>&nbsp;Delete
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!--Profile-->
+<div> 
+  <img class="profile-pic" src="http://www.thecvrighter.co.uk/wp-content/uploads/2012/06/Profile.jpg" width="254em" height="254em"/>
+</div>
+<h1 style="margin-top:1em;">António Espinha</h1>
+<span class="glyphicon glyphicon-home" style="margin-top:1em"></span>&nbsp;&nbsp;Hometown: Porto
+<p style="display:block;"><span class="glyphicon glyphicon-gift" style="margin-top:1em"></span>&nbsp;&nbsp;Age: 23</p>
+<p style="display:block;"><span class="glyphicon glyphicon-briefcase" style="margin-top:0m"></span>&nbsp;&nbsp;Work: Student</p>
+
+<div class="btn-group btn-group-sm">
+  <a href="#" class="btn btn-primary" role="dislike">
+    <span class="glyphicon glyphicon-th-list"/>&nbsp;See Friends
+  </a>
+</div>
+
+<div class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+  <a href="#" class="btn btn-primary" role="dislike">
+    <span class="glyphicon glyphicon-chevron-up"/>&nbsp;Promote
+  </a>
+</div>
+
+<div class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+  <a href="#" class="btn btn-primary" role="dislike">
+    <span class="glyphicon glyphicon-chevron-down"/>&nbsp;Dispromote
+  </a>
+</div>
+
+<div class="btn-group btn-group-sm" style="display:block;margin-top:1em">
+  <a href="#" class="btn btn-primary" role="dislike">
+    <span class="glyphicon glyphicon-remove"/>&nbsp;Ban
+  </a>
+</div>
+
+
+
+
+
+<!--post history-->
+<div class="pull-left post-history">
+  <div class="panel panel-primary">
+   <div class="panel-heading">Post history</div>
+ </div>
+</div>
+
+<div class="pull-left post-history">
+  <div class="panel panel-primary" style="height:100%;overflow:auto;">
+   <div class="panel-body">
+
+    <div class="jumbotron" style="text-align:center;float:left;width:100%;">
+      <img src="http://imagens8.publico.pt/imagens.aspx/773638?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+      <div class="caption">
+        <h2 style="color:#b74934">Governo insiste no aumento dos descontos para a ADSE através do Parlamento</h2>
+        <p> Conselho de Ministros aprovou envio do diploma vetado  </p>              
+        <p> por Cavaco Silva para a Assembleia da República.</p>              
+        <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a> 
+        <div class="btn-group btn-group-sm">
+          <a href="#" class="btn btn-primary" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
+        </div>
+        <div class="btn-group btn-group-sm">
+          <a href="#" class="btn btn-primary" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
+        </div>
+      </div>
+      <p>
+        <div style="float:left;clear:left">
+          <h4>Posted by maxPoster93 at 21:36</h4>
+        </div>
+        <div style="float:right">
+          <h4>8987 points &nbsp;34 comments</h4>
+        </div>
+      </p>
+    </div>
+
+    <div class="jumbotron" style="text-align:center;float:left;width:100%;">
+      <img src="http://imagens8.publico.pt/imagens.aspx/829728?tp=UH&db=IMAGENS" width="192em" height="192em" style="float:left"/>
+      <div class="caption">
+        <h2 style="color:#b74934">Rui Costa sobe mais dois lugares na Paris-Nice</h2>
+        <p>O actual campeão do mundo de ciclismo de estrada mantém-se a 19 segundos da liderança.</p>
+        <a href="#" class="btn" role="button"><img src="../img/facebook-icon-sm.png"/></a> 
+        <div class="btn-group btn-group-sm">
+          <a href="#" class="btn btn-primary" role="like">
+            <span class="glyphicon glyphicon-arrow-up"/>
+          </a> 
+        </div>
+        <div class="btn-group btn-group-sm">
+          <a href="#" class="btn btn-primary" role="dislike">
+            <span class="glyphicon glyphicon-arrow-down"/>
+          </a>
+        </div>
+        <p>
+          <div style="float:left;clear:left">
+            <h4>Posted by maxPoster93 at 21:36</h4>
+          </div>
+          <div style="float:right">
+            <h4>8987 points &nbsp;34 comments</h4>
+          </div>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+</body>
+</html>

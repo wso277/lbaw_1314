@@ -42,8 +42,7 @@
                                value="{$user[0].email}" placeholder="Email Address" tabindex="4">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="picture" id="picture" class="form-control input-lg"
-                               value="{$user[0].fotografia}" placeholder="Picture URL" tabindex="4">
+                        <input type="file" name="file" id="file" accept="image/*"><br>
                     </div>
                     <div>
                         <h3 style="color:#f0f0f0">Interests</h3>

@@ -5,6 +5,7 @@
 {include file="common/nav.tpl"}
 
 <link href="{$BASE_URL}css/search.css" rel="stylesheet">
+<script type="text/javascript" src="{$BASE_URL}javascript/filter.js"></script>
 
 <div class="count">
     Found {(sizeof($results['user']) + sizeof($results['work']) + sizeof($results['local']) + sizeof
@@ -13,7 +14,7 @@
 <div class="well well-sm">
     <table>
         <tr>
-            <td width="30%">
+            <td width="10%">
 				<span class="glyphicon glyphicon-search" style="font-size:48px;margin:30% 30% 30% 30%;">
 				</span>
             </td>
@@ -27,81 +28,24 @@
             <td>
                 <input type="submit" class="btn btn-success" value="Search"/>
             </td>
+            <td> 
+                <input type="date" class="form-control" id="first_date" placeholder="Date range(min value)">
+            </td>
+            <td>
+                <input type="date" class="form-control" id="last_date" placeholder="Date range(max value)">
+            </td>
+            <td>
+                <button class="btn btn-md btn-success" id="filter">Filter by date</button>
+            </td>
             </form>
         </tr>
     </table>
 
-    <div class="glyphicon glyphicon-filter"></div>
-    <!--Filters
-
-    <div class="well">
-        <table>
-            <tr>
-                <td width="30%">
-                    <a href="#">Filter 1</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 5</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 9</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 13</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="30%">
-                    <a href="#">Filter 2</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 6</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 10</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 14</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="30%">
-                    <a href="#">Filter 3</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 7</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 11</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 15</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td width="30%">
-                    <a href="#">Filter 4</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 8</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 12</a>
-                </td>
-                <td width="30%">
-                    <a href="#">Filter 16</a>
-                </td>
-            </tr>
-        </table>
-    </div>-->
-
     <div class="results">&nbsp;Found {count($results['content'])} news</div>
+    <div id ="news">
     {foreach $results['content'] as $content}
-        <div class="media">
-            <a class="pull-left" href="{$BASE_URL}pages/users/content.php?id={$content.idnoticia}">
+        <div class="media" id="{$content.data_post}">
+            <a class="pull-left" href="{$BASE_URL}pages/content/content.php?id={$content.idnoticia}">
                 <img class="media-object" src="{$content.fotografia}" width="64px" height="64px">
             </a>
 
@@ -114,6 +58,7 @@
             </a>
         </div>
     {/foreach}
+    </div>
 
     <br>
 

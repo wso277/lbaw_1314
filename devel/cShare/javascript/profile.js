@@ -9,16 +9,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-
-                if (data.msg == true) {
-                    alert("Promote successful!");
-                }
-                else {
-                    alert("Error Promoting!");
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO Promote NO yarr.. :(");
             }
         });
     });
@@ -32,16 +25,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-
-                if (data.msg == true) {
-                    alert("Demote successful!");
-                }
-                else {
-                    alert("Error Demoting!");
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO Demote NO yarr.. :(");
             }
         });
     });
@@ -55,16 +41,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-
-                if (data.msg == true) {
-                    alert("Ban successful!");
-                }
-                else {
-                    alert("Error Baning!");
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO Ban NO yarr.. :(");
             }
         });
     });
@@ -78,16 +57,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-
-                if (data.msg == true) {
-                    alert("Temporary Ban successful!");
-                }
-                else {
-                    alert("Error Baning!");
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO Temporary Ban NO yarr.. :(");
             }
         });
     });
@@ -101,16 +73,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-
-                if (data.msg == true) {
-                    alert("Unban successful!");
-                }
-                else {
-                    alert("Error Baning!");
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO Unban NO yarr.. :(");
             }
         });
     });
@@ -124,17 +89,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-                
-                if (data.msg == true) {
-                    alert("Friend added with success!");
-                    location.reload();
-                }
-                else {
-                    alert("Error adding friend!");
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO friend NO yarr.. :(");
             }
         });
     });
@@ -148,17 +105,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-
-                if (data.msg == true) {
-                    alert("Friend removed with success!");
-                    location.reload();
-                }
-                else {
-                    alert("Error removing friend!" + data.msg);
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO friend NO yarr.. :(");
             }
         });
     });
@@ -172,17 +121,9 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(data) {
-
-                if (data.msg == true) {
-                    alert("Friend removed with success!");
-                    location.reload();
-                }
-                else {
-                    alert("Error removing friend!" + data.msg);
-                }
+                location.reload();
             },
             error: function(data) {
-                alert("NO friend NO yarr.. :(");
             }
         });
     });

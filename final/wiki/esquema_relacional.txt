@@ -1,0 +1,12 @@
+Noticia(idNoticia, Conteudo, Titulo, idUtilizador->Utilizador, avaliacao)
+Comentario(idComentario, Conteudo, avaliacao, idUtilizador->Utilizador, idNoticia->Noticia)
+Link(idLink, HomeLink, href)
+LinkNoticia(idNoticia->Noticia, idLink->Link);
+NoticiaCategoria(idNoticia->Noticia, idCategoria->Categoria)
+Categoria(idCategoria, Nome)
+Filtro(idFiltro, Nome)
+CategoriaFiltro(idCategoria->Categoria, idFiltro->Filtro)
+Utilizador(idUtilizador, Nome, Idade, Localidade, Username, Profissao, Fotografia, Tipo, Estado)
+InteresseUtilizador(Interesse->Categoria, idUtilizador->Utilizador)
+Mensagem(Emissor->Utilizador, Receptor->Utilizador, Assunto, Conteudo)
+Amizade(Amigo1->Utilizador, Amigo2->Utilizador) 	//Amigo1<Amigo2
