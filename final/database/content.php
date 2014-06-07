@@ -115,11 +115,11 @@
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    function getCommentLikes($contentId, $commentId, $username)
+    function getCommentLikes($contentId, $commentId)
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT SUM (AvaliarComentario.avaliacao) FROM AvaliarComentario,Comentario,Noticia WHERE AvaliarComentario.idComentario = Comentario.idComentario AND Comentario.idNoticia = Noticia.idNoticia AND Comentario.username = AvaliarComentario.username AND Comentario.idNoticia = ? AND Comentario.idComentario = ? AND Comentario.username LIKE ?");
-        $stmt->execute(array($contentId, $commentId, $username));
+        $stmt = $conn->prepare("SELECT SUM (AvaliarComentario.avaliacao) FROM AvaliarComentario,Comentario,Noticia WHERE AvaliarComentario.idComentario = Comentario.idComentario AND Comentario.idNoticia = Noticia.idNoticia AND Comentario.idNoticia = ? AND Comentario.idComentario = ?");
+        $stmt->execute(array($contentId, $commentId));
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
