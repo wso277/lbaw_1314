@@ -11,7 +11,6 @@
             $conn->rollBack();
             exit;
         }
-        var_dump($links);
         foreach ($links as $key => $link) {
 
             $stmt = $conn->prepare("SELECT * FROM Link WHERE href = ?");
