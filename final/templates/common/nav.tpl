@@ -104,7 +104,7 @@
                         <span class="glyphicon glyphicon-share"></span><b>Share</b> content, see your <span
                                 class="glyphicon glyphicon-list"></span><b>Friends</b>,
                         <span class="glyphicon glyphicon-arrow-up"></span><b>Upvote</b> or <span
-                                class="glyphicon glyphicon-arrow-down"></span><b>Downvote</b> a news and all the things
+                                class="glyphicon glyphicon-arrow-down"></span><b>Downvote</b> news and all the things
                         a <b>Visitor</b> can do.</p>
                 {/if}
             </div>

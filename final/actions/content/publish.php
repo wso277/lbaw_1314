@@ -21,8 +21,7 @@
         }
     }
 
-    if (!isset($username) || !isset($title) || !isset($photo) || !isset($message)
-    ) {
+    if (!isset($username) || !isset($title) || !isset($photo) || !isset($message)) {
         $_SESSION['error_messages'][] = 'All fields are mandatory';
         $_SESSION['form_values'] = $_POST;
         header("Location: $BASE_URL" . 'pages/content/publish.php');
@@ -30,7 +29,6 @@
     }
 
     try {
-
         $result = publish($username, $title, $message, $photo, $links);
     } catch (PDOException $ex) {
         logError($ex->getMessage());
