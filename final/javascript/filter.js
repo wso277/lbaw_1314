@@ -13,6 +13,11 @@ $(document).ready(function () {
                 }
             } else if (x > y) {
                 alert("The first date must be lower than the second");
+            } else {
+                var z = new Date($(this).attr('id'));
+                if (z != x) {
+                    $(this).hide();
+                }
             }
         });
     });
