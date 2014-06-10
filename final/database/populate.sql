@@ -20,10 +20,10 @@ INSERT INTO Editor VALUES('AAntunesD','Diogo Andrade Antunes','Vila Real de Sant
 INSERT INTO Editor VALUES('JoaoCAP','Joao Castro Pato','Guimaraes','147258369','joaocastrop2@yarr.com','Barman','/~lbaw1353/proto/images/assets/default.png','editor','normal');
 INSERT INTO Editor VALUES('NunoFer','Nuno Ferreira','Lisboa','NunoFerre','nuninho@yarr.com','escritor','/~lbaw1353/proto/images/assets/default.png','editor','bantemp');
 
-/*Test Users*/
+/*Test Users*//*
 INSERT INTO Editor VALUES('csharetestmod','Moderador de teste','Local de teste','11111111','csharetestmod@cshare.com','moderador','/~lbaw1353/proto/images/assets/default.png','moderador','normal'
 INSERT INTO Editor VALUES('csharetestuser','Editor de teste','Local de teste','11111111','csharetestuser@cshare.com','editor','/~lbaw1353/proto/images/assets/default.png','editor','normal');
-
+*/
 
 
 INSERT INTO Noticia VALUES(DEFAULT,'«Ganhar é sempre o grande objetivo de um jogo. Na primeira parte tivemos o jogo bem controlado, fomos mais contundentes, tivemos as melhores oportunidades, podíamos ter aproveitado melhor algumas situações de superioridade», diz Paulo Bento.','«Fomos felizes, mas há que realçar o nosso esforço» - Paulo Bento','2014-06-07','http://www.abola.pt/img/fotos/seleccao/2014/paulobento01.jpg',0,'JC_1993');
