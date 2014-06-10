@@ -65,7 +65,7 @@
                 Delete Content
             </button>
         {/if}
-        <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&subject={$content.titulo}&id={$content.idnoticia}">
+        <a href="{$BASE_URL}pages/users/send_message.php?sender={$USERNAME}&subject={$content.titulo}&id={$content.idnoticia}&content=gnomo.fe.up.pt{$BASE_URL}pages/content/content.php?id={$content.idnoticia}">
             <button class="btn btn-primary btn-md">
                 Refer to Friend
             </button>

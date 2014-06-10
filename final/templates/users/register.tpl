@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <input type="text" name="display_name" id="display_name" class="form-control input-lg"
                            placeholder="Username" value="{$FORM_VALUES['display_name']}"
-                            {literal} tabindex="3" required pattern="^[^;:&quot;]{6,15}">
+                            {literal} tabindex="3" required pattern="^[^;:&quot;]{6,15}" title="Username must have between 6 and 15 characters">
                     {/literal}
                 </div>
                 <div class="form-group">
