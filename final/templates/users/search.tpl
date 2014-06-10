@@ -49,7 +49,7 @@
                     <img class="media-object" src="{$content.fotografia}" width="64px" height="64px">
                 </a>
 
-                <a href="{$BASE_URL}pages/users/content.php?id={$content.idnoticia}">
+                <a href="{$BASE_URL}pages/content/content.php?id={$content.idnoticia}">
                     <div class="media-body">
                         <h4 class="media-heading">{$content.titulo}</h4>
 
