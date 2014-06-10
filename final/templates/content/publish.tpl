@@ -6,7 +6,7 @@
     <body>
 
     <link href="{$BASE_URL}css/publication.css" rel="stylesheet">
-    <script src="{$BASE_URL}javascript/publication.js"></script>
+    <!--script src="{$BASE_URL}javascript/publication.js"></script-->
 
     {include file="common/nav.tpl"}
 
@@ -59,14 +59,39 @@
                         <input autocomplete="off" class="span3 link-box" id="field1" name="link1" type="text"
                                placeholder="Link" data-provide="typeahead" data-items="8"
                                data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                        <br /><br />
+                        <input autocomplete="off" class="span3 link-box" id="field2" name="link2" type="text"
+                               placeholder="Link" data-provide="typeahead" data-items="8"
+                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                        <br /><br />
+                        <input autocomplete="off" class="span3 link-box" id="field3" name="link3" type="text"
+                               placeholder="Link" data-provide="typeahead" data-items="8"
+                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                        <br /><br />
+                        <input autocomplete="off" class="span3 link-box" id="field4" name="link4" type="text"
+                               placeholder="Link" data-provide="typeahead" data-items="8"
+                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                        <br /><br />
+                        <input autocomplete="off" class="span3 link-box" id="field5" name="link5" type="text"
+                               placeholder="Link" data-provide="typeahead" data-items="8"
+                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                        <br /><br />
+                        <input autocomplete="off" class="span3 link-box" id="field6" name="link6" type="text"
+                               placeholder="Link" data-provide="typeahead" data-items="8"
+                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
+                        <br /><br />
+                        <input autocomplete="off" class="span3 link-box" id="field7" name="link7" type="text"
+                               placeholder="Link" data-provide="typeahead" data-items="8"
+                               data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
 
-                        <button id="b1" class="btn btn-primary add-more" type="button" style="margin-top:1em">+</button>
+                        <!--button id="b1" class="btn btn-primary add-more" type="button"
+                        style="margin-top:1em">+</button-->
                     </div>
                     <br>
 
-                    <div id="small">
+                    <!--div id="small">
                         <small style="color:#f0f0f0">Press + to add another link</small>
-                    </div>
+                    </div-->
 
                 </div>
             </div>

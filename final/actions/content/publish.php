@@ -12,9 +12,6 @@
 
         $name = 'link' . $i;
         $temp = $_POST[$name];
-        var_dump($i);
-        var_dump($name);
-        var_dump($temp);
         if ($temp == null || $temp == "") {
             break;
         } else {
@@ -23,8 +20,6 @@
             $i++;
         }
     }
-
-    var_dump($links);
     if (!isset($username) || !isset($title) || !isset($photo) || !isset($message)) {
         $_SESSION['error_messages'][] = 'All fields are mandatory';
         $_SESSION['form_values'] = $_POST;

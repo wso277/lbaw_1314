@@ -9,7 +9,6 @@
 
     $comments;
     $i = 0;
-    var_dump($links);
 
     foreach ($results as $result) {
         $temp = getCommentLikes($_GET['id'], $result['idcomentario']);
