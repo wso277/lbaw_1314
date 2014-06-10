@@ -36,7 +36,8 @@
                 <div class="form-group">
                     <input type="text" name="display_name" id="display_name" class="form-control input-lg"
                            placeholder="Username" value="{$FORM_VALUES['display_name']}"
-                            {literal} tabindex="3" required pattern="^[^;:&quot;]{6,15}">
+                            {literal} tabindex="3" required pattern="^[^;:&quot;]{6,
+                            15}" title="Username should have between 6 to 15 characters">
                     {/literal}
                 </div>
                 <div class="form-group">
@@ -58,7 +59,8 @@
                         <div class="form-group">
                             {literal}
                                 <input type="password" name="password" id="password" class="form-control input-lg"
-                                       placeholder="Password" tabindex="5" required pattern="^[^;:&quot;]{8,}">
+                                       placeholder="Password" tabindex="5" required pattern="^[^;:&quot;]{8,
+                                       }" title="Password should have more than 8 characters">
                             {/literal}
                         </div>
                     </div>
