@@ -58,7 +58,7 @@
                         <div class="form-group">
                             {literal}
                                 <input type="password" name="password" id="password" class="form-control input-lg"
-                                       placeholder="Password" tabindex="5" required pattern="^[^;:&quot;]{8,}">
+                                       placeholder="Password" tabindex="5" required pattern="^[^;:&quot;]{8,}" title="Password must have at least 8 characters">
                             {/literal}
                         </div>
                     </div>

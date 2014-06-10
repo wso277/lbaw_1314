@@ -38,7 +38,7 @@
         $result = createUser($name, $user, $location, $work, $email, $pass, $pic);
     } catch (PDOException $ex) {
         logError($ex->getMessage());
-        $_SESSION['error_messages'][] = 'Error registering';
+        $_SESSION['error_messages'][] = 'Username must be unique';
         $_SESSION['form_values'] = $_POST;
         header("Location: $BASE_URL" . 'pages/users/register.php');
         exit;
